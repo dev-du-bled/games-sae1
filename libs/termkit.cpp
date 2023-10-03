@@ -22,7 +22,7 @@
 #include <termios.h>
 #include <unistd.h>
 #elif defined(_win32)
-#include <windows.h>
+#include <winuser.h>
 #endif
 /* https://www.xfree86.org/current/ctlseqs.html */
 
@@ -194,6 +194,7 @@ extern void clear() {
  * Gets a single char from the user.
  * Does not echo and does not process keys
  */
+#if defined(unix)
 extern char getch() {
   // TODO: Add windows support
   struct termios original_termios, raw_termios;
@@ -210,8 +211,7 @@ extern char getch() {
   tcsetattr(STDIN_FILENO, 0, &original_termios);
   return result;
 }
-
-
+#endif
 /**
  * Gets the size of the terminal in rows and columns
  */
@@ -230,6 +230,22 @@ extern Term_size get_term_size() {
   result.width = term_info.srWindow.Right - term_info.srWindow.Left + 1;
   result.height = term_info.srWindow.Bottom - term_info.srWindow.Top + 1;
   return result;
+#endif
+}
+
+extern void hide_cursor() {
+#if defined(unix)
+  printf("\e[?25l");
+#elif defined(_win32)
+  ShowCursor(false);
+#endif
+}
+
+extern void show_cursor() {
+#if defined(unix)
+  printf("\e[?25h");
+#elif defined(_win32)
+  ShowCursor(true);
 #endif
 }
 

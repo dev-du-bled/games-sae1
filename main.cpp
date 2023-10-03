@@ -8,7 +8,9 @@ int main() {
   set_term_title("Custom title");
   set_cursor_pos(0, 0);
   printf("X");
+  #if defined(unix)
   cout << getch();
+  #endif
   struct Term_size ts;
   ts = get_term_size();
   printf("w:%i\nh:%i", ts.width, ts.height);
