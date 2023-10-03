@@ -18,3 +18,16 @@ extern std::string rgb_bg(unsigned r, unsigned g, unsigned b) {
   return rgb_impl(r,g,b,true);
 }
 
+extern void move_cursor_up(unsigned shift) {
+  printf("\e[%iA", shift);  
+}
+extern void move_cursor_left(unsigned shift) {
+  printf("\e[%iD", shift);  
+}
+extern void move_cursor_right(unsigned shift) {
+  printf("\e[%iC", shift);  
+}
+extern void move_cursor_down(unsigned shift) {
+  printf("\e[%iB", shift);  
+
+}
