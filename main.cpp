@@ -1,4 +1,4 @@
-#include "libs/term.cpp"
+#include "libs/termkit.cpp"
 
 int main()
 {
