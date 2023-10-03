@@ -2,9 +2,9 @@
 
 using namespace std;
 int main() {
-  printf("%sRed text%s\n", rgb_fg(255, 0, 0).c_str(), DEFAULT_TERM_STYLE);
-  std::cout << bold_text("Im the BALLED text, tu du tu du du") << std::endl;
-  std::cout << underline_text("Underline text") << std::endl;
+  cout << rgb_fg("Red text", 255, 0, 0) << endl;
+  cout << bold_text("Im the BALLED text, tu du tu du du") << endl;
+  cout << underline_text("Underline text") << endl;
   set_term_title("Custom title");
   set_cursor_pos(0, 0);
   printf("X");

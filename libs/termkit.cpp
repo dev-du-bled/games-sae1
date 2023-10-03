@@ -59,8 +59,8 @@ std::string rgb_impl(unsigned r, unsigned g, unsigned b,
  * @param b Intensity of the blue channel (ranges from 0-255)
  * @return color ANSI Escape sequence representing a color
  */
-extern std::string rgb_fg(unsigned r, unsigned g, unsigned b) {
-  return rgb_impl(r, g, b, false);
+extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b) {
+  return rgb_impl(r, g, b, false) + text + "\e[39m";
 }
 
 /**
@@ -73,8 +73,8 @@ extern std::string rgb_fg(unsigned r, unsigned g, unsigned b) {
  * @param b Intensity of the blue channel (ranges from 0-255)
  * @return color ANSI Escape sequence representing a color
  */
-extern std::string rgb_bg(unsigned r, unsigned g, unsigned b) {
-  return rgb_impl(r, g, b, true);
+extern std::string rgb_bg(std::string text, unsigned r, unsigned g, unsigned b) {
+  return rgb_impl(r, g, b, true) + text + "\e[49m";
 }
 
 /**
