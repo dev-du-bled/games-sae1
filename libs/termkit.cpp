@@ -18,6 +18,8 @@
 #include <iostream>
 #include <string>
 
+/* https://www.xfree86.org/current/ctlseqs.html */
+
 /**
  * Escape sequence to reset the terminal styling (Removes colors and text
  * effects)
@@ -38,7 +40,8 @@ extern const char DEFAULT_TERM_STYLE[5] = "\e[0m";
  * @param color_background To use the color for background coloring or not
  * @return color ANSI Escape sequence representing a color
  */
-std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background) {
+std::string rgb_impl(unsigned r, unsigned g, unsigned b,
+                     bool color_background) {
   char buffer[20];
   snprintf(buffer, sizeof(buffer), "\e[%i;2;%i;%i;%im",
            (38 + color_background * 10), r, g, b);
@@ -111,7 +114,70 @@ extern void move_cursor_right(unsigned shift) { printf("\e[%iC", shift); }
 extern void move_cursor_down(unsigned shift) { printf("\e[%iB", shift); }
 
 /**
- * Clears the line starting from the cursor position.
+ * Clears the line.
  * Moves the cursor at the end of the line.
  */
-extern void clear_line() {printf("\e[2K");}
+extern void clear_line() { printf("\e[2K"); }
+
+/**
+ * Sets the terminal's window title
+ *
+ * @param title The new window title
+ */
+extern void set_term_title(std::string title) {
+  printf("\e]2;%s\007", title.c_str());
+}
+
+/**
+ * Makes the text look THICK
+ *
+ * @param text Text to be bolded
+ */
+extern std::string bold_text(std::string text) {
+  return "\e[1m" + text + "\e[22m";
+}
+
+/**
+ * Draws a line under the text
+ *
+ * @param text Text to underline
+ */
+extern std::string underline_text(std::string text) {
+  return "\e[4m" + text + "\e[24m";
+}
+
+/**
+ * Tells the terminal to save the cursor position for later
+ */
+extern void save_cursor_pos() { printf("\e[s"); }
+
+/**
+ * Tells the terminal to put the cursor back at the saved position (if any)
+ */
+extern void restore_cursor_pos() { printf("\e[u"); }
+
+/**
+ * Puts the cursor at coordinate (X,Y)
+ *
+ * 0,0 is the top left corner
+ *
+ * @param x Position on the X axis
+ * @param y Position on the Y axis
+ */
+extern void set_cursor_pos(unsigned x, unsigned y) {
+  printf("\e[%i;%if\n", x, y);
+}
+
+/**
+ * Clears the terminal screen and history
+ */
+extern void clear() {
+  printf("\e[2J"); // clears the screen
+  printf("\e[3J"); // clears the scrollback (history), see (1) clear
+  set_cursor_pos(0, 0);
+}
+
+/**
+ * An alternative way to clear the screen
+ */
+extern void clear_alternative() { printf("\e[f"); }
