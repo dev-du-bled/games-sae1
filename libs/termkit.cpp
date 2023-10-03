@@ -17,7 +17,8 @@
 
 #include <iostream>
 #include <string>
-
+#include <termios.h>
+#include <unistd.h>
 /* https://www.xfree86.org/current/ctlseqs.html */
 
 /**
@@ -59,7 +60,8 @@ std::string rgb_impl(unsigned r, unsigned g, unsigned b,
  * @param b Intensity of the blue channel (ranges from 0-255)
  * @return color ANSI Escape sequence representing a color
  */
-extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b) {
+extern std::string rgb_fg(std::string text, unsigned r, unsigned g,
+                          unsigned b) {
   return rgb_impl(r, g, b, false) + text + "\e[39m";
 }
 
@@ -73,7 +75,8 @@ extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b) 
  * @param b Intensity of the blue channel (ranges from 0-255)
  * @return color ANSI Escape sequence representing a color
  */
-extern std::string rgb_bg(std::string text, unsigned r, unsigned g, unsigned b) {
+extern std::string rgb_bg(std::string text, unsigned r, unsigned g,
+                          unsigned b) {
   return rgb_impl(r, g, b, true) + text + "\e[49m";
 }
 
@@ -177,6 +180,26 @@ extern void clear() {
   set_cursor_pos(0, 0);
 }
 
+/**
+ * Gets a single char from the user.
+ * Does not echo and does not process keys 
+ */
+extern char getch() { 
+ // TODO: Add windows support
+ struct termios original_termios, raw_termios;
+ char result;
+ // Save original terminal settings
+ tcgetattr(STDIN_FILENO, &original_termios);
+ // create settings in RawMode
+ cfmakeraw(&raw_termios);
+ // change to our raw settings
+ tcsetattr(STDIN_FILENO, 0, &raw_termios);
+ // read one byte into result
+ read(STDIN_FILENO, &result, 1);
+ // restore original terminal settings
+ tcsetattr(STDIN_FILENO, 0, &original_termios);
+ return result;
+}
 /**
  * An alternative way to clear the screen
  */

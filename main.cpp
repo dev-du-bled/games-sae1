@@ -8,5 +8,6 @@ int main() {
   set_term_title("Custom title");
   set_cursor_pos(0, 0);
   printf("X");
+  cout << getch();
   return 0;
 }
