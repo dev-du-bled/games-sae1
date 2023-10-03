@@ -233,6 +233,9 @@ extern Term_size get_term_size() {
 #endif
 }
 
+/**
+ * Hide the cursor
+ */
 extern void hide_cursor() {
 #if defined(unix)
   printf("\e[?25l");
@@ -241,6 +244,9 @@ extern void hide_cursor() {
 #endif
 }
 
+/**
+ * Show the cursor
+ */
 extern void show_cursor() {
 #if defined(unix)
   printf("\e[?25h");
