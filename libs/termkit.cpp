@@ -17,8 +17,13 @@
 
 #include <iostream>
 #include <string>
+#if defined(unix)
+#include <sys/ioctl.h>
 #include <termios.h>
 #include <unistd.h>
+#elif defined(_win32)
+#include <windows.h>
+#endif
 /* https://www.xfree86.org/current/ctlseqs.html */
 
 /**
@@ -26,6 +31,11 @@
  * effects)
  */
 extern const char DEFAULT_TERM_STYLE[5] = "\e[0m";
+
+class Term_size {
+public:
+  int width, height;
+};
 
 /**
  * Generates a color escape sequence.
@@ -182,24 +192,47 @@ extern void clear() {
 
 /**
  * Gets a single char from the user.
- * Does not echo and does not process keys 
+ * Does not echo and does not process keys
  */
-extern char getch() { 
- // TODO: Add windows support
- struct termios original_termios, raw_termios;
- char result;
- // Save original terminal settings
- tcgetattr(STDIN_FILENO, &original_termios);
- // create settings in RawMode
- cfmakeraw(&raw_termios);
- // change to our raw settings
- tcsetattr(STDIN_FILENO, 0, &raw_termios);
- // read one byte into result
- read(STDIN_FILENO, &result, 1);
- // restore original terminal settings
- tcsetattr(STDIN_FILENO, 0, &original_termios);
- return result;
+extern char getch() {
+  // TODO: Add windows support
+  struct termios original_termios, raw_termios;
+  char result;
+  // Save original terminal settings
+  tcgetattr(STDIN_FILENO, &original_termios);
+  // create settings in RawMode
+  cfmakeraw(&raw_termios);
+  // change to our raw settings
+  tcsetattr(STDIN_FILENO, 0, &raw_termios);
+  // read one byte into result
+  read(STDIN_FILENO, &result, 1);
+  // restore original terminal settings
+  tcsetattr(STDIN_FILENO, 0, &original_termios);
+  return result;
 }
+
+
+/**
+ * Gets the size of the terminal in rows and columns
+ */
+extern Term_size get_term_size() {
+#if defined(unix)
+  struct winsize size;
+  Term_size result;
+  ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
+  result.width = size.ws_col;
+  result.height = size.ws_row;
+  return result;
+#elif defined(_win32)
+  CONSOLE_SCREEN_BUFFER_INFO term_info;
+  Term_size result;
+  GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &term_info);
+  result.width = term_info.srWindow.Right - term_info.srWindow.Left + 1;
+  result.height = term_info.srWindow.Bottom - term_info.srWindow.Top + 1;
+  return result;
+#endif
+}
+
 /**
  * An alternative way to clear the screen
  */

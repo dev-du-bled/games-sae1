@@ -9,5 +9,8 @@ int main() {
   set_cursor_pos(0, 0);
   printf("X");
   cout << getch();
+  struct Term_size ts;
+  ts = get_term_size();
+  printf("w:%i\nh:%i", ts.width, ts.height);
   return 0;
 }
