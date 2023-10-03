@@ -109,3 +109,9 @@ extern void move_cursor_right(unsigned shift) { printf("\e[%iC", shift); }
  * @param shift How many times to go down
  */
 extern void move_cursor_down(unsigned shift) { printf("\e[%iB", shift); }
+
+/**
+ * Clears the line starting from the cursor position.
+ * Moves the cursor at the end of the line.
+ */
+extern void clear_line() {printf("\e[2K");}
