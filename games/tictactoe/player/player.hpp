@@ -1,4 +1,4 @@
-/*
+/**
  * This file contains the Player class.
  * 
  * @file player.hpp
