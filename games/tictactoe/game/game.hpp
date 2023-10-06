@@ -14,9 +14,18 @@ public:
   /**
    * @brief Adds a player to the game
    *
+   * @param playerNumber number of the player
+   *
    * @return void
    */
-  void AddPlayer();
+  void AddPlayer(unsigned short int playerNumber);
+
+  /**
+   * @brief Displays the logo of the game
+   *
+   * @return void
+   */
+  void DisplayLogo();
 
   /**
    * @brief Starts the game
@@ -35,5 +44,5 @@ public:
 private:
   // ----- ATTRIBUTES -----
   std::vector<Player> players;
-  unsigned int turn = 0;
+  unsigned int turn;
 };

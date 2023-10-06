@@ -1,5 +1,5 @@
 /**
- * @brief This file contains the main function.
+ * @brief This file contains the main function of TicTacToe.
  *
  * @file main.cpp
  *
@@ -11,6 +11,8 @@
 int main()
 {
   Game game;
+
   game.Play();
+
   return 0;
 }

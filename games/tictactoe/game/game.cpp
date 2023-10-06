@@ -16,19 +16,26 @@
 
 #include "game.hpp"
 
-// ----- ADDPLAYER -----
-void Game::AddPlayer()
+void Game::AddPlayer(unsigned short int playerNumber)
 {
   Player player;
   std::string name;
   unsigned char symbol;
 
+  std::cout << "Player " << playerNumber << std::endl;
+
+  std::cout << std::endl;
+
   std::cout << "Name: ";
   std::cin >> name;
   player.SetName(name);
 
+  std::cout << std::endl;
+
   std::cout << "Symbol: ";
   std::cin >> symbol;
+
+  player.ResetScore();
 
   if (symbol == 'X' || symbol == 'x')
   {
@@ -45,18 +52,40 @@ void Game::AddPlayer()
   else
   {
     std::cout << "Invalid symbol" << std::endl;
-    AddPlayer();
+    AddPlayer(playerNumber);
   }
+
+  std::cout << std::endl;
+  termkit::clear();
+  DisplayLogo();
 }
 
-// ----- START -----
+void Game::DisplayLogo()
+{
+  std::cout << "████████╗██╗░█████╗░████████╗░█████╗░░█████╗░████████╗░█████╗░███████╗" << std::endl;
+  std::cout << "╚══██╔══╝██║██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██╔════╝" << std::endl;
+  std::cout << "░░░██║░░░██║██║░░╚═╝░░░██║░░░███████║██║░░╚═╝░░░██║░░░██║░░██║█████╗░░" << std::endl;
+  std::cout << "░░░██║░░░██║██║░░██╗░░░██║░░░██╔══██║██║░░██╗░░░██║░░░██║░░██║██╔══╝░░" << std::endl;
+  std::cout << "░░░██║░░░██║╚█████╔╝░░░██║░░░██║░░██║╚█████╔╝░░░██║░░░╚█████╔╝███████╗" << std::endl;
+  std::cout << "░░░╚═╝░░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░░╚════╝░╚══════╝" << std::endl;
+
+  std::cout << std::endl;
+}
+
 void Game::Start()
 {
-  AddPlayer();
-  AddPlayer();
+  termkit::clear();
+  termkit::set_term_title("TicTacToe");
+
+  DisplayLogo();
+
+  AddPlayer(1);
+  AddPlayer(2);
+
+  termkit::clear();
 }
 
-// ----- PLAY -----
 void Game::Play()
 {
+  Start();
 }
