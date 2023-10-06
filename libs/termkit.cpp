@@ -22,7 +22,7 @@
 #include <termios.h>
 #include <unistd.h>
 #elif defined(_win32)
-#include <winuser.h>
+#include <windows.h>
 #endif
 /* https://www.xfree86.org/current/ctlseqs.html */
 
@@ -30,7 +30,7 @@
  * Escape sequence to reset the terminal styling (Removes colors and text
  * effects)
  */
-extern const char DEFAULT_TERM_STYLE[5] = "\e[0m";
+extern const char DEFAULT_TERM_STYLE[5] = "\x1b[0m";
 
 class Term_size {
 public:
@@ -54,7 +54,7 @@ public:
 std::string rgb_impl(unsigned r, unsigned g, unsigned b,
                      bool color_background) {
   char buffer[20];
-  snprintf(buffer, sizeof(buffer), "\e[%i;2;%i;%i;%im",
+  snprintf(buffer, sizeof(buffer), "\x1b[%i;2;%i;%i;%im",
            (38 + color_background * 10), r, g, b);
   // Explicit casting from char array to cpp string to avoid being confused
   return (std::string)buffer;
@@ -72,7 +72,7 @@ std::string rgb_impl(unsigned r, unsigned g, unsigned b,
  */
 extern std::string rgb_fg(std::string text, unsigned r, unsigned g,
                           unsigned b) {
-  return rgb_impl(r, g, b, false) + text + "\e[39m";
+  return rgb_impl(r, g, b, false) + text + "\x1b[39m";
 }
 
 /**
@@ -87,7 +87,7 @@ extern std::string rgb_fg(std::string text, unsigned r, unsigned g,
  */
 extern std::string rgb_bg(std::string text, unsigned r, unsigned g,
                           unsigned b) {
-  return rgb_impl(r, g, b, true) + text + "\e[49m";
+  return rgb_impl(r, g, b, true) + text + "\x1b[49m";
 }
 
 /**
@@ -97,7 +97,7 @@ extern std::string rgb_bg(std::string text, unsigned r, unsigned g,
  *
  * @param shift How many times to go up
  */
-extern void move_cursor_up(unsigned shift) { printf("\e[%iA", shift); }
+extern void move_cursor_up(unsigned shift) { printf("\x1b[%iA", shift); }
 
 /**
  * Generates a movement escape sequence.
@@ -106,7 +106,7 @@ extern void move_cursor_up(unsigned shift) { printf("\e[%iA", shift); }
  *
  * @param shift How many times to go left
  */
-extern void move_cursor_left(unsigned shift) { printf("\e[%iD", shift); }
+extern void move_cursor_left(unsigned shift) { printf("\x1b[%iD", shift); }
 
 /**
  * Generates a movement escape sequence.
@@ -115,7 +115,7 @@ extern void move_cursor_left(unsigned shift) { printf("\e[%iD", shift); }
  *
  * @param shift How many times to go right
  */
-extern void move_cursor_right(unsigned shift) { printf("\e[%iC", shift); }
+extern void move_cursor_right(unsigned shift) { printf("\x1b[%iC", shift); }
 
 /**
  * Generates a movement escape sequence.
@@ -124,13 +124,13 @@ extern void move_cursor_right(unsigned shift) { printf("\e[%iC", shift); }
  *
  * @param shift How many times to go down
  */
-extern void move_cursor_down(unsigned shift) { printf("\e[%iB", shift); }
+extern void move_cursor_down(unsigned shift) { printf("\x1b[%iB", shift); }
 
 /**
  * Clears the line.
  * Moves the cursor at the end of the line.
  */
-extern void clear_line() { printf("\e[2K"); }
+extern void clear_line() { printf("\x1b[2K"); }
 
 /**
  * Sets the terminal's window title
@@ -147,7 +147,7 @@ extern void set_term_title(std::string title) {
  * @param text Text to be bolded
  */
 extern std::string bold_text(std::string text) {
-  return "\e[1m" + text + "\e[22m";
+  return "\x1b[1m" + text + "\x1b[22m";
 }
 
 /**
@@ -156,37 +156,38 @@ extern std::string bold_text(std::string text) {
  * @param text Text to underline
  */
 extern std::string underline_text(std::string text) {
-  return "\e[4m" + text + "\e[24m";
+  return "\x1b[4m" + text + "\x1b[24m";
 }
 
 /**
  * Tells the terminal to save the cursor position for later
  */
-extern void save_cursor_pos() { printf("\e[s"); }
+extern void save_cursor_pos() { 
+ printf("\x1b[s"); 
+}
 
 /**
  * Tells the terminal to put the cursor back at the saved position (if any)
  */
-extern void restore_cursor_pos() { printf("\e[u"); }
+extern void restore_cursor_pos() { printf("\x1b[u"); }
 
 /**
  * Puts the cursor at coordinate (X,Y)
+ * 1,1 is the top left corner
  *
- * 0,0 is the top left corner
- *
- * @param x Position on the X axis
- * @param y Position on the Y axis
+ * @param line Position on the Y axis
+ * @param column Position on the X axis
  */
-extern void set_cursor_pos(unsigned x, unsigned y) {
-  printf("\e[%i;%if\n", x, y);
+extern void set_cursor_pos(unsigned line, unsigned column) {
+  printf("\x1b[%i;%if\n", line, column);
 }
 
 /**
  * Clears the terminal screen and history
  */
 extern void clear() {
-  printf("\e[2J"); // clears the screen
-  printf("\e[3J"); // clears the scrollback (history), see (1) clear
+  printf("\x1b[2J"); // clears the screen
+  printf("\x1b[3J"); // clears the scrollback (history), see (1) clear
   set_cursor_pos(0, 0);
 }
 
@@ -237,25 +238,17 @@ extern Term_size get_term_size() {
  * Hide the cursor
  */
 extern void hide_cursor() {
-#if defined(unix)
-  printf("\e[?25l");
-#elif defined(_win32)
-  ShowCursor(false);
-#endif
+  printf("\x1b[?25l");
 }
 
 /**
  * Show the cursor
  */
 extern void show_cursor() {
-#if defined(unix)
-  printf("\e[?25h");
-#elif defined(_win32)
-  ShowCursor(true);
-#endif
+  printf("\x1b[?25h");
 }
 
 /**
  * An alternative way to clear the screen
  */
-extern void clear_alternative() { printf("\e[f"); }
+extern void clear_alternative() { printf("\x1b[f"); }
