@@ -22,17 +22,18 @@ void Game::AddPlayer(unsigned short int playerNumber)
   std::string name;
   unsigned char symbol;
 
-  std::cout << "Player " << playerNumber << std::endl;
+  termkit::move_cursor_right(31);
+  std::cout << termkit::bold_text("Player ") << termkit::rgb_fg(std::to_string(playerNumber), 255, 0, 0) << std::endl;
 
   std::cout << std::endl;
 
-  std::cout << "Name: ";
+  std::cout << termkit::bold_text("Name: ");
   std::cin >> name;
   player.SetName(name);
 
   std::cout << std::endl;
 
-  std::cout << "Symbol: ";
+  std::cout << termkit::bold_text("Symbol (X/O): ");
   std::cin >> symbol;
 
   player.ResetScore();
@@ -62,12 +63,12 @@ void Game::AddPlayer(unsigned short int playerNumber)
 
 void Game::DisplayLogo()
 {
-  std::cout << "████████╗██╗░█████╗░████████╗░█████╗░░█████╗░████████╗░█████╗░███████╗" << std::endl;
-  std::cout << "╚══██╔══╝██║██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██╔════╝" << std::endl;
-  std::cout << "░░░██║░░░██║██║░░╚═╝░░░██║░░░███████║██║░░╚═╝░░░██║░░░██║░░██║█████╗░░" << std::endl;
-  std::cout << "░░░██║░░░██║██║░░██╗░░░██║░░░██╔══██║██║░░██╗░░░██║░░░██║░░██║██╔══╝░░" << std::endl;
-  std::cout << "░░░██║░░░██║╚█████╔╝░░░██║░░░██║░░██║╚█████╔╝░░░██║░░░╚█████╔╝███████╗" << std::endl;
-  std::cout << "░░░╚═╝░░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░░╚════╝░╚══════╝" << std::endl;
+  std::cout << termkit::rgb_fg("████████╗██╗░█████╗░████████╗░█████╗░░█████╗░████████╗░█████╗░███████╗", 252, 127, 3) << std::endl;
+  std::cout << termkit::rgb_fg("╚══██╔══╝██║██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██╔════╝", 252, 127, 3) << std::endl;
+  std::cout << termkit::rgb_fg("░░░██║░░░██║██║░░╚═╝░░░██║░░░███████║██║░░╚═╝░░░██║░░░██║░░██║█████╗░░", 252, 127, 3) << std::endl;
+  std::cout << termkit::rgb_fg("░░░██║░░░██║██║░░██╗░░░██║░░░██╔══██║██║░░██╗░░░██║░░░██║░░██║██╔══╝░░", 252, 127, 3) << std::endl;
+  std::cout << termkit::rgb_fg("░░░██║░░░██║╚█████╔╝░░░██║░░░██║░░██║╚█████╔╝░░░██║░░░╚█████╔╝███████╗", 252, 127, 3) << std::endl;
+  std::cout << termkit::rgb_fg("░░░╚═╝░░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░░╚════╝░╚══════╝", 252, 127, 3) << std::endl;
 
   std::cout << std::endl;
 }
