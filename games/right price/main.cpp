@@ -1,5 +1,6 @@
 #include <string>
-#include "../../libs/termkit.cpp"
+#include "../../libs/termkit.hpp"
+#include <iostream>
 
 class Object {
 public:
@@ -16,9 +17,9 @@ int get_user_input(int min, int max, std::string name) {
   int result;
 
   std::cout << "Combien pour "
-            << rgb_fg(name, 125, 56, 89) << " ? ("
-            << rgb_fg(std::to_string(min), 24, 103, 255) << " - "
-            << rgb_fg(std::to_string(max), 24, 103, 255) << " )";
+            << termkit::rgb_fg(name, 125, 56, 89) << " ? ("
+            << termkit::rgb_fg(std::to_string(min), 24, 103, 255) << " - "
+            << termkit::rgb_fg(std::to_string(max), 24, 103, 255) << " )";
 
   std::cin >> result;
   return result;

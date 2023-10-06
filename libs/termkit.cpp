@@ -14,11 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-#ifndef _TERMKIT
-#define _TERMKIT
-
+#pragma once
 #include <iostream>
 #include <string>
+#include "termkit.hpp"
 #if defined(unix) || defined(__APPLE__)
 #include <sys/ioctl.h>
 #include <termios.h>
@@ -32,12 +31,9 @@
  * Escape sequence to reset the terminal styling (Removes colors and text
  * effects)
  */
-extern const char DEFAULT_TERM_STYLE[5] = "\x1b[0m";
+namespace termkit {
 
-class Term_size {
-public:
-  int width, height;
-};
+extern const char DEFAULT_TERM_STYLE[5] = "\x1b[0m";
 
 /**
  * Generates a color escape sequence.
@@ -164,9 +160,7 @@ extern std::string underline_text(std::string text) {
 /**
  * Tells the terminal to save the cursor position for later
  */
-extern void save_cursor_pos() { 
- printf("\x1b[s"); 
-}
+extern void save_cursor_pos() { printf("\x1b[s"); }
 
 /**
  * Tells the terminal to put the cursor back at the saved position (if any)
@@ -239,20 +233,15 @@ extern Term_size get_term_size() {
 /**
  * Hide the cursor
  */
-extern void hide_cursor() {
-  printf("\x1b[?25l");
-}
+extern void hide_cursor() { printf("\x1b[?25l"); }
 
 /**
  * Show the cursor
  */
-extern void show_cursor() {
-  printf("\x1b[?25h");
-}
+extern void show_cursor() { printf("\x1b[?25h"); }
 
 /**
  * An alternative way to clear the screen
  */
 extern void clear_alternative() { printf("\x1b[f"); }
-
-#endif
+} // namespace termkit

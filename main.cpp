@@ -1,4 +1,4 @@
-#include "libs/termkit.cpp"
+#include "libs/termkit.hpp"
 #include "games/right price/main.cpp"
 
 using namespace std;
