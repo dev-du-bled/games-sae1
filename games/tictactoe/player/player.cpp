@@ -1,3 +1,13 @@
+/**
+ * @brief This file contains the Player class.
+ * 
+ * @file player.hpp
+ * 
+ * @see player.cpp
+ * 
+ * created by Zarox28
+*/
+
 #include <iostream>
 #include "../../../libs/termkit.cpp"
 

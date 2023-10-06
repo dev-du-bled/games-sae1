@@ -1,14 +1,12 @@
-#include <iostream>
-#include "../../libs/termkit.cpp"
+/**
+ * @brief This file contains the main function.
+ * 
+ * @file main.cpp
+ * 
+ * Created by Zarox28
+*/
 
-#include "player/player.hpp"
-#include "player/player.cpp"
-
-#include "game/game.hpp"
 #include "game/game.cpp"
-
-#include "board/board.hpp"
-#include "board/board.cpp"
 
 int main() {
   return 0;

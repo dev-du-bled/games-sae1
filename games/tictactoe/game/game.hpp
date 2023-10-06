@@ -1,5 +1,5 @@
 /**
- * This file contains the Game class.
+ * @brief This file contains the Game class.
  * 
  * @file game.hpp
  *
