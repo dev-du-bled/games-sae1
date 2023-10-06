@@ -14,6 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+#ifndef _TERMKIT
+#define _TERMKIT
 
 #include <iostream>
 #include <string>
@@ -252,3 +254,5 @@ extern void show_cursor() {
  * An alternative way to clear the screen
  */
 extern void clear_alternative() { printf("\x1b[f"); }
+
+#endif

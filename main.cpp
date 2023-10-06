@@ -1,4 +1,5 @@
 #include "libs/termkit.cpp"
+#include "games/right price/main.cpp"
 
 #include <chrono>
 #include <thread>
