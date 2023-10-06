@@ -1,4 +1,4 @@
-/*
+/**
  * This file is part of the Luna distribution (https://github.com/0x454d505459).
  * Copyright (c) 2023 Luna OGER--MASSICOT.
  *
@@ -230,8 +230,8 @@ extern Term_size get_term_size() {
   CONSOLE_SCREEN_BUFFER_INFO term_info;
   Term_size result;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &term_info);
-  result.width = term_info.srWindow.Right - term_info.srWindow.Left + 1;
-  result.height = term_info.srWindow.Bottom - term_info.srWindow.Top + 1;
+  result.width = term_info.dwsize.x;
+  result.height = term_info.dwsize.y;
   return result;
 #endif
 }
