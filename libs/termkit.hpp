@@ -18,18 +18,19 @@
 #pragma once
 #include <string>
 
+namespace termkit {
 /**
  * Escape sequence to reset the terminal styling (Removes colors and text
  * effects)
  */
-
-namespace termkit {
 extern const char DEFAULT_TERM_STYLE[5];
 
 class Term_size {
 public:
   int width, height;
 };
+
+std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background);
 
 /**
  * Generates a color escape sequence.

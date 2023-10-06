@@ -15,6 +15,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 #pragma once
+
 #include <iostream>
 #include <string>
 #include "termkit.hpp"
@@ -25,10 +26,10 @@
 #elif defined(_WIN32)
 #include <windows.h>
 #endif
+/* https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences */
 /* https://www.xfree86.org/current/ctlseqs.html */
 
 namespace termkit {
-
 extern const char DEFAULT_TERM_STYLE[5] = "\x1b[0m";
 
 std::string rgb_impl(unsigned r, unsigned g, unsigned b,
@@ -128,4 +129,4 @@ extern void hide_cursor() { printf("\x1b[?25l"); }
 extern void show_cursor() { printf("\x1b[?25h"); }
 
 extern void clear_alternative() { printf("\x1b[f"); }
-} // namespace termkit
+}
