@@ -52,11 +52,11 @@ void Game::AddPlayer()
 // ----- START -----
 void Game::Start()
 {
+  AddPlayer();
+  AddPlayer();
 }
 
 // ----- PLAY -----
 void Game::Play()
 {
-  AddPlayer();
-  AddPlayer();
 }
