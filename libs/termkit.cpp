@@ -19,11 +19,11 @@
 
 #include <iostream>
 #include <string>
-#if defined(unix)
+#if defined(unix) || defined(__APPLE__)
 #include <sys/ioctl.h>
 #include <termios.h>
 #include <unistd.h>
-#elif defined(_win32)
+#elif defined(_WIN32)
 #include <windows.h>
 #endif
 /* https://www.xfree86.org/current/ctlseqs.html */
@@ -197,7 +197,7 @@ extern void clear() {
  * Gets a single char from the user.
  * Does not echo and does not process keys
  */
-#if defined(unix)
+#if defined(unix) || defined(__APPLE__)
 extern char getch() {
   // TODO: Add windows support
   struct termios original_termios, raw_termios;
@@ -219,7 +219,7 @@ extern char getch() {
  * Gets the size of the terminal in rows and columns
  */
 extern Term_size get_term_size() {
-#if defined(unix)
+#if defined(unix) || defined(__APPLE__)
   struct winsize size;
   Term_size result;
   ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
