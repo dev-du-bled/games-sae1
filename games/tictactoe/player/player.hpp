@@ -58,6 +58,29 @@ class Player {
     */
     void SetSymbol(unsigned char symbol);
 
+    /**
+     * Sets the score of the player
+     * 
+     * @param score score of the player
+     *
+     * @return void
+    */
+    void SetScore(unsigned int score);
+
+    /**
+     * Adds 1 to the score of the player
+     * 
+     * @return void
+    */
+    void AddScore();
+
+    /**
+     * Resets the score of the player
+     * 
+     * @return void
+    */
+    void ResetScore();
+
   private:
     // ----- ATTRIBUTES -----
     std::string name;

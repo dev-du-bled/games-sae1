@@ -37,3 +37,18 @@ void Player::SetName(std::string name) {
 void Player::SetSymbol(unsigned char symbol) {
   this->symbol = symbol;
 }
+
+// ----- SETSCORE -----
+void Player::SetScore(unsigned int score) {
+  this->score = score;
+}
+
+// ----- ADDSCORE -----
+void Player::AddScore() {
+  score++;
+}
+
+// ----- RESETSCORE -----
+void Player::ResetScore() {
+  score = 0;
+}

@@ -9,5 +9,7 @@
 #include "game/game.cpp"
 
 int main() {
+    Game game;
+    game.Start();
   return 0;
 }
