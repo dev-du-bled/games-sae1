@@ -166,9 +166,4 @@ extern void hide_cursor();
  */
 extern void show_cursor();
 
-/**
- * An alternative way to clear the screen
- */
-extern void clear_alternative();
-
 } // namespace termkit

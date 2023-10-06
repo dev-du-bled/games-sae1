@@ -128,5 +128,4 @@ extern void hide_cursor() { printf("\x1b[?25l"); }
 
 extern void show_cursor() { printf("\x1b[?25h"); }
 
-extern void clear_alternative() { printf("\x1b[f"); }
 }
