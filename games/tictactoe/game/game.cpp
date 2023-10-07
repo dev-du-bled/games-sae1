@@ -38,6 +38,20 @@ void Game::AddPlayer(unsigned short int playerNumber)
 
   player.ResetScore();
 
+  for (int i = 0; i < players.size(); i++)
+  {
+    if (players[i].GetSymbol() == symbol)
+    {
+      std::cout << std::endl;
+      std::cout << termkit::bold_text("This symbol is already taken!") << std::endl;
+      std::cout << std::endl;
+
+      AddPlayer(playerNumber);
+
+      return;
+    }
+  }
+
   if (symbol == 'X' || symbol == 'x')
   {
     player.SetSymbol('x');
