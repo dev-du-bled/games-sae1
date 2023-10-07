@@ -16,9 +16,9 @@
  */
 #pragma once
 
+#include "termkit.hpp"
 #include <iostream>
 #include <string>
-#include "termkit.hpp"
 #if defined(unix) || defined(__APPLE__)
 #include <sys/ioctl.h>
 #include <termios.h>
@@ -26,7 +26,8 @@
 #elif defined(_WIN32)
 #include <windows.h>
 #endif
-/* https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences */
+/* https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences
+ */
 /* https://www.xfree86.org/current/ctlseqs.html */
 
 namespace termkit {
@@ -46,7 +47,7 @@ extern std::string rgb_fg(std::string text, unsigned r, unsigned g,
   return rgb_impl(r, g, b, false) + text + "\x1b[39m";
 }
 
- extern std::string rgb_bg(std::string text, unsigned r, unsigned g,
+extern std::string rgb_bg(std::string text, unsigned r, unsigned g,
                           unsigned b) {
   return rgb_impl(r, g, b, true) + text + "\x1b[49m";
 }
@@ -128,4 +129,34 @@ extern void hide_cursor() { printf("\x1b[?25l"); }
 
 extern void show_cursor() { printf("\x1b[?25h"); }
 
+extern std::string center_line(std::string line) {
+  std::string result = "";
+
+  Term_size console_size = get_term_size();
+  unsigned console_middle_point = console_size.width / 2;
+  unsigned text_middle_point = line.length() / 2;
+
+  unsigned center_point = console_middle_point - text_middle_point;
+  for (int i = 0; i < center_point; i++) {
+    result += " ";
+  }
+  result += line;
+  return result;
 }
+
+extern std::string center_text(std::string text) {
+  std::string result = "";
+  std::string constructed_line = "";
+
+  for (auto &character : text) {
+    if (character == '\n') {
+      result += '\n' + center_line(constructed_line);
+      constructed_line = "";
+      continue;
+    }
+    constructed_line += character;
+  }
+  return result;
+}
+
+} // namespace termkit

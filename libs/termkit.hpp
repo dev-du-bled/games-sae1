@@ -166,4 +166,23 @@ extern void hide_cursor();
  */
 extern void show_cursor();
 
+/**
+ * Centers a single line horizontally
+ *
+ * Adds space chars for padding
+ *
+ * @param line String of text to center
+ * @return a string padded-left with space chars
+ */
+extern std::string center_line(std::string line);
+
+/**
+ * Centers a paragraph line by line horizontally
+ *
+ * Calls termkit::center_line en every lines
+ *
+ * @param text String of text to center
+ * @return a string with every line padded-left using space chars
+ */
+extern std::string center_text(std::string text);
 } // namespace termkit
