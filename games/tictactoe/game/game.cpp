@@ -9,12 +9,26 @@
  */
 
 #include <iostream>
+
 #include "../../../libs/termkit.cpp"
+#include "../../../libs/utils.cpp"
 
 #include "../player/player.cpp"
 #include "../board/board.cpp"
 
 #include "game.hpp"
+
+void Game::DisplayLogo()
+{
+  std::cout << termkit::rgb_fg("████████╗██╗░█████╗░████████╗░█████╗░░█████╗░████████╗░█████╗░███████╗", 252, 127, 3) << std::endl;
+  std::cout << termkit::rgb_fg("╚══██╔══╝██║██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██╔════╝", 252, 127, 3) << std::endl;
+  std::cout << termkit::rgb_fg("░░░██║░░░██║██║░░╚═╝░░░██║░░░███████║██║░░╚═╝░░░██║░░░██║░░██║█████╗░░", 252, 127, 3) << std::endl;
+  std::cout << termkit::rgb_fg("░░░██║░░░██║██║░░██╗░░░██║░░░██╔══██║██║░░██╗░░░██║░░░██║░░██║██╔══╝░░", 252, 127, 3) << std::endl;
+  std::cout << termkit::rgb_fg("░░░██║░░░██║╚█████╔╝░░░██║░░░██║░░██║╚█████╔╝░░░██║░░░╚█████╔╝███████╗", 252, 127, 3) << std::endl;
+  std::cout << termkit::rgb_fg("░░░╚═╝░░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░░╚════╝░╚══════╝", 252, 127, 3) << std::endl;
+
+  std::cout << std::endl;
+}
 
 void Game::AddPlayer(unsigned short int playerNumber)
 {
@@ -29,6 +43,24 @@ void Game::AddPlayer(unsigned short int playerNumber)
 
   std::cout << termkit::bold_text("Name: ");
   std::cin >> name;
+
+  for (int i = 0; i < players.size(); i++)
+  {
+    if (players[i].GetName() == name)
+    {
+      std::cout << std::endl;
+      std::cout << termkit::bold_text("This name is already taken!") << std::endl;
+      std::cout << std::endl;
+
+      Utils::Wait(2);
+      termkit::clear();
+      DisplayLogo();
+      AddPlayer(playerNumber);
+
+      return;
+    }
+  }
+
   player.SetName(name);
 
   std::cout << std::endl;
@@ -46,6 +78,9 @@ void Game::AddPlayer(unsigned short int playerNumber)
       std::cout << termkit::bold_text("This symbol is already taken!") << std::endl;
       std::cout << std::endl;
 
+      Utils::Wait(2);
+      termkit::clear();
+      DisplayLogo();
       AddPlayer(playerNumber);
 
       return;
@@ -67,6 +102,10 @@ void Game::AddPlayer(unsigned short int playerNumber)
   else
   {
     std::cout << "Invalid symbol" << std::endl;
+
+    Utils::Wait(2);
+    termkit::clear();
+    DisplayLogo();
     AddPlayer(playerNumber);
   }
 
@@ -75,16 +114,16 @@ void Game::AddPlayer(unsigned short int playerNumber)
   DisplayLogo();
 }
 
-void Game::DisplayLogo()
+void Game::SetBoardSize()
 {
-  std::cout << termkit::rgb_fg("████████╗██╗░█████╗░████████╗░█████╗░░█████╗░████████╗░█████╗░███████╗", 252, 127, 3) << std::endl;
-  std::cout << termkit::rgb_fg("╚══██╔══╝██║██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██╔══██╗██╔════╝", 252, 127, 3) << std::endl;
-  std::cout << termkit::rgb_fg("░░░██║░░░██║██║░░╚═╝░░░██║░░░███████║██║░░╚═╝░░░██║░░░██║░░██║█████╗░░", 252, 127, 3) << std::endl;
-  std::cout << termkit::rgb_fg("░░░██║░░░██║██║░░██╗░░░██║░░░██╔══██║██║░░██╗░░░██║░░░██║░░██║██╔══╝░░", 252, 127, 3) << std::endl;
-  std::cout << termkit::rgb_fg("░░░██║░░░██║╚█████╔╝░░░██║░░░██║░░██║╚█████╔╝░░░██║░░░╚█████╔╝███████╗", 252, 127, 3) << std::endl;
-  std::cout << termkit::rgb_fg("░░░╚═╝░░░╚═╝░╚════╝░░░░╚═╝░░░╚═╝░░╚═╝░╚════╝░░░░╚═╝░░░░╚════╝░╚══════╝", 252, 127, 3) << std::endl;
+  unsigned int size;
 
-  std::cout << std::endl;
+  termkit::clear();
+
+  std::cout << termkit::bold_text("Board size: ");
+  std::cin >> size;
+
+  board.SetSize(size);
 }
 
 void Game::Start()
@@ -96,6 +135,10 @@ void Game::Start()
 
   AddPlayer(1);
   AddPlayer(2);
+
+  SetBoardSize();
+
+  turn = 0;
 
   termkit::clear();
 }

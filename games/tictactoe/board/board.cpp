@@ -8,7 +8,14 @@
  * created by Zarox28
  */
 
-#include <iostream>
-#include "../../../libs/termkit.cpp"
-
 #include "board.hpp"
+
+void Board::SetSize(unsigned int size)
+{
+  this->size = size;
+}
+
+unsigned int Board::GetSize()
+{
+  return size;
+}

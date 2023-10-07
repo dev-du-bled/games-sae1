@@ -8,9 +8,6 @@
  * created by Zarox28
  */
 
-#include <iostream>
-#include "../../../libs/termkit.cpp"
-
 #include "player.hpp"
 
 std::string Player::GetName()

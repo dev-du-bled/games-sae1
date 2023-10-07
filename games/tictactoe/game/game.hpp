@@ -12,6 +12,13 @@ class Game
 {
 public:
   /**
+   * @brief Displays the logo of the game
+   *
+   * @return void
+   */
+  void DisplayLogo();
+
+  /**
    * @brief Adds a player to the game
    *
    * @param playerNumber number of the player
@@ -21,18 +28,19 @@ public:
   void AddPlayer(unsigned short int playerNumber);
 
   /**
-   * @brief Displays the logo of the game
-   *
-   * @return void
-   */
-  void DisplayLogo();
-
-  /**
    * @brief Starts the game
    *
    * @return void
    */
   void Start();
+
+  /**
+   * @brief Sets the size of the board
+   *
+   * @return void
+   *
+   */
+  void SetBoardSize();
 
   /**
    * @brief Plays the game
@@ -45,4 +53,5 @@ private:
   // ----- ATTRIBUTES -----
   std::vector<Player> players;
   unsigned int turn;
+  Board board;
 };
