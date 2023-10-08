@@ -17,30 +17,33 @@ void DrawHangman(int fail, char wordByCharGuessed[], int wordLength)
     termkit::clear();
     termkit::hide_cursor();
 
-    cout << "-------------- Hangman --------------" << endl
+    cout << termkit::center_line("-------------- Hangman --------------") << endl
          << endl;
     vector<std::string> pics = {
-        "       \n       \n       \n       \n       \n       \n=========",
-        "       \n      |\n      |\n      |\n      |\n      |\n=========",
-        "  +---+\n      |\n      |\n      |\n      |\n      |\n=========",
-        "  +---+\n  |   |\n      |\n      |\n      |\n      |\n=========",
-        "  +---+\n  |   |\n  O   |\n      |\n      |\n      |\n=========",
-        "  +---+\n  |   |\n  O   |\n  |   |\n      |\n      |\n=========",
-        "  +---+\n  |   |\n  O   |\n /|   |\n      |\n      |\n=========",
-        "  +---+\n  |   |\n  O   |\n /|\\  |\n      |\n      |\n=========",
-        "  +---+\n  |   |\n  O   |\n /|\\  |\n /    |\n      |\n=========",
-        "  +---+\n  |   |\n  O   |\n /|\\  |\n / \\  |\n      |\n========="};
-    cout << pics[fail] << endl;
+        "       \n       \n       \n       \n       \n       \n=========\n",
+        "       \n      |\n      |\n      |\n      |\n      |\n=========\n",
+        "  +---+\n      |\n      |\n      |\n      |\n      |\n=========\n",
+        "  +---+\n  |   |\n      |\n      |\n      |\n      |\n=========\n",
+        "  +---+\n  |   |\n  O   |\n      |\n      |\n      |\n=========\n",
+        "  +---+\n  |   |\n  O   |\n  |   |\n      |\n      |\n=========\n",
+        "  +---+\n  |   |\n  O   |\n /|   |\n      |\n      |\n=========\n",
+        "  +---+\n  |   |\n  O   |\n /|\\  |\n      |\n      |\n=========\n",
+        "  +---+\n  |   |\n  O   |\n /|\\  |\n /    |\n      |\n=========\n",
+        "  +---+\n  |   |\n  O   |\n /|\\  |\n / \\  |\n      |\n=========\n"};
+    cout << termkit::center_text_block(pics[fail]) << endl
+         << endl;
 
-    cout << endl
-         << termkit::bold_text("     Word: ");
+    // cout << endl
+    //      << termkit::center_text(termkit::bold_text("     Word: "));
+    string wordByCharGuessedString = "";
     for (int i = 0; i < wordLength; i++)
     {
-        cout << wordByCharGuessed[i] << " ";
+        wordByCharGuessedString += wordByCharGuessed[i];
+        wordByCharGuessedString += " ";
     }
+    cout << termkit::center_line(termkit::bold_text("Word: ") + wordByCharGuessedString) << " " << endl;
     cout << endl
-         << endl
-         << "-------------------------------------" << endl
+         << termkit::center_line("-------------------------------------") << endl
          << endl;
 }
 
