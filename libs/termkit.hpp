@@ -185,4 +185,12 @@ extern std::string center_line(std::string line);
  * @return a string with every line padded-left using space chars
  */
 extern std::string center_text(std::string text);
+
+/**
+ * Centers a paragraph horizontally
+ *
+ * @param text String of text to center
+ * @return a string with every line padded-left using space chars
+ */
+extern std::string center_text_block(std::string text);
 } // namespace termkit

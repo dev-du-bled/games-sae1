@@ -148,7 +148,7 @@ extern std::string center_text(std::string text) {
   std::string result = "";
   std::string constructed_line = "";
 
-  for (auto &character : text) {
+  for (char &character : text) {
     if (character == '\n') {
       result += '\n' + center_line(constructed_line);
       constructed_line = "";
@@ -157,6 +157,28 @@ extern std::string center_text(std::string text) {
     constructed_line += character;
   }
   return result;
+}
+
+extern std::string center_text_block(std::string text) {
+  std::string result = "";
+  std::string constructed_line = "";
+
+  Term_size console_size = get_term_size();
+  unsigned console_middle_point = console_size.width / 2;
+  unsigned text_middle_point = text.substr(0, text.find('\n')).length() / 2;
+
+  unsigned center_point = console_middle_point - text_middle_point;
+
+  for (auto &character : text) {
+    if (character == '\n') {
+      result += '\n' + std::string(center_point, ' ') + constructed_line;
+      constructed_line = "";
+      continue;
+    }
+    constructed_line += character;
+  }
+  return result;
+  
 }
 
 } // namespace termkit
