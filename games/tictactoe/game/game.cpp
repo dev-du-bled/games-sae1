@@ -15,6 +15,7 @@
 
 #include "../player/player.cpp"
 #include "../board/board.cpp"
+#include <vector>
 
 #include "game.hpp"
 

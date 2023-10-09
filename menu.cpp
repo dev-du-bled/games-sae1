@@ -4,15 +4,24 @@
 #include <vector>
 
 const char *title =
-    R"( _____ _____ _      _____ _____ _____    ___    _____   ___  ___  ___ _____ 
-/  ___|  ___| |    |  ___/  __ \_   _|  / _ \  |  __ \ / _ \ |  \/  ||  ___|
-\ `--.| |__ | |    | |__ | /  \/ | |   / /_\ \ | |  \// /_\ \| .  . || |__  
- `--. \  __|| |    |  __|| |     | |   |  _  | | | __ |  _  || |\/| ||  __| 
-/\__/ / |___| |____| |___| \__/\ | |   | | | | | |_\ \| | | || |  | || |___ 
-\____/\____/\_____/\____/ \____/ \_/   \_| |_/  \____/\_| |_/\_|  |_/\____/
+    R"( _____ _____ _      _____ _____ _____     ___    _____   ___  ___  ___ _____ 
+/  ___|  ___| |    |  ___/  __ \_   _|  / _ \   |  __ \ / _ \ |  \/  ||  ___|
+\ `--.| |__ | |    | |__ | /  \/ | |   / /_\ \  | |  \// /_\ \| .  . || |__  
+ `--. \  __|| |    |  __|| |     | |   |  _  |  | | __ |  _  || |\/| ||  __| 
+/\__/ / |___| |____| |___| \__/\ | |   | | | |  | |_\ \| | | || |  | || |___ 
+\____/\____/\_____/\____/ \____/ \_/   \_| |_/   \____/\_| |_/\_|  |_/\____/
 )";
 
-enum Keys { CTRLC = 3, TAB = 9, ENTER = 13, ESC = 27 ,UP=65, DOWN=66, BAKTAB=90, BRACKET=91};
+enum Keys {
+  CTRLC = 3,
+  TAB = 9,
+  ENTER = 13,
+  ESC = 27,
+  UP = 65,
+  DOWN = 66,
+  BAKTAB = 90,
+  BRACKET = 91
+};
 
 class MenuEntry {
 public:
@@ -26,14 +35,14 @@ public:
 };
 
 extern void showMenu(std::vector<MenuEntry> games) {
-  unsigned short selected_option = 0;
+  int selected_option = 0;
   bool is_selecting = true;
 
   termkit::clear();
   std::cout << termkit::rgb_fg(termkit::center_text_block(title), 255, 0, 0)
             << std::endl;
-  std::cout << termkit::center_line(std::string(52, ' ') +
-                                    termkit::bold_text("v0.0.1"))
+
+  std::cout << termkit::center_line(std::string(52, ' ') + termkit::bold_text("v0.0.1"))
             << std::endl;
 
   std::cout << std::endl;
@@ -42,8 +51,7 @@ extern void showMenu(std::vector<MenuEntry> games) {
     // render
     for (int i = 0; i < games.size(); i++) {
       if (i == selected_option) {
-        std::cout << termkit::rgb_fg(termkit::center_line(games[i].dislayName),
-                                     255, 0, 0)
+        std::cout << termkit::rgb_fg(termkit::center_line(games[i].dislayName), 255, 0, 0)
                   << std::endl;
       } else
         std::cout << termkit::center_line(games[i].dislayName) << std::endl;
@@ -54,9 +62,11 @@ extern void showMenu(std::vector<MenuEntry> games) {
     switch (termkit::getch()) {
     case CTRLC:
       return;
+
     case TAB:
       selected_option = (selected_option + 1) % games.size();
       continue;
+
     case ENTER:
       is_selecting = false;
       break;
@@ -68,10 +78,11 @@ extern void showMenu(std::vector<MenuEntry> games) {
       char g = termkit::getch();
       switch (g) {
       case UP:
-        selected_option = (selected_option + 1) % games.size();
-        continue;
-      case DOWN:
         selected_option = (selected_option - 1) % games.size();
+        continue;
+
+      case DOWN:
+        selected_option = (selected_option + 1) % games.size();
         continue;
 
       case BAKTAB:

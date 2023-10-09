@@ -8,6 +8,8 @@
  * created by Zarox28
  */
 
+#include <vector>
+
 class Board
 {
 public:
