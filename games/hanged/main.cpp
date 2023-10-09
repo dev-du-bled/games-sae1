@@ -33,15 +33,13 @@ void DrawHangman(int fail, char wordByCharGuessed[], int wordLength)
     cout << termkit::center_text_block(pics[fail]) << endl
          << endl;
 
-    // cout << endl
-    //      << termkit::center_text(termkit::bold_text("     Word: "));
     string wordByCharGuessedString = "";
     for (int i = 0; i < wordLength; i++)
     {
         wordByCharGuessedString += wordByCharGuessed[i];
         wordByCharGuessedString += " ";
     }
-    cout << termkit::center_line(termkit::bold_text("Word: ") + wordByCharGuessedString) << " " << endl;
+    cout << termkit::center_line("Word: " + wordByCharGuessedString) << endl;
     cout << endl
          << termkit::center_line("-------------------------------------") << endl
          << endl;
@@ -112,6 +110,8 @@ extern void Hangman()
         }
         guessed = allGuessed;
     }
+
+    termkit::show_cursor();
 
     if (guessed == true)
         cout << "You win !" << endl;
