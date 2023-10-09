@@ -53,7 +53,7 @@ public:
    *
    * @return void
    */
-  void SetSymbol(unsigned char symbol);
+  void SetSymbol(char symbol);
 
   /**
    * @brief Sets the score of the player
@@ -81,6 +81,6 @@ public:
 private:
   // ----- ATTRIBUTES -----
   std::string name;
-  unsigned char symbol;
+  char symbol;
   unsigned int score;
 };

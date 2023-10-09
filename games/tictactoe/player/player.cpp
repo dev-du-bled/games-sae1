@@ -30,7 +30,7 @@ void Player::SetName(std::string name)
   this->name = name;
 }
 
-void Player::SetSymbol(unsigned char symbol)
+void Player::SetSymbol(char symbol)
 {
   this->symbol = symbol;
 }

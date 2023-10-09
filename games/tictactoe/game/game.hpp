@@ -43,6 +43,25 @@ public:
   void SetBoardSize();
 
   /**
+   * @brief Checks if the game is over
+   *
+   * @return bool
+   *
+   */
+  bool IsOver();
+
+  /**
+   * @brief Checks if the game is a draw
+   *
+   * @param grid grid of the game
+   * @param symbol symbol of the player
+   *
+   * @return bool
+   *
+   */
+  bool IsWin(std::vector<std::vector<char>> grid, char symbol);
+
+  /**
    * @brief Plays the game
    *
    * @return void
@@ -52,6 +71,9 @@ public:
 private:
   // ----- ATTRIBUTES -----
   std::vector<Player> players;
-  unsigned int turn;
+  unsigned short int turn;
+  unsigned short int moves;
+  unsigned short int actualMove;
+  unsigned short int position;
   Board board;
 };

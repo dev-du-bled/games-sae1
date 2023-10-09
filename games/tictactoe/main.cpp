@@ -8,10 +8,10 @@
 
 #include "game/game.cpp"
 
-int main()
+int tictactoe()
 {
   Game game;
-
+  game.Start();
   game.Play();
 
   return 0;
