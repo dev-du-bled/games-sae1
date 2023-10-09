@@ -6,7 +6,7 @@
 using namespace std;
 int main() {
   showMenu({
-    MenuEntry(&Hangman, "Pendu de Firmin"),
+    MenuEntry(&Hangman, "Pendu de FirminGaming"),
     MenuEntry(&justeprix, "Juste prix de Luna")
   });
   return 0;

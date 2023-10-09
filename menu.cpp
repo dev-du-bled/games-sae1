@@ -12,13 +12,15 @@ const char *title =
 \____/\____/\_____/\____/ \____/ \_/   \_| |_/  \____/\_| |_/\_|  |_/\____/
 )";
 
+enum Keys { CTRLC = 3, TAB = 9, ENTER = 13, ESC = 27 ,UP=65, DOWN=66, BAKTAB=90, BRACKET=91};
+
 class MenuEntry {
 public:
-  void (*callee)();
+  void (*exec)();
   std::string dislayName;
 
   MenuEntry(void (*callee)(), std::string name) {
-    this->callee = callee;
+    this->exec = callee;
     this->dislayName = name;
   }
 };
@@ -40,7 +42,8 @@ extern void showMenu(std::vector<MenuEntry> games) {
     // render
     for (int i = 0; i < games.size(); i++) {
       if (i == selected_option) {
-        std::cout << termkit::rgb_fg(termkit::center_line(games[i].dislayName),255, 0, 0)
+        std::cout << termkit::rgb_fg(termkit::center_line(games[i].dislayName),
+                                     255, 0, 0)
                   << std::endl;
       } else
         std::cout << termkit::center_line(games[i].dislayName) << std::endl;
@@ -48,17 +51,38 @@ extern void showMenu(std::vector<MenuEntry> games) {
     termkit::move_cursor_up(games.size());
 
     // keyboard input
-    char g = termkit::getch();
-    switch (g) {
-    case 3:
+    switch (termkit::getch()) {
+    case CTRLC:
       return;
-    case 9:
+    case TAB:
       selected_option = (selected_option + 1) % games.size();
       continue;
-    case 13:
+    case ENTER:
       is_selecting = false;
       break;
+    // handle multi-character keys '^[' e.i UP arrow is ^[A
+    //                                                  27 91 A
+    case ESC:
+      if (termkit::getch() != BRACKET)
+        continue;
+      char g = termkit::getch();
+      switch (g) {
+      case UP:
+        selected_option = (selected_option + 1) % games.size();
+        continue;
+      case DOWN:
+        selected_option = (selected_option - 1) % games.size();
+        continue;
+
+      case BAKTAB:
+        selected_option = (selected_option - 1) % games.size();
+        continue;
+      default:
+        printf("%i", g);
+      }
     }
   }
-  games[selected_option].callee();
+  games[selected_option].exec();
+  // make sure we show back the cursor
+  termkit::show_cursor();
 }
