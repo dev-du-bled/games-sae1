@@ -70,6 +70,11 @@ extern void Hangman()
         char test = termkit::getch();
         bool alreadyTestedBool = false;
 
+        // Handle ^C
+        if (test == 3) {
+            return;
+        }
+
         for (int i = 0; i < alreadyTested.size(); i++)
         {
             if (alreadyTested[i] == test)
