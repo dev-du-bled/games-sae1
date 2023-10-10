@@ -39,6 +39,8 @@ extern void showMenu(std::vector<MenuEntry> games) {
   bool is_selecting = true;
 
   termkit::clear();
+  termkit::hide_cursor();
+
   std::cout << termkit::rgb_fg(termkit::center_text_block(title), 255, 0, 0)
             << std::endl;
 
@@ -88,12 +90,16 @@ extern void showMenu(std::vector<MenuEntry> games) {
       case BAKTAB:
         selected_option = (selected_option - 1) % games.size();
         continue;
-      default:
-        printf("%i", g);
+      // default:
+      //   printf("%i", g);
       }
     }
   }
+
+  termkit::clear();
   games[selected_option].exec();
   // make sure we show back the cursor
   termkit::show_cursor();
+  // reset terminal stylings
+  std::cout<<termkit::DEFAULT_TERM_STYLE;
 }
