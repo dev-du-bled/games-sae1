@@ -82,11 +82,6 @@ unsigned short int Board::GetSize()
   return size;
 }
 
-unsigned short int Board::GetPosition(std::vector<int> position)
-{
-  return grid[position[0]][position[1]];
-}
-
 std::vector<std::vector<char>> Board::GetGrid()
 {
   return grid;

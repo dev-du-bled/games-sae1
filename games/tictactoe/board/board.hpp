@@ -52,16 +52,6 @@ public:
   unsigned short int GetSize();
 
   /**
-   * @brief Returns the position of the player
-   *
-   * @param position position of the player
-   *
-   * @return position of the player
-   *
-   */
-  unsigned short int GetPosition(std::vector<int> position);
-
-  /**
    * @brief Returns the grid
    *
    * @return grid

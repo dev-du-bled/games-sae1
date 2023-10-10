@@ -68,38 +68,11 @@ void Game::AddPlayer(unsigned short int playerNumber)
 
   player.ResetScore();
 
-  if (players.size() == 1)
-  {
-    players[0].GetSymbol() == 'x' ? player.SetSymbol('o') : player.SetSymbol('x');
-    players.push_back(player);
-  }
-  else
-  {
-    std::cout << termkit::bold_text("Symbol: ");
-    std::cin >> symbol;
+  std::cout << termkit::bold_text("Symbol: ");
+  std::cin >> symbol;
+  player.SetSymbol(tolower(symbol));
 
-    if (symbol == 'X' || symbol == 'x')
-    {
-      player.SetSymbol('x');
-      players.push_back(player);
-    }
-
-    else if (symbol == 'O' || symbol == 'o')
-    {
-      player.SetSymbol('o');
-      players.push_back(player);
-    }
-
-    else
-    {
-      std::cout << "Invalid symbol" << std::endl;
-
-      Utils::Wait(2);
-      termkit::clear();
-      DisplayLogo();
-      AddPlayer(playerNumber);
-    }
-  }
+  players.push_back(player);
 
   std::cout << std::endl;
   termkit::clear();
@@ -115,7 +88,17 @@ void Game::SetBoardSize()
   std::cout << termkit::bold_text("Board size: ");
   std::cin >> size;
 
-  board.SetSize(size);
+  if (size < 3 || size > 100)
+  {
+    std::cout << std::endl;
+    std::cout << termkit::bold_text("Board size must be between 3 and 100!") << std::endl;
+    std::cout << std::endl;
+
+    Utils::Wait(2);
+    termkit::clear();
+    DisplayLogo();
+    SetBoardSize();
+  }
 }
 
 void Game::Start()
