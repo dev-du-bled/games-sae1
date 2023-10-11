@@ -45,13 +45,16 @@ void DrawHangman(int fail, vector<char> wordByCharGuessed, vector<char> alreadyT
         alreadyTestedString += alreadyTested[i];
     }
 
-    cout << termkit::center_line("Word: " + wordByCharGuessedString)
+    cout << "     "
+         << termkit::center_line(termkit::bold_text("Word: ") + wordByCharGuessedString)
          << endl
          << endl;
     if (alreadyTested.size() > 0)
-        cout << termkit::center_line("Already used letters: " + alreadyTestedString) << endl;
-    cout << endl
-         << termkit::bold_text(termkit::center_line("-------------------------------------")) << endl
+        cout << "     "
+             << termkit::center_line(termkit::bold_text("Already used letters: ") + alreadyTestedString)
+             << endl
+             << endl;
+    cout << termkit::bold_text(termkit::center_line("-------------------------------------")) << endl
          << endl;
 }
 
