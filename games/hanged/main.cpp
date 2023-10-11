@@ -5,11 +5,13 @@
 using namespace std;
 
 /**
- * @brief Draw the hangman game
+ * @brief Draw the hangman game in terminal
  *
  * @param fail Number of fails
  *
  * @param wordByCharGuessed Word by char guessed
+ *
+ * @param alreadyTested Already tested letters
  */
 void DrawHangman(int fail, vector<char> wordByCharGuessed, vector<char> alreadyTested)
 {
@@ -19,6 +21,7 @@ void DrawHangman(int fail, vector<char> wordByCharGuessed, vector<char> alreadyT
 
     cout << termkit::bold_text(termkit::center_line("-------------- Hangman --------------")) << endl
          << endl;
+
     vector<std::string> pics = {
         "       \n       \n       \n       \n       \n       \n=========\n",
         "       \n      |\n      |\n      |\n      |\n      |\n=========\n",
@@ -30,6 +33,7 @@ void DrawHangman(int fail, vector<char> wordByCharGuessed, vector<char> alreadyT
         "  +---+\n  |   |\n  O   |\n /|\\  |\n      |\n      |\n=========\n",
         "  +---+\n  |   |\n  O   |\n /|\\  |\n /    |\n      |\n=========\n",
         "  +---+\n  |   |\n  O   |\n /|\\  |\n / \\  |\n      |\n=========\n"};
+
     cout << termkit::center_text_block(pics[fail]) << endl
          << endl;
 
@@ -39,21 +43,22 @@ void DrawHangman(int fail, vector<char> wordByCharGuessed, vector<char> alreadyT
         wordByCharGuessedString += wordByCharGuessed[i];
         wordByCharGuessedString += " ";
     }
+
     string alreadyTestedString = "";
     for (int i = 0; i < alreadyTested.size(); i++)
-    {
         alreadyTestedString += alreadyTested[i];
-    }
 
     cout << "     "
          << termkit::center_line(termkit::bold_text("Word: ") + wordByCharGuessedString)
          << endl
          << endl;
+
     if (alreadyTested.size() > 0)
         cout << "     "
              << termkit::center_line(termkit::bold_text("Already used letters: ") + alreadyTestedString)
              << endl
              << endl;
+
     cout << termkit::bold_text(termkit::center_line("-------------------------------------")) << endl
          << endl;
 }
@@ -89,15 +94,14 @@ extern void Hangman()
         for (int i = 0; i < alreadyTested.size(); i++)
         {
             if (alreadyTested[i] == test)
-            {
                 alreadyTestedBool = true;
-            }
         }
+
         if (alreadyTestedBool)
-        {
             continue;
-        }
+
         alreadyTested.push_back(test);
+
         bool found = false;
 
         for (int i = 0; i < word.length(); i++)
@@ -110,9 +114,7 @@ extern void Hangman()
         }
 
         if (found == false)
-        {
             fail++;
-        }
 
         DrawHangman(fail, wordByCharGuessed, alreadyTested);
         bool allGuessed = true;
@@ -120,19 +122,17 @@ extern void Hangman()
         for (int i = 0; i < word.length(); i++)
         {
             if (wordByCharGuessed[i] == '_')
-            {
                 allGuessed = false;
-            }
         }
         guessed = allGuessed;
     }
 
-    termkit::show_cursor();
-
     if (guessed == true)
         cout << termkit::center_line("You win !") << endl;
     else
-        cout << "     " // When there is bold in text and the text is centered, this space is needed
+        cout << "     "
              << termkit::center_line("You lose ! The word was " + termkit::bold_text(word))
              << endl;
+
+    termkit::show_cursor();
 }
