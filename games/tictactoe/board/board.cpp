@@ -9,6 +9,9 @@
  */
 
 #include "board.hpp"
+#include <iostream>
+#include <regex>
+#include <vector>
 
 void Board::SetSize(unsigned short int size)
 {
@@ -29,6 +32,11 @@ bool Board::SetPosition(std::vector<int> postion, char symbol)
 {
   if (postion[0] < size && postion[1] < size && postion[0] >= 0 && postion[1] >= 0)
   {
+    if (std::regex_match(std::to_string(postion[0]), std::regex("[0-9]+")) == false || std::regex_match(std::to_string(postion[1]), std::regex("[0-9]+")) == false)
+    {
+      return false;
+    }
+
     if (grid[postion[0]][postion[1]] == ' ')
     {
       grid[postion[0]][postion[1]] = symbol;
@@ -64,7 +72,15 @@ void Board::Draw()
     for (unsigned int k = 0; k < size; k++)
     {
       std::cout << " ";
-      std::cout << grid[k][j];
+
+      if (k % 2 == 0)
+      {
+        std::cout << termkit::rgb_fg(termkit::bold_text(std::string(1, grid[k][j])), 255, 0, 0);
+      }
+      else
+      {
+        std::cout << termkit::rgb_fg(termkit::bold_text(std::string(1, grid[k][j])), 0, 0, 255);
+      }
 
       if (k < size - 1)
       {
