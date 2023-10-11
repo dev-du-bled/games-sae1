@@ -16,7 +16,7 @@ extern string RandomWord()
     vector<string> mots = {"pomme", "abricot", "fenetre", "chaise", "bureau", "table", "ordinateur",
                            "clavier", "souris", "ecran", "horloge", "lampe", "porte", "poteau",
                            "voiture", "camion", "velo", "moto", "avion", "bateau", "train", "bus",
-                           "pied", "onglet", "prise", "feuille", "cahier", "brosse"};
+                           "pied", "onglet", "prise", "feuille", "cahier", "brosse", "moteur", "roue"};
 
     srand(time(0));
 
