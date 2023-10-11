@@ -97,8 +97,10 @@ extern void showMenu(std::vector<MenuEntry> games) {
   }
 
   termkit::clear();
+  termkit::show_cursor();
+  
   games[selected_option].exec();
-  // make sure we show back the cursor
+  // make sure we show back the cursor, in case the game didn't
   termkit::show_cursor();
   // reset terminal stylings
   std::cout<<termkit::DEFAULT_TERM_STYLE;
