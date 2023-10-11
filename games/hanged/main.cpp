@@ -11,7 +11,7 @@ using namespace std;
  *
  * @param wordByCharGuessed Word by char guessed
  */
-void DrawHangman(int fail, char wordByCharGuessed[], int wordLength)
+void DrawHangman(int fail, vector<char> wordByCharGuessed, int wordLength)
 {
     termkit::set_term_title("Hangman game");
     termkit::clear();
@@ -50,17 +50,17 @@ void DrawHangman(int fail, char wordByCharGuessed[], int wordLength)
  */
 extern void Hangman()
 {
-    int fail = 0;                              // Number of player's fails
-    string word = RandomWord();                // Random word to guess
-    bool guessed = false;                      // If the player guessed the word
-    char wordByChar[word.length()] = {},       // Word by char
-        wordByCharGuessed[word.length()] = {}; // Word by char guessed
-    std::vector<char> alreadyTested;           // Already tested letters
+    int fail = 0;               // Number of player's fails
+    string word = RandomWord(); // Random word to guess
+    bool guessed = false;       // If the player guessed the word
+    vector<char> wordByChar,    // Word by char
+        wordByCharGuessed;      // Word by char guessed
+    vector<char> alreadyTested; // Already tested letters
 
     for (int i = 0; i < word.length(); i++)
     {
-        wordByChar[i] = word[i];
-        wordByCharGuessed[i] = '_';
+        wordByChar.push_back(word[i]);
+        wordByCharGuessed.push_back('_');
     }
 
     DrawHangman(fail, wordByCharGuessed, word.length());
@@ -71,7 +71,8 @@ extern void Hangman()
         bool alreadyTestedBool = false;
 
         // Handle ^C
-        if (test == 3) {
+        if (test == 3)
+        {
             return;
         }
 
