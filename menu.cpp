@@ -35,7 +35,7 @@ public:
 };
 
 extern void showMenu(std::vector<MenuEntry> games) {
-  int selected_option = 0;
+  unsigned short selected_option = 0;
   bool is_selecting = true;
 
   termkit::clear();

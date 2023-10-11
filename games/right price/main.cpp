@@ -65,6 +65,13 @@ unsigned random(unsigned min, unsigned max) {
   return uint_dist10(rng);
 }
 
+void vincentsay(std::string speech) {
+  std::cout<<vincent;
+  termkit::move_cursor_right(45);
+  termkit::move_cursor_up(65);
+  std::cout<<speech;
+}
+
 void final() {
 
   bool won = false;
@@ -106,7 +113,8 @@ void final() {
             << std::endl;
 }
 
-void plus_proche() {}
+void plus_proche() {
+}
 
 void trois_part() {}
 
@@ -121,6 +129,8 @@ extern void justeprix() {
   vincent += termkit::DEFAULT_TERM_STYLE;
   fileStream.close();
 
+  vincentsay("Hoyyay");
+  
   plus_proche();
   trois_part();
   final();
