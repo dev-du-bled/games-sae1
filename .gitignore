@@ -34,3 +34,5 @@ main
 
 .vscode
 *.pdb
+
+.DS_Store
