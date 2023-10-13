@@ -27,7 +27,7 @@ public:
    *
    * @return void
    */
-  void AddPlayer(unsigned short int playerNumber);
+  void AddPlayer(unsigned short playerNumber);
 
   /**
    * @brief Starts the game
@@ -73,9 +73,8 @@ public:
 private:
   // ----- ATTRIBUTES -----
   std::vector<Player> players;
-  unsigned short int turn;
-  unsigned short int moves;
-  unsigned short int actualMove;
-  unsigned short int position;
+  unsigned short turn;
+  unsigned short moves;
+  unsigned short actualMove;
   Board board;
 };

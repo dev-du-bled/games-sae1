@@ -32,7 +32,7 @@ void Game::DisplayLogo()
   std::cout << termkit::rgb_fg(logo, 252, 157, 3) << std::endl;
 }
 
-void Game::AddPlayer(unsigned short int playerNumber)
+void Game::AddPlayer(unsigned short playerNumber)
 {
   Player player;
   std::string name;
@@ -45,7 +45,7 @@ void Game::AddPlayer(unsigned short int playerNumber)
   std::cout << termkit::bold_text("Name: ");
   std::cin >> name;
 
-  for (unsigned short int i = 0; i < players.size(); i++)
+  for (unsigned short i = 0; i < players.size(); i++)
   {
     if (players[i].GetName() == name)
     {
@@ -158,12 +158,12 @@ void Game::Start()
 
 bool Game::IsWin(std::vector<std::vector<char>> grid, char symbol)
 {
-  for (unsigned short int i = 0; i < grid.size(); i++)
+  for (unsigned short i = 0; i < grid.size(); i++)
   {
     bool rowWin = true;
     bool colWin = true;
 
-    for (unsigned short int j = 0; j < grid.size(); j++)
+    for (unsigned short j = 0; j < grid.size(); j++)
     {
       if (grid[i][j] != symbol)
       {
@@ -174,6 +174,7 @@ bool Game::IsWin(std::vector<std::vector<char>> grid, char symbol)
         colWin = false;
       }
     }
+
     if (rowWin || colWin)
     {
       return true;
@@ -183,7 +184,7 @@ bool Game::IsWin(std::vector<std::vector<char>> grid, char symbol)
   bool diag1Win = true;
   bool diag2Win = true;
 
-  for (unsigned short int i = 0; i < grid.size(); i++)
+  for (unsigned short i = 0; i < grid.size(); i++)
   {
     if (grid[i][i] != symbol)
     {
@@ -194,6 +195,7 @@ bool Game::IsWin(std::vector<std::vector<char>> grid, char symbol)
       diag2Win = false;
     }
   }
+
   if (diag1Win || diag2Win)
   {
     return true;
@@ -204,15 +206,10 @@ bool Game::IsWin(std::vector<std::vector<char>> grid, char symbol)
 
 bool Game::IsOver()
 {
-  if (actualMove == moves)
-  {
-    return true;
-  }
-
   if (IsWin(board.GetGrid(), players[turn].GetSymbol()))
   {
     std::cout << std::endl;
-    std::cout << termkit::bold_text(players[turn].GetName()) << termkit::bold_text(" won!") << std::endl;
+    std::cout << termkit::bold_text(players[turn].GetName()) << " (" << players[turn].GetSymbol() << ") " << termkit::bold_text("won!") << std::endl;
     std::cout << std::endl;
 
     players[turn].AddScore();
@@ -230,20 +227,36 @@ bool Game::IsOver()
     return true;
   }
 
+  if (actualMove == moves)
+  {
+    std::cout << std::endl;
+    std::cout << "It's a draw!" << std::endl;
+    std::cout << std::endl;
+
+    actualMove = 0;
+    turn = 0;
+
+    Utils::Wait(2);
+    termkit::clear();
+
+    return true;
+  }
+
   return false;
 }
 
 void Game::Play()
 {
-  while (!IsOver())
+  unsigned short x;
+  unsigned short y;
+
+  while (true)
   {
-    unsigned short int x;
-    unsigned short int y;
     termkit::clear();
 
     DisplayLogo();
 
-    std::cout << players[turn].GetName() << "'s turn" << std::endl;
+    std::cout << players[turn].GetName() << "'s turn (" << termkit::bold_text(std::string(1, players[turn].GetSymbol())) << ")" << std::endl;
     std::cout << std::endl;
 
     board.Draw();
@@ -257,14 +270,13 @@ void Game::Play()
     if (board.SetPosition({x - 1, y - 1}, players[turn].GetSymbol()))
     {
       actualMove++;
-      if (!turn)
+
+      if (IsOver())
       {
-        turn = 1;
+        break;
       }
-      else
-      {
-        turn = 0;
-      }
+
+      turn = 1 - turn;
     }
     else
     {
@@ -274,6 +286,7 @@ void Game::Play()
 
       Utils::Wait(2);
       termkit::clear();
+
       continue;
     }
   }

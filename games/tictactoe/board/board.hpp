@@ -21,7 +21,7 @@ public:
    * @return void
    *
    */
-  void SetSize(unsigned short int size);
+  void SetSize(unsigned short size);
 
   /**
    * @brief Sets the position of the player
@@ -49,7 +49,7 @@ public:
    * @return size of the board
    *
    */
-  unsigned short int GetSize();
+  unsigned short GetSize();
 
   /**
    * @brief Returns the grid
@@ -61,6 +61,6 @@ public:
 
 private:
   // ----- ATTRIBUTES -----
-  unsigned short int size;
+  unsigned short size;
   std::vector<std::vector<char>> grid;
 };

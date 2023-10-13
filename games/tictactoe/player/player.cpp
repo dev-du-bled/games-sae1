@@ -25,6 +25,16 @@ unsigned int Player::GetScore()
   return score;
 }
 
+std::vector<int> Player::GetColor()
+{
+  return color;
+}
+
+void Player::SetColor(std::vector<int> color)
+{
+  this->color = color;
+}
+
 void Player::SetName(std::string name)
 {
   this->name = name;

@@ -38,6 +38,23 @@ public:
   unsigned int GetScore();
 
   /**
+   * @brief Returns the color of the player
+   *
+   * @return color of the player
+   *
+   */
+  std::vector<int> GetColor();
+
+  /**
+   * @brief Sets the color of the player
+   *
+   * @param color color of the player
+   *
+   * @return void
+   */
+  void SetColor(std::vector<int> color);
+
+  /**
    * @brief Sets the name of the player
    *
    * @param name name of the player
@@ -83,4 +100,5 @@ private:
   std::string name;
   char symbol;
   unsigned int score;
+  std::vector<int> color;
 };

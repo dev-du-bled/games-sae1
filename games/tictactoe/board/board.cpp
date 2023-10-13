@@ -8,6 +8,8 @@
  * created by Zarox28
  */
 
+#include "../../../libs/termkit.cpp"
+
 #include "board.hpp"
 #include <iostream>
 #include <regex>
@@ -73,14 +75,7 @@ void Board::Draw()
     {
       std::cout << " ";
 
-      if (k % 2 == 0)
-      {
-        std::cout << termkit::rgb_fg(termkit::bold_text(std::string(1, grid[k][j])), 255, 0, 0);
-      }
-      else
-      {
-        std::cout << termkit::rgb_fg(termkit::bold_text(std::string(1, grid[k][j])), 0, 0, 255);
-      }
+      std::cout << termkit::bold_text(std::string(1, grid[k][j]));
 
       if (k < size - 1)
       {
