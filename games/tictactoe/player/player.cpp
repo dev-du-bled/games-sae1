@@ -20,17 +20,17 @@ unsigned char Player::GetSymbol()
   return symbol;
 }
 
-unsigned int Player::GetScore()
+unsigned short Player::GetScore()
 {
   return score;
 }
 
-std::vector<int> Player::GetColor()
+std::vector<unsigned short> Player::GetColor()
 {
   return color;
 }
 
-void Player::SetColor(std::vector<int> color)
+void Player::SetColor(std::vector<unsigned short> color)
 {
   this->color = color;
 }
@@ -45,7 +45,7 @@ void Player::SetSymbol(char symbol)
   this->symbol = symbol;
 }
 
-void Player::SetScore(unsigned int score)
+void Player::SetScore(unsigned short score)
 {
   this->score = score;
 }

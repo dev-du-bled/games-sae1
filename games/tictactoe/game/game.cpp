@@ -38,6 +38,8 @@ void Game::AddPlayer(unsigned short playerNumber)
   std::string name;
   unsigned char symbol;
 
+  DisplayLogo();
+
   std::cout << termkit::bold_text(termkit::center_line("Player ")) << termkit::rgb_fg(std::to_string(playerNumber), 255, 0, 0) << std::endl;
 
   std::cout << std::endl;
@@ -55,10 +57,8 @@ void Game::AddPlayer(unsigned short playerNumber)
 
       Utils::Wait(2);
       termkit::clear();
-      DisplayLogo();
-      AddPlayer(playerNumber);
 
-      return;
+      AddPlayer(playerNumber);
     }
   }
 
@@ -79,10 +79,8 @@ void Game::AddPlayer(unsigned short playerNumber)
 
     Utils::Wait(2);
     termkit::clear();
-    DisplayLogo();
-    AddPlayer(playerNumber);
 
-    return;
+    AddPlayer(playerNumber);
   }
 
   if (players.size() == 1)
@@ -95,10 +93,8 @@ void Game::AddPlayer(unsigned short playerNumber)
 
       Utils::Wait(2);
       termkit::clear();
-      DisplayLogo();
-      AddPlayer(playerNumber);
 
-      return;
+      AddPlayer(playerNumber);
     }
   }
 
@@ -108,7 +104,6 @@ void Game::AddPlayer(unsigned short playerNumber)
 
   std::cout << std::endl;
   termkit::clear();
-  DisplayLogo();
 }
 
 void Game::SetBoardSize()
@@ -122,7 +117,11 @@ void Game::SetBoardSize()
   std::cout << termkit::bold_text("Board size: ");
   std::cin >> size;
 
-  if (size < 3 || size > 100)
+  if (size >= 3 && size <= 100)
+  {
+    board.SetSize(size);
+  }
+  else
   {
     std::cout << std::endl;
     std::cout << termkit::bold_text("Board size must be between 3 and 100!") << std::endl;
@@ -130,11 +129,9 @@ void Game::SetBoardSize()
 
     Utils::Wait(2);
     termkit::clear();
-    DisplayLogo();
+
     SetBoardSize();
   }
-
-  board.SetSize(size);
 }
 
 void Game::Start()
@@ -142,16 +139,14 @@ void Game::Start()
   termkit::clear();
   termkit::set_term_title("TicTacToe");
 
-  DisplayLogo();
-
   AddPlayer(1);
   AddPlayer(2);
 
   SetBoardSize();
 
   turn = 0;
-  moves = board.GetSize() * board.GetSize();
   actualMove = 0;
+  moves = board.GetSize() * board.GetSize();
 
   termkit::clear();
 }
@@ -221,7 +216,7 @@ bool Game::IsOver()
     actualMove = 0;
     turn = 0;
 
-    Utils::Wait(2);
+    Utils::Wait(3);
     termkit::clear();
 
     return true;
@@ -262,6 +257,7 @@ void Game::Play()
     board.Draw();
 
     std::cout << std::endl;
+
     std::cout << "x: ";
     std::cin >> x;
     std::cout << "y: ";
@@ -286,8 +282,6 @@ void Game::Play()
 
       Utils::Wait(2);
       termkit::clear();
-
-      continue;
     }
   }
 

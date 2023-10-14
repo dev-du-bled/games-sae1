@@ -15,7 +15,7 @@
 #include <regex>
 #include <vector>
 
-void Board::SetSize(unsigned short int size)
+void Board::SetSize(unsigned short size)
 {
   this->size = size;
 
@@ -60,9 +60,9 @@ bool Board::SetPosition(std::vector<int> postion, char symbol)
 
 void Board::Draw()
 {
-  for (unsigned int j = 0; j < size; j++)
+  for (unsigned short j = 0; j < size; j++)
   {
-    for (unsigned int i = 0; i < size; i++)
+    for (unsigned short i = 0; i < size; i++)
     {
       if (j > 0)
         std::cout << "--- ";
@@ -71,7 +71,7 @@ void Board::Draw()
     if (j > 0)
       std::cout << std::endl;
 
-    for (unsigned int k = 0; k < size; k++)
+    for (unsigned short k = 0; k < size; k++)
     {
       std::cout << " ";
 
@@ -88,7 +88,7 @@ void Board::Draw()
   }
 }
 
-unsigned short int Board::GetSize()
+unsigned short Board::GetSize()
 {
   return size;
 }

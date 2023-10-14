@@ -35,7 +35,7 @@ public:
    * @return score of the player
    *
    */
-  unsigned int GetScore();
+  unsigned short GetScore();
 
   /**
    * @brief Returns the color of the player
@@ -43,7 +43,7 @@ public:
    * @return color of the player
    *
    */
-  std::vector<int> GetColor();
+  std::vector<unsigned short> GetColor();
 
   /**
    * @brief Sets the color of the player
@@ -52,7 +52,7 @@ public:
    *
    * @return void
    */
-  void SetColor(std::vector<int> color);
+  void SetColor(std::vector<unsigned short> color);
 
   /**
    * @brief Sets the name of the player
@@ -79,7 +79,7 @@ public:
    *
    * @return void
    */
-  void SetScore(unsigned int score);
+  void SetScore(unsigned short score);
 
   /**
    * @brief Adds 1 to the score of the player
@@ -99,6 +99,6 @@ private:
   // ----- ATTRIBUTES -----
   std::string name;
   char symbol;
-  unsigned int score;
-  std::vector<int> color;
+  unsigned short score;
+  std::vector<unsigned short> color;
 };
