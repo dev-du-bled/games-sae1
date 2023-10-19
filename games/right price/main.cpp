@@ -27,7 +27,9 @@ public:
 Object objects[] = {
     Object("AWACS E-3F", 250000000),
     Object("la tablette de Dmitri", 5555),
-    Object("un Iphone infinity 5G Pro Max + Ultra Obsidian Titanium Mix Edition", 2134),
+    Object(
+        "un Iphone infinity 5G Pro Max + Ultra Obsidian Titanium Mix Edition",
+        2134),
     Object("une Yubikey 5 NFC", 55),
     Object("un casque GAMING", 80),
     Object("un video projecteur", 300),
@@ -66,13 +68,41 @@ unsigned random(unsigned min, unsigned max) {
 }
 
 void vincentsay(std::string speech) {
-  std::cout<<vincent;
+  termkit::clear();
+
+  unsigned termwidth = termkit::get_term_size().width;
+  unsigned padding = 10;
+  unsigned line_len = 0;
+
+  std::string constructed_word = "";
+
+  std::cout << vincent;
   termkit::move_cursor_right(45);
-  termkit::move_cursor_up(65);
-  std::cout<<speech;
+  termkit::move_cursor_up(20);
+
+  for (auto &ch : speech) {
+
+    if (ch == ' ') {
+      if (line_len + constructed_word.length() + 1 + 45 + padding > termwidth) {
+        termkit::move_cursor_down(1);
+        termkit::move_cursor_left(line_len-18);
+        //std::cerr<<line_len;
+        line_len = 0;
+      }
+      std::cout<<constructed_word + " ";
+      constructed_word = "";
+      line_len += constructed_word.length() + 1;
+      continue;
+    }
+
+    constructed_word += ch;
+    line_len++;
+  }
+  termkit::move_cursor_down(1);
+  termkit::move_cursor_left(line_len);
 }
 
-void final() {
+void vitrine() {
 
   bool won = false;
   int user_guess;
@@ -82,6 +112,9 @@ void final() {
   Object object_to_guess = objects[random(0, 30)];
   int price_to_guess = object_to_guess.price;
   std::string object_name = object_to_guess.name;
+
+  vincentsay(
+      R"(La vitrine va entre 10 et 50 000€ il va falloir trouver son juste prix, je vous demande de répéter les chiffres en intégralité, laisser moi le temps de vous répondre, ecoutez se que vous dites et bonne chance.)");
 
   do {
 
@@ -108,13 +141,13 @@ void final() {
     }
   } while (!won);
   std::cout << "Felicitation !! Vous avez trouvé " +
-               termkit::rgb_fg(std::to_string(price_to_guess), 92, 255,174)
-               + "€, le prix de " + termkit::rgb_fg(object_name, 92, 255, 174)
+                   termkit::rgb_fg(std::to_string(price_to_guess), 92, 255,
+                                   174) +
+                   "€, le prix de " + termkit::rgb_fg(object_name, 92, 255, 174)
             << std::endl;
 }
 
-void plus_proche() {
-}
+void plus_proche() {}
 
 void trois_part() {}
 
@@ -129,9 +162,7 @@ extern void justeprix() {
   vincent += termkit::DEFAULT_TERM_STYLE;
   fileStream.close();
 
-  vincentsay("Hoyyay");
-  
   plus_proche();
   trois_part();
-  final();
+  vitrine();
 }

@@ -24,6 +24,7 @@
 #include <termios.h>
 #include <unistd.h>
 #elif defined(_WIN32)
+#include <conio.h>
 #include <windows.h>
 #endif
 /* https://learn.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences
@@ -105,25 +106,32 @@ extern char getch() {
   tcsetattr(STDIN_FILENO, 0, &original_termios);
   return result;
 }
+
+#else
+extern char getch() { return (char)_getch(); }
 #endif
 
+#if defined(unix) || defined(_APPLE__)
 extern Term_size get_term_size() {
-#if defined(unix) || defined(__APPLE__)
   struct winsize size;
   Term_size result;
   ioctl(STDOUT_FILENO, TIOCGWINSZ, &size);
   result.width = size.ws_col;
   result.height = size.ws_row;
   return result;
-#elif defined(_win32)
+}
+
+
+#else
+extern Term_size get_term_size() {
   CONSOLE_SCREEN_BUFFER_INFO term_info;
   Term_size result;
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &term_info);
-  result.width = term_info.dwsize.x;
-  result.height = term_info.dwsize.y;
+  result.width = term_info.dwSize.X;
+  result.height = term_info.dwSize.Y;
   return result;
-#endif
 }
+#endif
 
 extern void hide_cursor() { printf("\x1b[?25l"); }
 
@@ -178,7 +186,6 @@ extern std::string center_text_block(std::string text) {
     constructed_line += character;
   }
   return result;
-  
 }
 
 } // namespace termkit

@@ -27,7 +27,7 @@ extern const char DEFAULT_TERM_STYLE[5];
 
 class Term_size {
 public:
-  int width, height;
+  unsigned width, height;
 };
 
 std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background);
@@ -147,9 +147,7 @@ extern void clear();
  * Gets a single char from the user.
  * Does not echo and does not process keys
  */
-#if defined(unix) || defined(__APPLE__)
 extern char getch();
-#endif
 
 /**
  * Gets the size of the terminal in rows and columns
