@@ -111,7 +111,7 @@ extern char getch() {
 extern char getch() { return (char)_getch(); }
 #endif
 
-#if defined(unix) || defined(_APPLE__)
+#if defined(unix) || defined(__APPLE__)
 extern Term_size get_term_size() {
   struct winsize size;
   Term_size result;
