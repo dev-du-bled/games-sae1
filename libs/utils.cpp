@@ -9,8 +9,6 @@
  */
 #pragma once
 
-#pragma once
-
 #include <iostream>
 #include <cstdlib>
 #if defined(unix) || defined(__APPLE__)
