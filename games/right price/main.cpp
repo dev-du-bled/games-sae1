@@ -9,10 +9,6 @@
 typedef std::mt19937 RngAlgo;
 RngAlgo rng;
 
-// vincent.txt
-std::string vincent = "";
-const unsigned long derniere_emition = 10042015;
-
 class Object {
 public:
   std::string name;
@@ -67,43 +63,7 @@ unsigned random(unsigned min, unsigned max) {
   return uint_dist10(rng);
 }
 
-void vincentsay(std::string speech) {
-  termkit::clear();
-
-  unsigned termwidth = termkit::get_term_size().width;
-  unsigned padding = 10;
-  unsigned line_len = 0;
-
-  std::string constructed_word = "";
-
-  std::cout << vincent;
-  termkit::move_cursor_right(45);
-  termkit::move_cursor_up(20);
-
-  for (auto &ch : speech) {
-
-    if (ch == ' ') {
-      if (line_len + constructed_word.length() + 1 + 45 + padding > termwidth) {
-        termkit::move_cursor_down(1);
-        termkit::move_cursor_left(line_len-18);
-        //std::cerr<<line_len;
-        line_len = 0;
-      }
-      std::cout<<constructed_word + " ";
-      constructed_word = "";
-      line_len += constructed_word.length() + 1;
-      continue;
-    }
-
-    constructed_word += ch;
-    line_len++;
-  }
-  termkit::move_cursor_down(1);
-  termkit::move_cursor_left(line_len);
-}
-
 void vitrine() {
-
   bool won = false;
   int user_guess;
 
@@ -113,9 +73,6 @@ void vitrine() {
   int price_to_guess = object_to_guess.price;
   std::string object_name = object_to_guess.name;
 
-  vincentsay(
-      R"(La vitrine va entre 10 et 50 000€ il va falloir trouver son juste prix, je vous demande de répéter les chiffres en intégralité, laisser moi le temps de vous répondre, ecoutez se que vous dites et bonne chance.)");
-
   do {
 
     std::cout << "Combien pour " << termkit::rgb_fg(object_name, 125, 56, 89)
@@ -124,7 +81,6 @@ void vitrine() {
 
     // cheat code
     if (user_input == "vincent") {
-      std::cout << vincent;
       break;
     }
 
@@ -152,16 +108,6 @@ void plus_proche() {}
 void trois_part() {}
 
 extern void justeprix() {
-  std::ifstream fileStream("./ressources/vincent.txt");
-  std::string line;
-
-  while (fileStream) {
-    std::getline(fileStream, line);
-    vincent += line + "\n";
-  }
-  vincent += termkit::DEFAULT_TERM_STYLE;
-  fileStream.close();
-
   plus_proche();
   trois_part();
   vitrine();
