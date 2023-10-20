@@ -1,6 +1,6 @@
 #include <iostream>
 #include "../../libs/termkit.cpp"
-#include "../../libs/utils.hpp"
+#include "../../libs/utils.cpp"
 
 using namespace std;
 
