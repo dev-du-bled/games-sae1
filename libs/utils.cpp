@@ -7,6 +7,7 @@
  *
  * created by Zarox28
  */
+#pragma once
 
 #pragma once
 

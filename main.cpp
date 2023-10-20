@@ -3,7 +3,7 @@
 #include "games/tictactoe/main.cpp"
 #include "games/hanged/main.cpp"
 #include "games/pfc/main.cpp"
-#include "games/reflex/main.cpp"
+#include "games/shipwar/main.cpp"
 #include "menu.cpp"
 
 using namespace std;
@@ -13,6 +13,6 @@ int main()
             MenuEntry(&justeprix, "Juste prix de Luna"),
             MenuEntry(&tictactoe, "Morpion de Zarox28"),
             MenuEntry(&pfc, "Gravier Carton Couteau de Dieu"),
-            MenuEntry(&reflex, "Jeu de reflexe de Zarox28")});
+            MenuEntry(&shipwar, "Bataille navale de BoomTchaGong")});
   return 0;
 }

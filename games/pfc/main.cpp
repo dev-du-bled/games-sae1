@@ -1,6 +1,6 @@
 #include <iostream>
 #include "../../libs/termkit.cpp"
-#include "../../libs/utils.hpp"
+#include "../../libs/utils.cpp"
 
 using namespace std;
 
@@ -19,13 +19,13 @@ int randomHand()
 }
 
 /**
- * @brief Tells which player won the round
+ * @brief Tells which player won
  *
  * @param playOne Player one's play
  *
  * @param playTwo Computers's play
  *
- * @return 0 if draw, 1 if player one won, 2 if computer won
+ * @return 0 if draw, 1 if player one, 2 if computer won
  */
 int ComparePlays(int playOne, int playTwo)
 {
@@ -129,8 +129,12 @@ extern void pfc()
     int playerScore = 0;   // Player score
     int computerScore = 0; // Computer score
 
-    cout << "How many rounds do you want to play ? ";
-    cin >> rounds;
+    while (rounds > 10 || rounds < 1)
+    {
+        cout << endl
+             << termkit::center_line("Nombre de manches (1-10) : ");
+        cin >> rounds;
+    }
 
     for (int i = 0; i < rounds; i++)
     {
@@ -176,13 +180,22 @@ extern void pfc()
         DrawPfc(1, playerScore, computerScore, roundsPlayed, rounds, winner, playerPlay, computerPlay);
         Utils::Wait(3);
     }
-    if (playerScore == computerScore)
+    switch (ComparePlays(playerScore, computerScore))
+    {
+    case 0:
         cout << endl
              << termkit::center_line("Egalité du match !") << endl;
-    else if (playerScore > computerScore)
+        break;
+    case 1:
         cout << endl
              << termkit::center_line("Vous avez gagné le match !") << endl;
-    else
+        break;
+    case 2:
         cout << endl
              << termkit::center_line("Vous avez perdu le match !") << endl;
+        break;
+    default:
+        break;
+    }
+    termkit::show_cursor();
 }
