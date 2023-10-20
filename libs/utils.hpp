@@ -18,5 +18,5 @@ namespace Utils
      * @return void
      *
      */
-    extern void Wait(unsigned int seconds);
+    extern void wait(unsigned int seconds);
 }
