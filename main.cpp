@@ -11,6 +11,6 @@ int main()
   showMenu({MenuEntry(&Hangman, "Pendu de FirminGaming"),
             MenuEntry(&justeprix, "Juste prix de Luna"),
             MenuEntry(&tictactoe, "Morpion de Zarox28"),
-            MenuEntry(&pfc, "Pierre feuille ciseaux de Dieu")});
+            MenuEntry(&pfc, "Gravier Carton Couteau de Dieu")});
   return 0;
 }
