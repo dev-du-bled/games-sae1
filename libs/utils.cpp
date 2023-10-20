@@ -8,6 +8,8 @@
  * created by Zarox28
  */
 
+#pragma once
+
 #include <iostream>
 #include <cstdlib>
 #if defined(unix) || defined(__APPLE__)
@@ -16,14 +18,16 @@
 #include <windows.h>
 #endif
 
+#include "utils.hpp"
+
 namespace Utils
 {
-  extern void wait(unsigned int seconds)
+  extern void Wait(unsigned int seconds)
   {
-    #if defined(unix) || defined(__APPLE__)
+#if defined(unix) || defined(__APPLE__)
     sleep(seconds);
-    #else
+#else
     Sleep(seconds);
-    #endif
+#endif
   }
 }

@@ -174,7 +174,7 @@ extern void pfc()
         }
         roundsPlayed++;
         DrawPfc(1, playerScore, computerScore, roundsPlayed, rounds, winner, playerPlay, computerPlay);
-        Utils::wait(3);
+        Utils::Wait(3);
     }
     if (playerScore == computerScore)
         cout << endl

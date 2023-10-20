@@ -30,6 +30,7 @@ void Game::DisplayLogo()
 )";
 
   std::cout << termkit::rgb_fg(logo, 252, 157, 3) << std::endl;
+  std::cout << termkit::bold_text("By Zarox28") << std::endl;
 }
 
 void Game::AddPlayer(unsigned short playerNumber)
@@ -55,7 +56,7 @@ void Game::AddPlayer(unsigned short playerNumber)
       std::cout << termkit::bold_text("This name is already taken!") << std::endl;
       std::cout << std::endl;
 
-      Utils::wait(2);
+      Utils::Wait(2);
       termkit::clear();
 
       AddPlayer(playerNumber);
@@ -77,7 +78,7 @@ void Game::AddPlayer(unsigned short playerNumber)
     std::cout << termkit::bold_text("Symbol not allowed!") << std::endl;
     std::cout << std::endl;
 
-    Utils::wait(2);
+    Utils::Wait(2);
     termkit::clear();
 
     AddPlayer(playerNumber);
@@ -91,7 +92,7 @@ void Game::AddPlayer(unsigned short playerNumber)
       std::cout << termkit::bold_text("This symbol is already taken!") << std::endl;
       std::cout << std::endl;
 
-      Utils::wait(2);
+      Utils::Wait(2);
       termkit::clear();
 
       AddPlayer(playerNumber);
@@ -127,7 +128,7 @@ void Game::SetBoardSize()
     std::cout << termkit::bold_text("Board size must be between 3 and 100!") << std::endl;
     std::cout << std::endl;
 
-    Utils::wait(2);
+    Utils::Wait(2);
     termkit::clear();
 
     SetBoardSize();
@@ -216,7 +217,7 @@ bool Game::IsOver()
     actualMove = 0;
     turn = 0;
 
-    Utils::wait(3);
+    Utils::Wait(3);
     termkit::clear();
 
     return true;
@@ -231,7 +232,7 @@ bool Game::IsOver()
     actualMove = 0;
     turn = 0;
 
-    Utils::wait(2);
+    Utils::Wait(2);
     termkit::clear();
 
     return true;
@@ -280,7 +281,7 @@ void Game::Play()
       std::cout << termkit::bold_text("This position is already taken or value is not possible!") << std::endl;
       std::cout << std::endl;
 
-      Utils::wait(2);
+      Utils::Wait(2);
       termkit::clear();
     }
   }

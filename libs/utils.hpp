@@ -13,10 +13,10 @@ namespace Utils
     /**
      * @brief Wait for a certain amount of time.
      *
-     * @param seconds amount of time to wait
+     * @param seconds amount of time to Wait
      *
      * @return void
      *
      */
-    extern void wait(unsigned int seconds);
+    extern void Wait(unsigned int seconds);
 }
