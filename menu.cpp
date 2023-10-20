@@ -44,7 +44,8 @@ extern void showMenu(std::vector<MenuEntry> games) {
   std::cout << termkit::rgb_fg(termkit::center_text_block(title), 255, 0, 0)
             << std::endl;
 
-  std::cout << termkit::center_line(std::string(52, ' ') + termkit::bold_text("v0.0.1"))
+  std::cout << termkit::center_line(std::string(52, ' ') +
+                                    termkit::bold_text("v0.0.1"))
             << std::endl;
 
   std::cout << std::endl;
@@ -53,7 +54,8 @@ extern void showMenu(std::vector<MenuEntry> games) {
     // render
     for (int i = 0; i < games.size(); i++) {
       if (i == selected_option) {
-        std::cout << termkit::rgb_fg(termkit::center_line(games[i].dislayName), 255, 0, 0)
+        std::cout << termkit::rgb_fg(termkit::center_line(games[i].dislayName),
+                                     255, 0, 0)
                   << std::endl;
       } else
         std::cout << termkit::center_line(games[i].dislayName) << std::endl;
@@ -72,8 +74,9 @@ extern void showMenu(std::vector<MenuEntry> games) {
     case ENTER:
       is_selecting = false;
       break;
-    // handle multi-character keys '^[' e.i UP arrow is ^[A
-    //                                                  27 91 A
+// handle multi-character keys '^[' e.i UP arrow is ^[A
+//                                                  27 91 A
+#if defined(unix) || defined(__APPLE__) // linux and mac support
     case ESC:
       if (termkit::getch() != BRACKET)
         continue;
@@ -90,18 +93,26 @@ extern void showMenu(std::vector<MenuEntry> games) {
       case BAKTAB:
         selected_option = (selected_option - 1) % games.size();
         continue;
-      // default:
-      //   printf("%i", g);
+        // default:
+        //   printf("%i", g);
       }
+#else // windows support
+    case 72:
+      selected_option = (selected_option - 1) % games.size();
+      continue;
+    case 80:
+      selected_option = (selected_option + 1) % games.size();
+      continue;
+#endif
     }
   }
 
   termkit::clear();
   termkit::show_cursor();
-  
+
   games[selected_option].exec();
   // make sure we show back the cursor, in case the game didn't
   termkit::show_cursor();
   // reset terminal stylings
-  std::cout<<termkit::DEFAULT_TERM_STYLE;
+  std::cout << termkit::DEFAULT_TERM_STYLE;
 }
