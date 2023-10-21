@@ -145,7 +145,7 @@ extern std::string center_line(std::string line) {
   unsigned text_middle_point = line.length() / 2;
 
   unsigned center_point = console_middle_point - text_middle_point;
-  for (int i = 0; i < center_point; i++) {
+  for (unsigned i = 0; i < center_point; i++) {
     result += " ";
   }
   result += line;

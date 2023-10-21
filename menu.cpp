@@ -52,7 +52,7 @@ extern void showMenu(std::vector<MenuEntry> games) {
 
   while (is_selecting) {
     // render
-    for (int i = 0; i < games.size(); i++) {
+    for (unsigned long i = 0; i < games.size(); i++) {
       if (i == selected_option) {
         std::cout << termkit::rgb_fg(termkit::center_line(games[i].dislayName),
                                      255, 0, 0)
