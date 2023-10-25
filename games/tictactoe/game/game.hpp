@@ -18,7 +18,7 @@ public:
    *
    * @return void
    */
-  void DisplayLogo();
+  void displayLogo();
 
   /**
    * @brief Adds a player to the game
@@ -27,14 +27,14 @@ public:
    *
    * @return void
    */
-  void AddPlayer(unsigned short playerNumber);
+  void addPlayer(unsigned short playerNumber);
 
   /**
    * @brief Starts the game
    *
    * @return void
    */
-  void Start();
+  void start();
 
   /**
    * @brief Sets the size of the board
@@ -42,7 +42,7 @@ public:
    * @return void
    *
    */
-  void SetBoardSize();
+  void setBoardSize();
 
   /**
    * @brief Checks if the game is over
@@ -50,7 +50,7 @@ public:
    * @return bool
    *
    */
-  bool IsOver();
+  bool isOver();
 
   /**
    * @brief Checks if the game is a draw
@@ -61,14 +61,14 @@ public:
    * @return bool
    *
    */
-  bool IsWin(std::vector<std::vector<char>> grid, char symbol);
+  bool isWin(std::vector<std::vector<char>> grid, char symbol);
 
   /**
    * @brief Plays the game
    *
    * @return void
    */
-  void Play();
+  void play();
 
 private:
   // ----- ATTRIBUTES -----

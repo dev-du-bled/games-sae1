@@ -19,7 +19,7 @@
 
 #include "game.hpp"
 
-void Game::DisplayLogo()
+void Game::displayLogo()
 {
   const char *logo =
       R"( _____ _     _____         _____
@@ -29,20 +29,20 @@ void Game::DisplayLogo()
   |_| |_|\___||_|\__,_|\___||_|\___/ \___|
 )";
 
-  std::cout << termkit::rgb_fg(logo, 252, 157, 3) << std::endl;
-  std::cout << termkit::bold_text("By Zarox28") << std::endl;
+  std::cout << termkit::rgb_fg(termkit::center_text_block(logo), 252, 157, 3) << std::endl;
+  std::cout << termkit::bold_text(termkit::center_line("By Zarox28")) << std::endl;
   std::cout << std::endl;
 }
 
-void Game::AddPlayer(unsigned short playerNumber)
+void Game::addPlayer(unsigned short playerNumber)
 {
   Player player;
   std::string name;
   unsigned char symbol;
 
-  DisplayLogo();
+  displayLogo();
 
-  std::cout << termkit::bold_text(termkit::center_line("Player ")) << termkit::rgb_fg(std::to_string(playerNumber), 255, 0, 0) << std::endl;
+  std::cout << termkit::bold_text(termkit::center_line("player ")) << termkit::rgb_fg(std::to_string(playerNumber), 255, 0, 0) << std::endl;
 
   std::cout << std::endl;
 
@@ -51,7 +51,7 @@ void Game::AddPlayer(unsigned short playerNumber)
 
   for (unsigned short i = 0; i < players.size(); i++)
   {
-    if (players[i].GetName() == name)
+    if (players[i].getName() == name)
     {
       std::cout << std::endl;
       std::cout << termkit::bold_text("This name is already taken!") << std::endl;
@@ -60,15 +60,15 @@ void Game::AddPlayer(unsigned short playerNumber)
       Utils::wait(2);
       termkit::clear();
 
-      AddPlayer(playerNumber);
+      addPlayer(playerNumber);
     }
   }
 
-  player.SetName(name);
+  player.setName(name);
 
   std::cout << std::endl;
 
-  player.ResetScore();
+  player.resetScore();
 
   std::cout << termkit::bold_text("Symbol: ");
   std::cin >> symbol;
@@ -82,12 +82,12 @@ void Game::AddPlayer(unsigned short playerNumber)
     Utils::wait(2);
     termkit::clear();
 
-    AddPlayer(playerNumber);
+    addPlayer(playerNumber);
   }
 
   if (players.size() == 1)
   {
-    if (symbol == players[0].GetSymbol())
+    if (symbol == players[0].getSymbol())
     {
       std::cout << std::endl;
       std::cout << termkit::bold_text("This symbol is already taken!") << std::endl;
@@ -96,11 +96,11 @@ void Game::AddPlayer(unsigned short playerNumber)
       Utils::wait(2);
       termkit::clear();
 
-      AddPlayer(playerNumber);
+      addPlayer(playerNumber);
     }
   }
 
-  player.SetSymbol(tolower(symbol));
+  player.setSymbol(tolower(symbol));
 
   players.push_back(player);
 
@@ -108,20 +108,20 @@ void Game::AddPlayer(unsigned short playerNumber)
   termkit::clear();
 }
 
-void Game::SetBoardSize()
+void Game::setBoardSize()
 {
   unsigned int size;
 
   termkit::clear();
 
-  DisplayLogo();
+  displayLogo();
 
   std::cout << termkit::bold_text("Board size: ");
   std::cin >> size;
 
   if (size >= 3 && size <= 100)
   {
-    board.SetSize(size);
+    board.setSize(size);
   }
   else
   {
@@ -132,28 +132,28 @@ void Game::SetBoardSize()
     Utils::wait(2);
     termkit::clear();
 
-    SetBoardSize();
+    setBoardSize();
   }
 }
 
-void Game::Start()
+void Game::start()
 {
   termkit::clear();
   termkit::set_term_title("TicTacToe");
 
-  AddPlayer(1);
-  AddPlayer(2);
+  addPlayer(1);
+  addPlayer(2);
 
-  SetBoardSize();
+  setBoardSize();
 
   turn = 0;
   actualMove = 0;
-  moves = board.GetSize() * board.GetSize();
+  moves = board.getSize() * board.getSize();
 
   termkit::clear();
 }
 
-bool Game::IsWin(std::vector<std::vector<char>> grid, char symbol)
+bool Game::isWin(std::vector<std::vector<char>> grid, char symbol)
 {
   for (unsigned short i = 0; i < grid.size(); i++)
   {
@@ -201,18 +201,18 @@ bool Game::IsWin(std::vector<std::vector<char>> grid, char symbol)
   return false;
 }
 
-bool Game::IsOver()
+bool Game::isOver()
 {
-  if (IsWin(board.GetGrid(), players[turn].GetSymbol()))
+  if (isWin(board.getGrid(), players[turn].getSymbol()))
   {
     std::cout << std::endl;
-    std::cout << termkit::bold_text(players[turn].GetName()) << " (" << players[turn].GetSymbol() << ") " << termkit::bold_text("won!") << std::endl;
+    std::cout << termkit::bold_text(players[turn].getName()) << " (" << players[turn].getSymbol() << ") " << termkit::bold_text("won!") << std::endl;
     std::cout << std::endl;
 
-    players[turn].AddScore();
+    players[turn].addScore();
 
-    std::cout << players[0].GetName() << ": " << players[0].GetScore() << std::endl;
-    std::cout << players[1].GetName() << ": " << players[1].GetScore() << std::endl;
+    std::cout << players[0].getName() << ": " << players[0].getScore() << std::endl;
+    std::cout << players[1].getName() << ": " << players[1].getScore() << std::endl;
     std::cout << std::endl;
 
     actualMove = 0;
@@ -242,7 +242,7 @@ bool Game::IsOver()
   return false;
 }
 
-void Game::Play()
+void Game::play()
 {
   unsigned short x;
   unsigned short y;
@@ -251,12 +251,12 @@ void Game::Play()
   {
     termkit::clear();
 
-    DisplayLogo();
+    displayLogo();
 
-    std::cout << players[turn].GetName() << "'s turn (" << termkit::bold_text(std::string(1, players[turn].GetSymbol())) << ")" << std::endl;
+    std::cout << players[turn].getName() << "'s turn (" << termkit::bold_text(std::string(1, players[turn].getSymbol())) << ")" << std::endl;
     std::cout << std::endl;
 
-    board.Draw();
+    board.draw();
 
     std::cout << std::endl;
 
@@ -265,11 +265,11 @@ void Game::Play()
     std::cout << "y: ";
     std::cin >> y;
 
-    if (board.SetPosition({x - 1, y - 1}, players[turn].GetSymbol()))
+    if (board.setPosition({x - 1, y - 1}, players[turn].getSymbol()))
     {
       actualMove++;
 
-      if (IsOver())
+      if (isOver())
       {
         break;
       }
@@ -287,6 +287,6 @@ void Game::Play()
     }
   }
 
-  board.SetSize(board.GetSize());
-  Play();
+  board.setSize(board.getSize());
+  play();
 }

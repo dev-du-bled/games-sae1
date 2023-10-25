@@ -11,6 +11,6 @@
 void tictactoe()
 {
   Game game;
-  game.Start();
-  game.Play();
+  game.start();
+  game.play();
 }

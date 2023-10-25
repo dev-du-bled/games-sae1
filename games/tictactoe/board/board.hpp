@@ -21,7 +21,7 @@ public:
    * @return void
    *
    */
-  void SetSize(unsigned short size);
+  void setSize(unsigned short size);
 
   /**
    * @brief Sets the position of the player
@@ -33,7 +33,7 @@ public:
    * @return bool
    *
    */
-  bool SetPosition(std::vector<int> postion, char symbol);
+  bool setPosition(std::vector<int> postion, char symbol);
 
   /**
    * @brief Draw the board
@@ -41,7 +41,7 @@ public:
    * @return void
    *
    */
-  void Draw();
+  void draw();
 
   /**
    * @brief Returns the size of the board
@@ -49,7 +49,7 @@ public:
    * @return size of the board
    *
    */
-  unsigned short GetSize();
+  unsigned short getSize();
 
   /**
    * @brief Returns the grid
@@ -57,7 +57,7 @@ public:
    * @return grid
    *
    */
-  std::vector<std::vector<char>> GetGrid();
+  std::vector<std::vector<char>> getGrid();
 
 private:
   // ----- ATTRIBUTES -----

@@ -10,52 +10,52 @@
 
 #include "player.hpp"
 
-std::string Player::GetName()
+std::string Player::getName()
 {
   return name;
 }
 
-unsigned char Player::GetSymbol()
+unsigned char Player::getSymbol()
 {
   return symbol;
 }
 
-unsigned short Player::GetScore()
+unsigned short Player::getScore()
 {
   return score;
 }
 
-std::vector<unsigned short> Player::GetColor()
+std::vector<unsigned short> Player::getColor()
 {
   return color;
 }
 
-void Player::SetColor(std::vector<unsigned short> color)
+void Player::setColor(std::vector<unsigned short> color)
 {
   this->color = color;
 }
 
-void Player::SetName(std::string name)
+void Player::setName(std::string name)
 {
   this->name = name;
 }
 
-void Player::SetSymbol(char symbol)
+void Player::setSymbol(char symbol)
 {
   this->symbol = symbol;
 }
 
-void Player::SetScore(unsigned short score)
+void Player::setScore(unsigned short score)
 {
   this->score = score;
 }
 
-void Player::AddScore()
+void Player::addScore()
 {
   score++;
 }
 
-void Player::ResetScore()
+void Player::resetScore()
 {
   score = 0;
 }

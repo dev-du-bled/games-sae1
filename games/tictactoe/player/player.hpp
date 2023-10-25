@@ -19,7 +19,7 @@ public:
    * @return name of the player
    *
    */
-  std::string GetName();
+  std::string getName();
 
   /**
    * @brief Returns the symbol of the player
@@ -27,7 +27,7 @@ public:
    * @return symbol of the player
    *
    */
-  unsigned char GetSymbol();
+  unsigned char getSymbol();
 
   /**
    * @brief Returns the score of the player
@@ -35,7 +35,7 @@ public:
    * @return score of the player
    *
    */
-  unsigned short GetScore();
+  unsigned short getScore();
 
   /**
    * @brief Returns the color of the player
@@ -43,7 +43,7 @@ public:
    * @return color of the player
    *
    */
-  std::vector<unsigned short> GetColor();
+  std::vector<unsigned short> getColor();
 
   /**
    * @brief Sets the color of the player
@@ -52,7 +52,7 @@ public:
    *
    * @return void
    */
-  void SetColor(std::vector<unsigned short> color);
+  void setColor(std::vector<unsigned short> color);
 
   /**
    * @brief Sets the name of the player
@@ -61,7 +61,7 @@ public:
    *
    * @return void
    */
-  void SetName(std::string name);
+  void setName(std::string name);
 
   /**
    * @brief Sets the symbol of the player
@@ -70,7 +70,7 @@ public:
    *
    * @return void
    */
-  void SetSymbol(char symbol);
+  void setSymbol(char symbol);
 
   /**
    * @brief Sets the score of the player
@@ -79,21 +79,21 @@ public:
    *
    * @return void
    */
-  void SetScore(unsigned short score);
+  void setScore(unsigned short score);
 
   /**
    * @brief Adds 1 to the score of the player
    *
    * @return void
    */
-  void AddScore();
+  void addScore();
 
   /**
    * @brief Resets the score of the player
    *
    * @return void
    */
-  void ResetScore();
+  void resetScore();
 
 private:
   // ----- ATTRIBUTES -----

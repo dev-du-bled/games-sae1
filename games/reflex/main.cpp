@@ -126,43 +126,50 @@ void play()
 
     termkit::clear();
 
-    previousTime[1] = std::to_string(durationSeconds.count()) + "." + std::to_string(durationMs.count() % 1000);
-    std::cout << "Previous time: " << termkit::bold_text(previousTime[0] + "s") << std::endl;
-
-    if (previousTime[1] == previousTime[0])
+    if (durationMs.count() == 0)
     {
-      std::cout << termkit::bold_text(termkit::center_line("   You have the same time as before!")) << std::endl;
-      color[0] = 66;
-      color[1] = 158;
-      color[2] = 245;
-    }
-    else if (previousTime[0] == "0")
-    {
-      std::cout << termkit::bold_text(termkit::center_line("   This is your first time!")) << std::endl;
-      for (unsigned short i = 0; i < 3; i++)
-      {
-        color[i] = 255;
-      }
-    }
-    else if (previousTime[1] < previousTime[0])
-    {
-      std::cout << termkit::bold_text(termkit::center_line("   You beat the previous time!")) << std::endl;
-      color[0] = 28;
-      color[1] = 189;
-      color[2] = 52;
+      std::cout << termkit::rgb_fg(termkit::bold_text(termkit::center_line("   You clicked too early!")), 255, 0, 0) << std::endl;
     }
     else
     {
-      std::cout << termkit::bold_text(termkit::center_line("   You didn't beat the previous time!")) << std::endl;
-      color[0] = 245;
-      color[1] = 168;
-      color[2] = 34;
+      previousTime[1] = std::to_string(durationSeconds.count()) + "." + std::to_string(durationMs.count() % 1000);
+      std::cout << "Previous time: " << termkit::bold_text(previousTime[0] + "s") << std::endl;
+
+      if (previousTime[1] == previousTime[0])
+      {
+        std::cout << termkit::bold_text(termkit::center_line("   You have the same time as before!")) << std::endl;
+        color[0] = 66;
+        color[1] = 158;
+        color[2] = 245;
+      }
+      else if (previousTime[0] == "0")
+      {
+        std::cout << termkit::bold_text(termkit::center_line("   This is your first time!")) << std::endl;
+        for (unsigned short i = 0; i < 3; i++)
+        {
+          color[i] = 255;
+        }
+      }
+      else if (previousTime[1] < previousTime[0])
+      {
+        std::cout << termkit::bold_text(termkit::center_line("   You beat the previous time!")) << std::endl;
+        color[0] = 28;
+        color[1] = 189;
+        color[2] = 52;
+      }
+      else
+      {
+        std::cout << termkit::bold_text(termkit::center_line("   You didn't beat the previous time!")) << std::endl;
+        color[0] = 245;
+        color[1] = 168;
+        color[2] = 34;
+      }
+
+      std::cout << "Reaction time: " << termkit::rgb_fg(termkit::bold_text(std::to_string(durationSeconds.count()) + "." + std::to_string(durationMs.count() % 1000) + "s"), color[0], color[1], color[2]) << std::endl;
+      std::cout << std::endl;
+
+      previousTime[0] = previousTime[1];
     }
-
-    std::cout << "Reaction time: " << termkit::rgb_fg(termkit::bold_text(std::to_string(durationSeconds.count()) + "." + std::to_string(durationMs.count() % 1000) + "s"), color[0], color[1], color[2]) << std::endl;
-    std::cout << std::endl;
-
-    previousTime[0] = previousTime[1];
 
     Utils::wait(2);
 
