@@ -31,6 +31,7 @@ void Game::DisplayLogo()
 
   std::cout << termkit::rgb_fg(logo, 252, 157, 3) << std::endl;
   std::cout << termkit::bold_text("By Zarox28") << std::endl;
+  std::cout << std::endl;
 }
 
 void Game::AddPlayer(unsigned short playerNumber)
