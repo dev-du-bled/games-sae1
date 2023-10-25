@@ -1,3 +1,10 @@
+/**
+ * @file  main.hpp
+ * @brief This file contains the Hangman game
+ * @see main.cpp
+ * @author Firmin_
+ */
+
 #include <iostream>
 #include "dictionary.cpp"
 #include "../../libs/termkit.cpp"

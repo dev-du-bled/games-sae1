@@ -1,3 +1,10 @@
+/**
+ * @file  main.hpp
+ * @brief This file contains the shipwar game
+ * @see main.cpp
+ * @author Firmin_
+ */
+
 #include <iostream>
 #include "../../libs/termkit.cpp"
 #include "../../libs/utils.cpp"

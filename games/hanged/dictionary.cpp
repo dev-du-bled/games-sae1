@@ -1,3 +1,10 @@
+/**
+ * @file  dictionary.hpp
+ * @brief This file contains the dictionary for the Hangman game
+ * @see main.cpp
+ * @author Firmin_
+ */
+
 #include <iostream>
 #include <vector>
 #include <cstdlib>
