@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['default_5fterm_5fstyle_0',['DEFAULT_TERM_STYLE',['../namespacetermkit.html#acf6328832ada72b09f14e75469b09bf7',1,'termkit']]],
-  ['displaylogo_1',['displaylogo',['../class_game.html#a218807ddbd533ba9f5cfc8d7bccb4531',1,'Game::displayLogo()'],['../games_2reflex_2main_8cpp.html#aa363c10f4f99c58179af601f5b031bfe',1,'displayLogo():&#160;main.cpp']]],
-  ['displaysquare_2',['displaySquare',['../games_2reflex_2main_8cpp.html#a6f5397defb04afe45f83878bfcf6395a',1,'main.cpp']]],
-  ['draw_3',['draw',['../class_board.html#af9b7fba8fe453fe0b3a45a91a3336a58',1,'Board']]]
+  ['center_5fline_0',['center_line',['../namespacetermkit.html#a62da95075b927b7b8713b98a15cc5767',1,'termkit']]],
+  ['center_5ftext_1',['center_text',['../namespacetermkit.html#a7668ff01650bd221982f955aa3d62e58',1,'termkit']]],
+  ['center_5ftext_5fblock_2',['center_text_block',['../namespacetermkit.html#a6c397ce1b5f07d6c7d6a18028e89dd5f',1,'termkit']]],
+  ['clear_3',['clear',['../namespacetermkit.html#a8f82cd06a453638337bd2d1cf84d0b5a',1,'termkit']]],
+  ['clear_5fline_4',['clear_line',['../namespacetermkit.html#a1f816f8d2ebded7a9b6069b5a3f3b7f2',1,'termkit']]],
+  ['contents_5',['Table of Contents',['../md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html#autotoc_md2',1,'']]]
 ];
