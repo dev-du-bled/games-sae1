@@ -1,15 +1,20 @@
 var searchData=
 [
-  ['random_0',['random',['../games_2right_01price_2main_8cpp.html#a14edbc0bf5c8e393bf98e8c10998a8bd',1,'main.cpp']]],
-  ['randomhand_1',['randomHand',['../games_2pfc_2main_8cpp.html#a080ab2f750d37bb730621c80044bbf75',1,'main.cpp']]],
-  ['randomword_2',['RandomWord',['../dictionary_8cpp.html#a5709d355485823d1ad633d1e1f8102e5',1,'dictionary.cpp']]],
-  ['readme_2emd_3',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['reflex_4',['reflex',['../games_2reflex_2main_8cpp.html#a1625e0f777fbe7e394ef35ac69161b7b',1,'main.cpp']]],
-  ['resetscore_5',['resetScore',['../class_player.html#a7dfdc0be35fa9ae42104a6bfe47634b8',1,'Player']]],
-  ['restore_5fcursor_5fpos_6',['restore_cursor_pos',['../namespacetermkit.html#a92bea3b13717b3eb7ef68eb1e4fd5b70',1,'termkit']]],
-  ['rgb_5fbg_7',['rgb_bg',['../namespacetermkit.html#acd5d9e72b135aaebcc796d6498ad8cd6',1,'termkit']]],
-  ['rgb_5ffg_8',['rgb_fg',['../namespacetermkit.html#a255732e4602c72da54a33a080074d3e0',1,'termkit']]],
-  ['rgb_5fimpl_9',['rgb_impl',['../namespacetermkit.html#af17d87d7cd896c95fe26cc45bea56e65',1,'termkit']]],
-  ['rng_10',['rng',['../games_2right_01price_2main_8cpp.html#ac03c0bcbdb2526472e690e410b407edb',1,'main.cpp']]],
-  ['rngalgo_11',['RngAlgo',['../games_2right_01price_2main_8cpp.html#ac0e20aa3781e9fdb8a59d23e9ae3c356',1,'main.cpp']]]
+  ['saé_20project_201_0',['SAÉ Project 1',['../md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html',1,'']]],
+  ['save_5fcursor_5fpos_1',['save_cursor_pos',['../namespacetermkit.html#a5509ae3685412cdb281a4a990e2d6148',1,'termkit']]],
+  ['set_5fcursor_5fpos_2',['set_cursor_pos',['../namespacetermkit.html#acc92669bb357e4ffd2b361ff113916b6',1,'termkit']]],
+  ['set_5fterm_5ftitle_3',['set_term_title',['../namespacetermkit.html#a0807cba9598e1ee8a43dec3e23612379',1,'termkit']]],
+  ['setboardsize_4',['setBoardSize',['../class_game.html#af2a177de94fb5f96da521acd1bd8722e',1,'Game']]],
+  ['setcolor_5',['setColor',['../class_player.html#a546211308465084101f7d3ffbda5ec46',1,'Player']]],
+  ['setname_6',['setName',['../class_player.html#a95d2b46eee230ad3e31612ff2bc681da',1,'Player']]],
+  ['setposition_7',['setPosition',['../class_board.html#a4c68712ba3c598933b70a0435790fce0',1,'Board']]],
+  ['setscore_8',['setScore',['../class_player.html#af542a8ec05217df22962f653056de807',1,'Player']]],
+  ['setsize_9',['setSize',['../class_board.html#aef9f3a64bb0cf0f640c3616cde955b2e',1,'Board']]],
+  ['setsymbol_10',['setSymbol',['../class_player.html#a6cd993753014ccdc16e08aa404203958',1,'Player']]],
+  ['shipwar_11',['shipwar',['../games_2shipwar_2main_8cpp.html#a366ffdfc4da03299ff5403c576849cb2',1,'main.cpp']]],
+  ['show_5fcursor_12',['show_cursor',['../namespacetermkit.html#a7512fe1e28c3dea76e7d4fd7596d471e',1,'termkit']]],
+  ['showmenu_13',['showMenu',['../menu_8cpp.html#ae972071030d8a58b941fc31e24795735',1,'menu.cpp']]],
+  ['space_14',['SPACE',['../games_2reflex_2main_8cpp.html#a729d2d47150ab5be1ccc21689f95e638ac08dae7edcb5c5bb959fee5971fbad95',1,'main.cpp']]],
+  ['space_5fkey_15',['SPACE_KEY',['../games_2reflex_2main_8cpp.html#a729d2d47150ab5be1ccc21689f95e638',1,'main.cpp']]],
+  ['start_16',['start',['../class_game.html#a3d9b98f7c4a96ecf578f75b96c9f0e90',1,'Game::start()'],['../games_2reflex_2main_8cpp.html#a60de64d75454385b23995437f1d72669',1,'start():&#160;main.cpp']]]
 ];

@@ -80,7 +80,6 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="termkit_8hpp_source.html">libs/termkit.hpp</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
-<code>#include &lt;random&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div>
 <p><a href="menu_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -100,7 +99,10 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa">UP</a> = 65
 , <a class="el" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da">DOWN</a> = 66
-, <a class="el" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee">BAKTAB</a> = 90
+, <a class="el" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45">WINUP</a> = 72
+, <a class="el" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9">WINDOWN</a> = 80
+, <br />
+&#160;&#160;<a class="el" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee">BAKTAB</a> = 90
 , <a class="el" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34">BRACKET</a> = 91
 <br />
  }</td></tr>
@@ -135,6 +137,8 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a0ada92b8263d776ca3c779d2a0e031bcaf5297152557c7da396243000ca240e89" name="a0ada92b8263d776ca3c779d2a0e031bcaf5297152557c7da396243000ca240e89"></a>ESC&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa" name="a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa"></a>UP&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da" name="a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da"></a>DOWN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45" name="a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45"></a>WINUP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9" name="a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9"></a>WINDOWN&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee" name="a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee"></a>BAKTAB&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34" name="a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34"></a>BRACKET&#160;</td><td class="fielddoc"></td></tr>
 </table>
@@ -181,13 +185,14 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">    R<span class="stringliteral">&quot;( _____ _____ _      _____ _____ _____     ___    _____   ___  ___  ___ _____ </span></div>
-<div class="line"><span class="stringliteral">/  ___|  ___| |    |  ___/  __ \_   _|  / _ \   |  __ \ / _ \ |  \/  ||  ___|</span></div>
-<div class="line"><span class="stringliteral">\ `--.| |__ | |    | |__ | /  \/ | |   / /_\ \  | |  \// /_\ \| .  . || |__  </span></div>
-<div class="line"><span class="stringliteral"> `--. \  __|| |    |  __|| |     | |   |  _  |  | | __ |  _  || |\/| ||  __| </span></div>
-<div class="line"><span class="stringliteral">/\__/ / |___| |____| |___| \__/\ | |   | | | |  | |_\ \| | | || |  | || |___ </span></div>
-<div class="line"><span class="stringliteral">\____/\____/\_____/\____/ \____/ \_/   \_| |_/   \____/\_| |_/\_|  |_/\____/</span></div>
-<div class="line"><span class="stringliteral">)&quot;</span></div>
+<div class="line">    R<span class="stringliteral">&quot;(</span></div>
+<div class="line"><span class="stringliteral"> ██████╗███████╗██╗     ███████╗ █████╗ ████████╗   █████╗    ██████╗  █████╗ ███╗   ███╗███████╗</span></div>
+<div class="line"><span class="stringliteral">██╔════╝██╔════╝██║     ██╔════╝██╔══██╗╚══██╔══╝  ██╔══██╗  ██╔════╝ ██╔══██╗████╗ ████║██╔════╝</span></div>
+<div class="line"><span class="stringliteral">╚█████╗ █████╗  ██║     █████╗  ██║  ╚═╝   ██║     ███████║  ██║  ██╗ ███████║██╔████╔██║█████╗  </span></div>
+<div class="line"><span class="stringliteral"> ╚═══██╗██╔══╝  ██║     ██╔══╝  ██║  ██╗   ██║     ██╔══██║  ██║  ╚██╗██╔══██║██║╚██╔╝██║██╔══╝  </span></div>
+<div class="line"><span class="stringliteral">██████╔╝███████╗███████╗███████╗╚█████╔╝   ██║     ██║  ██║  ╚██████╔╝██║  ██║██║ ╚═╝ ██║███████╗</span></div>
+<div class="line"><span class="stringliteral">╚═════╝ ╚══════╝╚══════╝╚══════╝ ╚════╝    ╚═╝     ╚═╝  ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝     ╚═╝╚══════╝</span></div>
+<div class="line"><span class="stringliteral">  )&quot;</span></div>
 </div><!-- fragment -->
 </div>
 </div>

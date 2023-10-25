@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['underline_5ftext_0',['underline_text',['../namespacetermkit.html#a76ae0214287c0fc86818bee7ba7357e3',1,'termkit']]]
+  ['vitrine_0',['vitrine',['../games_2right_01price_2main_8cpp.html#aa2ca7dac9c3f323968e1ef058e0cce58',1,'main.cpp']]]
 ];

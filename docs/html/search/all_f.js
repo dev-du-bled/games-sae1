@@ -1,16 +1,15 @@
 var searchData=
 [
-  ['pfc_0',['pfc',['../games_2pfc_2main_8cpp.html#af9770d097b7ac1bc57973b8cd0087488',1,'main.cpp']]],
-  ['play_1',['play',['../class_game.html#aa333825d0bca80e91e53c7e23f053405',1,'Game::play()'],['../games_2reflex_2main_8cpp.html#a6d58098c6cf63c241ed03bc797256bb1',1,'play():&#160;main.cpp']]],
-  ['player_2',['Player',['../class_player.html',1,'']]],
-  ['player_2ecpp_3',['player.cpp',['../player_8cpp.html',1,'']]],
-  ['player_2ehpp_4',['player.hpp',['../player_8hpp.html',1,'']]],
-  ['playerplaceship_5',['playerPlaceShip',['../games_2shipwar_2main_8cpp.html#a03ecd2a69fd9ba15f50be7c7408384f4',1,'main.cpp']]],
-  ['playerplaceshipsingrid_6',['playerPlaceShipsInGrid',['../games_2shipwar_2main_8cpp.html#a08f29e9a62bcd0287c3a50a671db850a',1,'main.cpp']]],
-  ['playerplayturn_7',['playerPlayTurn',['../games_2shipwar_2main_8cpp.html#aca67fb811163eb1a09b5eac6c1798489',1,'main.cpp']]],
-  ['plus_5fproche_8',['plus_proche',['../games_2right_01price_2main_8cpp.html#a8c3a362d36e248e4c66ca1f8b8496974',1,'main.cpp']]],
-  ['previoustime_9',['previousTime',['../games_2reflex_2main_8cpp.html#aca92ba59b29d517635c2172a6bc414b0',1,'main.cpp']]],
-  ['price_10',['price',['../class_object.html#ac3276731b48b9697e36ab7040cc50405',1,'Object']]],
-  ['printgrid_11',['printGrid',['../games_2shipwar_2main_8cpp.html#a9fec6b5e653b60f0c98cda3aa082ea98',1,'main.cpp']]],
-  ['project_201_12',['SAÉ Project 1',['../md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html',1,'']]]
+  ['random_0',['random',['../games_2right_01price_2main_8cpp.html#a14edbc0bf5c8e393bf98e8c10998a8bd',1,'main.cpp']]],
+  ['randomhand_1',['randomHand',['../games_2pfc_2main_8cpp.html#a080ab2f750d37bb730621c80044bbf75',1,'main.cpp']]],
+  ['randomword_2',['RandomWord',['../dictionary_8cpp.html#a5709d355485823d1ad633d1e1f8102e5',1,'dictionary.cpp']]],
+  ['readme_2emd_3',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['reflex_4',['reflex',['../games_2reflex_2main_8cpp.html#a1625e0f777fbe7e394ef35ac69161b7b',1,'main.cpp']]],
+  ['resetscore_5',['resetScore',['../class_player.html#a7dfdc0be35fa9ae42104a6bfe47634b8',1,'Player']]],
+  ['restore_5fcursor_5fpos_6',['restore_cursor_pos',['../namespacetermkit.html#a92bea3b13717b3eb7ef68eb1e4fd5b70',1,'termkit']]],
+  ['rgb_5fbg_7',['rgb_bg',['../namespacetermkit.html#a46ea43f1737790b676777621008cc5e1',1,'termkit']]],
+  ['rgb_5ffg_8',['rgb_fg',['../namespacetermkit.html#adedb45b0b043c05f8b4c5b8af9651400',1,'termkit']]],
+  ['rgb_5fimpl_9',['rgb_impl',['../namespacetermkit.html#a7c625d2ab63873268ad111e12a554e0c',1,'termkit::rgb_impl(std::string text, unsigned r, unsigned g, unsigned b, bool color_background, bool do_pad)'],['../namespacetermkit.html#af17d87d7cd896c95fe26cc45bea56e65',1,'termkit::rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background)']]],
+  ['rng_10',['rng',['../games_2right_01price_2main_8cpp.html#ac03c0bcbdb2526472e690e410b407edb',1,'main.cpp']]],
+  ['rngalgo_11',['RngAlgo',['../games_2right_01price_2main_8cpp.html#ac0e20aa3781e9fdb8a59d23e9ae3c356',1,'main.cpp']]]
 ];
