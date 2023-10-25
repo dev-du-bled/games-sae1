@@ -61,12 +61,12 @@ std::string rgb_impl(std::string text,unsigned r, unsigned g, unsigned b, bool c
 }
 
 extern std::string rgb_fg(std::string text, unsigned r, unsigned g,
-                          unsigned b, bool add_padding = false) {
+                          unsigned b, bool add_padding) {
   return rgb_impl(text, r, g, b, false, add_padding);
 }
 
 extern std::string rgb_bg(std::string text, unsigned r, unsigned g,
-                          unsigned b, bool add_padding = false) {
+                          unsigned b, bool add_padding) {
   return rgb_impl(text, r, g, b, true, add_padding);
 }
 
@@ -84,7 +84,7 @@ extern void set_term_title(std::string title) {
   printf("\e]2;%s\007", title.c_str());
 }
 
-extern std::string bold_text(std::string text, bool do_pad = false) {
+extern std::string bold_text(std::string text, bool do_pad) {
   std::string result = "";
 
   // Padding for the exact same reason as seen in rgb_impl
@@ -159,12 +159,15 @@ extern void hide_cursor() { printf("\x1b[?25l"); }
 
 extern void show_cursor() { printf("\x1b[?25h"); }
 
-extern std::string center_line(std::string line) {
+extern std::string center_line(std::string line, unsigned visual_width) {
   std::string result = "";
 
   Term_size console_size = get_term_size();
   unsigned console_middle_point = console_size.width / 2;
-  unsigned text_middle_point = line.length() / 2;
+  unsigned text_middle_point = 0;
+
+  if (visual_width != 0) text_middle_point = visual_width / 2;
+  else text_middle_point = line.length() / 2;
 
   unsigned center_point = console_middle_point - text_middle_point;
   for (unsigned i = 0; i < center_point; i++) {
@@ -174,13 +177,13 @@ extern std::string center_line(std::string line) {
   return result;
 }
 
-extern std::string center_text(std::string text) {
+extern std::string center_text(std::string text, unsigned visual_width) {
   std::string result = "";
   std::string constructed_line = "";
 
   for (char &character : text) {
     if (character == '\n') {
-      result += '\n' + center_line(constructed_line);
+      result += '\n' + center_line(constructed_line, visual_width);
       constructed_line = "";
       continue;
     }
@@ -189,7 +192,7 @@ extern std::string center_text(std::string text) {
   return result;
 }
 
-extern std::string center_text_block(std::string text, unsigned visual_width = 0) {
+extern std::string center_text_block(std::string text, unsigned visual_width) {
   std::string result = "";
   std::string constructed_line = "";
 

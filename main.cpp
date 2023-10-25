@@ -19,7 +19,6 @@ int main()
   
   // make sure we show back the cursor, in case the game didn't
   termkit::show_cursor();
-  termkit::clear();
   // reset terminal stylings
   std::cout << termkit::DEFAULT_TERM_STYLE;
   return 0;

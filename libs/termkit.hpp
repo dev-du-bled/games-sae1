@@ -30,7 +30,7 @@ public:
   unsigned width, height;
 };
 
-std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background, bool do_pad);
+std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background);
 
 /**
  * Generates a color escape sequence.
@@ -42,7 +42,7 @@ std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background, 
  * @param b Intensity of the blue channel (ranges from 0-255)
  * @return color ANSI Escape sequence representing a color
  */
-extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding);
+extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding = false);
 
 /**
  * Generates a color escape sequence.
@@ -54,7 +54,7 @@ extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b, 
  * @param b Intensity of the blue channel (ranges from 0-255)
  * @return color ANSI Escape sequence representing a color
  */
-extern std::string rgb_bg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding);
+extern std::string rgb_bg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding = false);
 
 /**
  * Generates a movement escape sequence.
@@ -111,7 +111,7 @@ extern void set_term_title(std::string title);
  * @param text Text to be bolded
  * @param do_pad Wether or not add spacing before the string to accomodate for escape sequences
  */
-extern std::string bold_text(std::string text, bool do_pad);
+extern std::string bold_text(std::string text, bool do_pad = false);
 
 /**
  * Draws a line under the text
@@ -171,9 +171,10 @@ extern void show_cursor();
  * Adds space chars for padding
  *
  * @param line String of text to center
+ * @param visual_witdh Overwrite the automatic with detection, usefull when the string contains non-printable characters
  * @return a string padded-left with space chars
  */
-extern std::string center_line(std::string line);
+extern std::string center_line(std::string line, unsigned visual_width = 0);
 
 /**
  * Centers a paragraph line by line horizontally
@@ -181,9 +182,10 @@ extern std::string center_line(std::string line);
  * Calls termkit::center_line en every lines
  *
  * @param text String of text to center
+ * @param visual_witdh Overwrite the automatic with detection, usefull when the string contains non-printable characters
  * @return a string with every line padded-left using space chars
  */
-extern std::string center_text(std::string text);
+extern std::string center_text(std::string text, unsigned visual_width = 0);
 
 /**
  * Centers a paragraph horizontally
@@ -192,5 +194,5 @@ extern std::string center_text(std::string text);
  * @param visual_witdh Overwrite the automatic with detection, usefull when the string contains non-printable characters
  * @return a string with every line padded-left using space chars
  */
-extern std::string center_text_block(std::string text, unsigned visual_width);
+extern std::string center_text_block(std::string text, unsigned visual_width = 0);
 } // namespace termkit

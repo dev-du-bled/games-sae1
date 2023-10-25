@@ -2,8 +2,9 @@
 #include <iostream>
 #include <random>
 #include <string>
-#include <algorithm>
 #include "../../libs/utils.hpp"
+
+#define TIME_BEFORE_EXIT 5
 
 // pseudo random number generator using the Mersenne Twister
 typedef std::mt19937 RngAlgo;
@@ -20,10 +21,9 @@ void vitrine() {
   unsigned user_input = 0;
   bool found = false;
 
-    
   std::cout<<termkit::center_line("---------------- Vitrine ----------------")<<std::endl;
   std::cout<<termkit::center_text("Vous aller devoir trouver le JUSTE PRIX de la vitrine, ça vaut entre 10 000 et 50 000 €,\n parlez clairement, ne vous emballez pas et laisser moi le temps de vous répondre, on y vas ?\n\n")<<std::endl;
-  std::cout<<termkit::center_line(termkit::rgb_bg("  APPUYEZ SUR UNE TOUCHE POUR COMMENCER  ", 255, 192, 203, true))<<std::endl;
+  std::cout<<termkit::center_line(termkit::rgb_bg("  APPUYEZ SUR UNE TOUCHE POUR COMMENCER  ", 255, 192, 203), 42)<<std::endl;
   std::cout<<std::endl;
   std::cout<<termkit::center_line("-----------------------------------------")<<std::endl;
 
@@ -35,7 +35,7 @@ void vitrine() {
 
   while (!found) {
     termkit::clear();
-    std::cerr<<price;
+    //std::cerr<<price;
     std::cout<<termkit::center_line("---------------- Vitrine ----------------")<<std::endl;
     std::cout<<termkit::center_line(text)<<std::endl;
     std::cout<<termkit::center_line("Votre prix: ")<<std::endl;
@@ -57,11 +57,14 @@ void vitrine() {
     }else break;
     }
 
-  std::cout<<termkit::center_line(termkit::rgb_fg("C'EST LE JUSTE PRIX ! La valeur de la vitrine est de '" + std::to_string(price) + "' !", 162, 227, 188));
-  std::cout<<termkit::center_line("Vous avez trouve en '" + termkit::rgb_fg(std::to_string(tries), 108, 172, 122) + "' !");
+  termkit::clear();
   
-  Utils::wait(5);
+  std::cout<<termkit::center_line(termkit::rgb_fg("C'EST LE JUSTE PRIX ! La valeur de la vitrine est de '" + std::to_string(price) + "' !", 162, 227, 188, true))<<std::endl;
+  std::string tries_str = std::to_string(tries);
+  const unsigned visual_string_lenght = tries_str.length() + 33;
+  std::cout<<termkit::center_line("Vous avez trouve en '" + termkit::rgb_fg(std::to_string(tries), 108, 172, 122) + "' essaies !", visual_string_lenght)<<std::endl;
 
+  Utils::wait(5);
 }
 
 extern void justeprix() {
