@@ -178,7 +178,7 @@ extern void pfc()
         }
         roundsPlayed++;
         DrawPfc(1, playerScore, computerScore, roundsPlayed, rounds, winner, playerPlay, computerPlay);
-        Utils::Wait(3);
+        Utils::wait(3);
     }
     switch (ComparePlays(playerScore, computerScore))
     {

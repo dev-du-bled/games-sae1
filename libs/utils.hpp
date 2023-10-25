@@ -11,9 +11,9 @@
 namespace Utils
 {
     /**
-     * @brief Wait for a certain amount of time.
+     * @brief wait for a certain amount of time.
      *
-     * @param seconds amount of time to Wait
+     * @param seconds amount of time to wait
      *
      * @return void
      *

@@ -107,7 +107,7 @@ void play()
   {
     displaySquare(0);
 
-    Utils::Wait(rand() % 5 + 1);
+    Utils::wait(rand() % 5 + 1);
 
     termkit::clear();
 
@@ -164,7 +164,7 @@ void play()
 
     previousTime[0] = previousTime[1];
 
-    Utils::Wait(2);
+    Utils::wait(2);
 
     termkit::clear();
 
