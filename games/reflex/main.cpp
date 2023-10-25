@@ -1,9 +1,7 @@
 /**
- * @brief This file contains the Reflex game.
- *
  * @file main.cpp
- *
- * created by Zarox28
+ * @brief Reflex game
+ * @author Zarox28
  */
 
 #include <iostream>
@@ -21,7 +19,11 @@ enum SPACE_KEY
   SPACE = 32
 };
 
-// ----- DISPLAY LOGO -----
+/**
+ * @brief Display the logo
+ *
+ * @return void
+ */
 void displayLogo()
 {
   const char *logo = R"( ____       __ _           
@@ -35,7 +37,13 @@ void displayLogo()
   std::cout << termkit::bold_text(termkit::center_line("By Zarox28")) << std::endl;
 }
 
-// ----- DISPLAY SQUARE -----
+/**
+ * @brief Display a colored square
+ *
+ * @param [in] color
+ *
+ * @return void
+ */
 void displaySquare(bool color)
 {
   std::string line;
@@ -73,7 +81,11 @@ void displaySquare(bool color)
   }
 }
 
-// ----- START -----
+/**
+ * @brief Start the game
+ *
+ * @return void
+ */
 void start()
 {
   termkit::clear();
@@ -100,7 +112,11 @@ void start()
   termkit::clear();
 }
 
-// ----- PLAY -----
+/**
+ * @brief Play the game
+ *
+ * @return void
+ */
 void play()
 {
   while (true)
@@ -193,7 +209,11 @@ void play()
   }
 }
 
-// ----- MAIN -----
+/**
+ * @brief Main function of the game
+ *
+ * @return void
+ */
 void reflex()
 {
   termkit::hide_cursor();

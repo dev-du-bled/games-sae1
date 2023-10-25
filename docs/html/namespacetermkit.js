@@ -1,0 +1,26 @@
+var namespacetermkit =
+[
+    [ "Term_size", "classtermkit_1_1_term__size.html", null ],
+    [ "bold_text", "namespacetermkit.html#a8300d4c627ea40096f3dfab08aeffc8a", null ],
+    [ "center_line", "namespacetermkit.html#a62da95075b927b7b8713b98a15cc5767", null ],
+    [ "center_text", "namespacetermkit.html#a7668ff01650bd221982f955aa3d62e58", null ],
+    [ "center_text_block", "namespacetermkit.html#a6c397ce1b5f07d6c7d6a18028e89dd5f", null ],
+    [ "clear", "namespacetermkit.html#a8f82cd06a453638337bd2d1cf84d0b5a", null ],
+    [ "clear_line", "namespacetermkit.html#a1f816f8d2ebded7a9b6069b5a3f3b7f2", null ],
+    [ "get_term_size", "namespacetermkit.html#a3d428a1add5e86af465690246a0b2540", null ],
+    [ "getch", "namespacetermkit.html#a3ee5435f45bee669e83ec94574952ff8", null ],
+    [ "hide_cursor", "namespacetermkit.html#ab82d5434c67e35c7de63f874b4befc29", null ],
+    [ "move_cursor_down", "namespacetermkit.html#a8285fb8ea76bceec83aab3fbb3ef15ec", null ],
+    [ "move_cursor_left", "namespacetermkit.html#a8286adb7b0fa498acae8a67c8b8ac3b3", null ],
+    [ "move_cursor_right", "namespacetermkit.html#a73067f64bdfd7fff3133cb380289c1ce", null ],
+    [ "move_cursor_up", "namespacetermkit.html#aa8ece6cc8e4b7d58ed6cf5502c3c16fd", null ],
+    [ "restore_cursor_pos", "namespacetermkit.html#a92bea3b13717b3eb7ef68eb1e4fd5b70", null ],
+    [ "rgb_bg", "namespacetermkit.html#acd5d9e72b135aaebcc796d6498ad8cd6", null ],
+    [ "rgb_fg", "namespacetermkit.html#a255732e4602c72da54a33a080074d3e0", null ],
+    [ "save_cursor_pos", "namespacetermkit.html#a5509ae3685412cdb281a4a990e2d6148", null ],
+    [ "set_cursor_pos", "namespacetermkit.html#acc92669bb357e4ffd2b361ff113916b6", null ],
+    [ "set_term_title", "namespacetermkit.html#a0807cba9598e1ee8a43dec3e23612379", null ],
+    [ "show_cursor", "namespacetermkit.html#a7512fe1e28c3dea76e7d4fd7596d471e", null ],
+    [ "underline_text", "namespacetermkit.html#a76ae0214287c0fc86818bee7ba7357e3", null ],
+    [ "DEFAULT_TERM_STYLE", "namespacetermkit.html#acf6328832ada72b09f14e75469b09bf7", null ]
+];

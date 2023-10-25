@@ -1,11 +1,8 @@
 /**
- * @brief This file contains the Game class.
- *
  * @file game.cpp
- *
+ * @brief This file contains the TicTacToe game class
  * @see game.hpp
- *
- * created by Zarox28
+ * @author Zarox28
  */
 
 #include <iostream>

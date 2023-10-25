@@ -1,11 +1,8 @@
 /**
- * @brief This file contains the Board class.
- *
- * @file board.hpp
- *
- * @see board.cpp
- *
- * created by Zarox28
+ * @file board.cpp
+ * @brief This file contains the TicTacToe board class
+ * @see board.hpp
+ * @author Zarox28
  */
 
 #include "../../../libs/termkit.cpp"

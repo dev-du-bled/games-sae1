@@ -1,11 +1,8 @@
 /**
- * This file contains the Board class.
- *
- * @file board.hpp
- *
+ * @file  board.hpp
+ * @brief This file contains the TicTacToe board class
  * @see board.cpp
- *
- * created by Zarox28
+ * @author Zarox28
  */
 
 #include <vector>
@@ -16,22 +13,19 @@ public:
   /**
    * @brief Sets the size of the board
    *
-   * @param size size of the board
+   * @param [in] size size of the board
    *
    * @return void
-   *
    */
   void setSize(unsigned short size);
 
   /**
    * @brief Sets the position of the player
    *
-   * @param postion position of the player
-   *
-   * @param symbol symbol of the player
+   * @param [in] postion position of the player
+   * @param [in] symbol symbol of the player
    *
    * @return bool
-   *
    */
   bool setPosition(std::vector<int> postion, char symbol);
 
@@ -39,7 +33,6 @@ public:
    * @brief Draw the board
    *
    * @return void
-   *
    */
   void draw();
 
@@ -47,7 +40,6 @@ public:
    * @brief Returns the size of the board
    *
    * @return size of the board
-   *
    */
   unsigned short getSize();
 
@@ -55,7 +47,6 @@ public:
    * @brief Returns the grid
    *
    * @return grid
-   *
    */
   std::vector<std::vector<char>> getGrid();
 

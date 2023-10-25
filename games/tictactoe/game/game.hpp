@@ -1,11 +1,8 @@
 /**
- * @brief This file contains the Game class.
- *
  * @file game.hpp
- *
+ * @brief This file contains the TicTacToe game class
  * @see game.cpp
- *
- * created by Zarox28
+ * @author Zarox28
  */
 
 #include <vector>
@@ -23,7 +20,7 @@ public:
   /**
    * @brief Adds a player to the game
    *
-   * @param playerNumber number of the player
+   * @param [in] playerNumber number of the player
    *
    * @return void
    */
@@ -48,18 +45,16 @@ public:
    * @brief Checks if the game is over
    *
    * @return bool
-   *
    */
   bool isOver();
 
   /**
    * @brief Checks if the game is a draw
    *
-   * @param grid grid of the game
-   * @param symbol symbol of the player
+   * @param [in] grid grid of the game
+   * @param [in] symbol symbol of the player
    *
    * @return bool
-   *
    */
   bool isWin(std::vector<std::vector<char>> grid, char symbol);
 

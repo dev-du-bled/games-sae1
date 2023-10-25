@@ -1,11 +1,8 @@
 /**
- * This file contains the Player class.
- *
+ * @brief This file contains the Player class.
  * @file player.hpp
- *
  * @see player.cpp
- *
- * created by Zarox28
+ * @author Zarox28
  */
 
 #include <string>
@@ -17,7 +14,6 @@ public:
    * @brief Returns the name of the player
    *
    * @return name of the player
-   *
    */
   std::string getName();
 
@@ -25,7 +21,6 @@ public:
    * @brief Returns the symbol of the player
    *
    * @return symbol of the player
-   *
    */
   unsigned char getSymbol();
 
@@ -33,7 +28,6 @@ public:
    * @brief Returns the score of the player
    *
    * @return score of the player
-   *
    */
   unsigned short getScore();
 
@@ -41,14 +35,13 @@ public:
    * @brief Returns the color of the player
    *
    * @return color of the player
-   *
    */
   std::vector<unsigned short> getColor();
 
   /**
    * @brief Sets the color of the player
    *
-   * @param color color of the player
+   * @param [in] color color of the player
    *
    * @return void
    */
@@ -57,7 +50,7 @@ public:
   /**
    * @brief Sets the name of the player
    *
-   * @param name name of the player
+   * @param [in] name name of the player
    *
    * @return void
    */
@@ -65,9 +58,7 @@ public:
 
   /**
    * @brief Sets the symbol of the player
-   *
-   * @param symbol symbol of the player
-   *
+   * @param [in] symbol symbol of the player
    * @return void
    */
   void setSymbol(char symbol);
@@ -75,7 +66,7 @@ public:
   /**
    * @brief Sets the score of the player
    *
-   * @param score score of the player
+   * @param [in] score score of the player
    *
    * @return void
    */
