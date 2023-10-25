@@ -82,7 +82,7 @@ $(document).ready(function() { init_codefold(0); });
   <div class="headertitle"><div class="title">termkit.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<a href="termkit_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
@@ -92,11 +92,11 @@ $(document).ready(function() { init_codefold(0); });
 <div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classtermkit_1_1_term__size.html">   28</a></span><span class="keyword">class </span><a class="code hl_class" href="classtermkit_1_1_term__size.html">Term_size</a> {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">unsigned</span> width, height;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classtermkit_1_1_term__size.html#ad1b336a61983ea0e483173f402b76de9">   30</a></span>  <span class="keywordtype">unsigned</span> <a class="code hl_variable" href="classtermkit_1_1_term__size.html#a986446ea484d847312edafc2cff3cc60">width</a>, <a class="code hl_variable" href="classtermkit_1_1_term__size.html#ad1b336a61983ea0e483173f402b76de9">height</a>;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
 </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>std::string rgb_impl(<span class="keywordtype">unsigned</span> r, <span class="keywordtype">unsigned</span> g, <span class="keywordtype">unsigned</span> b, <span class="keywordtype">bool</span> color_background);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>std::string <a class="code hl_function" href="namespacetermkit.html#af17d87d7cd896c95fe26cc45bea56e65">rgb_impl</a>(<span class="keywordtype">unsigned</span> r, <span class="keywordtype">unsigned</span> g, <span class="keywordtype">unsigned</span> b, <span class="keywordtype">bool</span> color_background);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">extern</span> std::string <a class="code hl_function" href="namespacetermkit.html#a255732e4602c72da54a33a080074d3e0">rgb_fg</a>(std::string text, <span class="keywordtype">unsigned</span> r, <span class="keywordtype">unsigned</span> g, <span class="keywordtype">unsigned</span> b);</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
@@ -112,7 +112,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacetermkit.html#a1f816f8d2ebded7a9b6069b5a3f3b7f2">clear_line</a>();</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacetermkit.html#a0807cba9598e1ee8a43dec3e23612379">set_term_title</a>(std::string title);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacetermkit.html#a0807cba9598e1ee8a43dec3e23612379">set_term_title</a>(std::string <a class="code hl_variable" href="menu_8cpp.html#a8214780964530800368b406c681fd1d9">title</a>);</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keyword">extern</span> std::string <a class="code hl_function" href="namespacetermkit.html#a8300d4c627ea40096f3dfab08aeffc8a">bold_text</a>(std::string text);</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
@@ -141,6 +141,9 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword">extern</span> std::string <a class="code hl_function" href="namespacetermkit.html#a6c397ce1b5f07d6c7d6a18028e89dd5f">center_text_block</a>(std::string text);</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>} <span class="comment">// namespace termkit</span></div>
 <div class="ttc" id="aclasstermkit_1_1_term__size_html"><div class="ttname"><a href="classtermkit_1_1_term__size.html">termkit::Term_size</a></div><div class="ttdef"><b>Definition</b> termkit.hpp:28</div></div>
+<div class="ttc" id="aclasstermkit_1_1_term__size_html_a986446ea484d847312edafc2cff3cc60"><div class="ttname"><a href="classtermkit_1_1_term__size.html#a986446ea484d847312edafc2cff3cc60">termkit::Term_size::width</a></div><div class="ttdeci">unsigned width</div><div class="ttdef"><b>Definition</b> termkit.hpp:30</div></div>
+<div class="ttc" id="aclasstermkit_1_1_term__size_html_ad1b336a61983ea0e483173f402b76de9"><div class="ttname"><a href="classtermkit_1_1_term__size.html#ad1b336a61983ea0e483173f402b76de9">termkit::Term_size::height</a></div><div class="ttdeci">unsigned height</div><div class="ttdef"><b>Definition</b> termkit.hpp:30</div></div>
+<div class="ttc" id="amenu_8cpp_html_a8214780964530800368b406c681fd1d9"><div class="ttname"><a href="menu_8cpp.html#a8214780964530800368b406c681fd1d9">title</a></div><div class="ttdeci">const char * title</div><div class="ttdef"><b>Definition</b> menu.cpp:6</div></div>
 <div class="ttc" id="anamespacetermkit_html"><div class="ttname"><a href="namespacetermkit.html">termkit</a></div><div class="ttdef"><b>Definition</b> termkit.cpp:34</div></div>
 <div class="ttc" id="anamespacetermkit_html_a0807cba9598e1ee8a43dec3e23612379"><div class="ttname"><a href="namespacetermkit.html#a0807cba9598e1ee8a43dec3e23612379">termkit::set_term_title</a></div><div class="ttdeci">void set_term_title(std::string title)</div><div class="ttdef"><b>Definition</b> termkit.cpp:66</div></div>
 <div class="ttc" id="anamespacetermkit_html_a1f816f8d2ebded7a9b6069b5a3f3b7f2"><div class="ttname"><a href="namespacetermkit.html#a1f816f8d2ebded7a9b6069b5a3f3b7f2">termkit::clear_line</a></div><div class="ttdeci">void clear_line()</div><div class="ttdef"><b>Definition</b> termkit.cpp:64</div></div>
@@ -164,6 +167,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="anamespacetermkit_html_acc92669bb357e4ffd2b361ff113916b6"><div class="ttname"><a href="namespacetermkit.html#acc92669bb357e4ffd2b361ff113916b6">termkit::set_cursor_pos</a></div><div class="ttdeci">void set_cursor_pos(unsigned line, unsigned column)</div><div class="ttdef"><b>Definition</b> termkit.cpp:82</div></div>
 <div class="ttc" id="anamespacetermkit_html_acd5d9e72b135aaebcc796d6498ad8cd6"><div class="ttname"><a href="namespacetermkit.html#acd5d9e72b135aaebcc796d6498ad8cd6">termkit::rgb_bg</a></div><div class="ttdeci">std::string rgb_bg(std::string text, unsigned r, unsigned g, unsigned b)</div><div class="ttdef"><b>Definition</b> termkit.cpp:51</div></div>
 <div class="ttc" id="anamespacetermkit_html_acf6328832ada72b09f14e75469b09bf7"><div class="ttname"><a href="namespacetermkit.html#acf6328832ada72b09f14e75469b09bf7">termkit::DEFAULT_TERM_STYLE</a></div><div class="ttdeci">const char DEFAULT_TERM_STYLE[5]</div><div class="ttdef"><b>Definition</b> termkit.hpp:26</div></div>
+<div class="ttc" id="anamespacetermkit_html_af17d87d7cd896c95fe26cc45bea56e65"><div class="ttname"><a href="namespacetermkit.html#af17d87d7cd896c95fe26cc45bea56e65">termkit::rgb_impl</a></div><div class="ttdeci">std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background)</div><div class="ttdef"><b>Definition</b> termkit.cpp:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

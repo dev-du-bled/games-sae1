@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['reflex_0',['reflex',['../games_2reflex_2main_8cpp.html#a1625e0f777fbe7e394ef35ac69161b7b',1,'main.cpp']]],
-  ['resetscore_1',['resetScore',['../class_player.html#a7dfdc0be35fa9ae42104a6bfe47634b8',1,'Player']]],
-  ['restore_5fcursor_5fpos_2',['restore_cursor_pos',['../namespacetermkit.html#a92bea3b13717b3eb7ef68eb1e4fd5b70',1,'termkit']]],
-  ['rgb_5fbg_3',['rgb_bg',['../namespacetermkit.html#acd5d9e72b135aaebcc796d6498ad8cd6',1,'termkit']]],
-  ['rgb_5ffg_4',['rgb_fg',['../namespacetermkit.html#a255732e4602c72da54a33a080074d3e0',1,'termkit']]]
+  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['main_2ecpp_1',['main.cpp',['../games_2hanged_2main_8cpp.html',1,'(Global Namespace)'],['../games_2pfc_2main_8cpp.html',1,'(Global Namespace)'],['../games_2reflex_2main_8cpp.html',1,'(Global Namespace)'],['../games_2right_01price_2main_8cpp.html',1,'(Global Namespace)'],['../games_2shipwar_2main_8cpp.html',1,'(Global Namespace)'],['../games_2tictactoe_2main_8cpp.html',1,'(Global Namespace)'],['../main_8cpp.html',1,'(Global Namespace)']]],
+  ['menu_2ecpp_2',['menu.cpp',['../menu_8cpp.html',1,'']]],
+  ['menuentry_3',['menuentry',['../class_menu_entry.html#a6aa246ac0c5c3b12ca7449a13e3e79d9',1,'MenuEntry::MenuEntry()'],['../class_menu_entry.html',1,'MenuEntry']]],
+  ['move_5fcursor_5fdown_4',['move_cursor_down',['../namespacetermkit.html#a8285fb8ea76bceec83aab3fbb3ef15ec',1,'termkit']]],
+  ['move_5fcursor_5fleft_5',['move_cursor_left',['../namespacetermkit.html#a8286adb7b0fa498acae8a67c8b8ac3b3',1,'termkit']]],
+  ['move_5fcursor_5fright_6',['move_cursor_right',['../namespacetermkit.html#a73067f64bdfd7fff3133cb380289c1ce',1,'termkit']]],
+  ['move_5fcursor_5fup_7',['move_cursor_up',['../namespacetermkit.html#aa8ece6cc8e4b7d58ed6cf5502c3c16fd',1,'termkit']]]
 ];

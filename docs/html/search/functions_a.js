@@ -1,15 +1,10 @@
 var searchData=
 [
-  ['save_5fcursor_5fpos_0',['save_cursor_pos',['../namespacetermkit.html#a5509ae3685412cdb281a4a990e2d6148',1,'termkit']]],
-  ['set_5fcursor_5fpos_1',['set_cursor_pos',['../namespacetermkit.html#acc92669bb357e4ffd2b361ff113916b6',1,'termkit']]],
-  ['set_5fterm_5ftitle_2',['set_term_title',['../namespacetermkit.html#a0807cba9598e1ee8a43dec3e23612379',1,'termkit']]],
-  ['setboardsize_3',['setBoardSize',['../class_game.html#af2a177de94fb5f96da521acd1bd8722e',1,'Game']]],
-  ['setcolor_4',['setColor',['../class_player.html#a546211308465084101f7d3ffbda5ec46',1,'Player']]],
-  ['setname_5',['setName',['../class_player.html#a95d2b46eee230ad3e31612ff2bc681da',1,'Player']]],
-  ['setposition_6',['setPosition',['../class_board.html#a4c68712ba3c598933b70a0435790fce0',1,'Board']]],
-  ['setscore_7',['setScore',['../class_player.html#af542a8ec05217df22962f653056de807',1,'Player']]],
-  ['setsize_8',['setSize',['../class_board.html#aef9f3a64bb0cf0f640c3616cde955b2e',1,'Board']]],
-  ['setsymbol_9',['setSymbol',['../class_player.html#a6cd993753014ccdc16e08aa404203958',1,'Player']]],
-  ['show_5fcursor_10',['show_cursor',['../namespacetermkit.html#a7512fe1e28c3dea76e7d4fd7596d471e',1,'termkit']]],
-  ['start_11',['start',['../class_game.html#a3d9b98f7c4a96ecf578f75b96c9f0e90',1,'Game::start()'],['../games_2reflex_2main_8cpp.html#a60de64d75454385b23995437f1d72669',1,'start():&#160;main.cpp']]]
+  ['pfc_0',['pfc',['../games_2pfc_2main_8cpp.html#af9770d097b7ac1bc57973b8cd0087488',1,'main.cpp']]],
+  ['play_1',['play',['../class_game.html#aa333825d0bca80e91e53c7e23f053405',1,'Game::play()'],['../games_2reflex_2main_8cpp.html#a6d58098c6cf63c241ed03bc797256bb1',1,'play():&#160;main.cpp']]],
+  ['playerplaceship_2',['playerPlaceShip',['../games_2shipwar_2main_8cpp.html#a03ecd2a69fd9ba15f50be7c7408384f4',1,'main.cpp']]],
+  ['playerplaceshipsingrid_3',['playerPlaceShipsInGrid',['../games_2shipwar_2main_8cpp.html#a08f29e9a62bcd0287c3a50a671db850a',1,'main.cpp']]],
+  ['playerplayturn_4',['playerPlayTurn',['../games_2shipwar_2main_8cpp.html#aca67fb811163eb1a09b5eac6c1798489',1,'main.cpp']]],
+  ['plus_5fproche_5',['plus_proche',['../games_2right_01price_2main_8cpp.html#a8c3a362d36e248e4c66ca1f8b8496974',1,'main.cpp']]],
+  ['printgrid_6',['printGrid',['../games_2shipwar_2main_8cpp.html#a9fec6b5e653b60f0c98cda3aa082ea98',1,'main.cpp']]]
 ];

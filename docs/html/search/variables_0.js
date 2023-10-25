@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['default_5fterm_5fstyle_0',['DEFAULT_TERM_STYLE',['../namespacetermkit.html#acf6328832ada72b09f14e75469b09bf7',1,'termkit']]]
+  ['color_0',['color',['../games_2reflex_2main_8cpp.html#a762974fa82300e8e785056e3399fa57c',1,'main.cpp']]]
 ];
