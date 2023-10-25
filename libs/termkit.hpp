@@ -30,7 +30,7 @@ public:
   unsigned width, height;
 };
 
-std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background);
+std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background, bool do_pad);
 
 /**
  * Generates a color escape sequence.
@@ -42,7 +42,7 @@ std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background);
  * @param b Intensity of the blue channel (ranges from 0-255)
  * @return color ANSI Escape sequence representing a color
  */
-extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b);
+extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding);
 
 /**
  * Generates a color escape sequence.
@@ -54,7 +54,7 @@ extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b);
  * @param b Intensity of the blue channel (ranges from 0-255)
  * @return color ANSI Escape sequence representing a color
  */
-extern std::string rgb_bg(std::string text, unsigned r, unsigned g, unsigned b);
+extern std::string rgb_bg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding);
 
 /**
  * Generates a movement escape sequence.
@@ -109,8 +109,9 @@ extern void set_term_title(std::string title);
  * Makes the text look THICK
  *
  * @param text Text to be bolded
+ * @param do_pad Wether or not add spacing before the string to accomodate for escape sequences
  */
-extern std::string bold_text(std::string text);
+extern std::string bold_text(std::string text, bool do_pad);
 
 /**
  * Draws a line under the text
@@ -188,7 +189,8 @@ extern std::string center_text(std::string text);
  * Centers a paragraph horizontally
  *
  * @param text String of text to center
+ * @param visual_witdh Overwrite the automatic with detection, usefull when the string contains non-printable characters
  * @return a string with every line padded-left using space chars
  */
-extern std::string center_text_block(std::string text);
+extern std::string center_text_block(std::string text, unsigned visual_width);
 } // namespace termkit

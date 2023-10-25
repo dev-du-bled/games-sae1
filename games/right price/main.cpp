@@ -1,61 +1,13 @@
 #include "../../libs/termkit.hpp"
-#include <fstream>
 #include <iostream>
 #include <random>
 #include <string>
-#include <time.h>
+#include <algorithm>
+#include "../../libs/utils.hpp"
 
 // pseudo random number generator using the Mersenne Twister
 typedef std::mt19937 RngAlgo;
 RngAlgo rng;
-
-class Object {
-public:
-  std::string name;
-  unsigned long price;
-
-  Object(std::string name, unsigned long price) {
-    this->name = name;
-    this->price = price;
-  }
-};
-
-Object objects[] = {
-    Object("AWACS E-3F", 250000000),
-    Object("la tablette de Dmitri", 5555),
-    Object(
-        "un Iphone infinity 5G Pro Max + Ultra Obsidian Titanium Mix Edition",
-        2134),
-    Object("une Yubikey 5 NFC", 55),
-    Object("un casque GAMING", 80),
-    Object("un video projecteur", 300),
-    Object("une smartwatch", 150),
-    Object("une souris GAMING", 60),
-    Object("une enceinte Bluetooth", 40),
-    Object("un clavier sans fil", 35),
-    Object("une chaise de bureau", 120),
-    Object("un ordinateur portable", 800),
-    Object("un appareil photo", 400),
-    Object("un sac à dos de randonnée", 70),
-    Object("une machine à café", 50),
-    Object("une batterie externe", 25),
-    Object("une guitare", 300),
-    Object("une imprimante", 150),
-    Object("des sneakers", 100),
-    Object("un support de tablette", 20),
-    Object("des écouteurs", 90),
-    Object("une Smart TV", 600),
-    Object("une trottinette électrique", 350),
-    Object("un drone", 500),
-    Object("une table basse", 200),
-    Object("un four à micro-ondes", 80),
-    Object("un mixeur", 30),
-    Object("un aspirateur", 120),
-    Object("un grille-pain", 15),
-    Object("une lampe de bureau", 40),
-    Object("un iso linux", 0),
-    Object("une Rubber Ducky", 80),
-};
 
 unsigned random(unsigned min, unsigned max) {
   rng.seed(time(NULL));
@@ -64,51 +16,58 @@ unsigned random(unsigned min, unsigned max) {
 }
 
 void vitrine() {
-  bool won = false;
-  int user_guess;
+  unsigned tries = 0;
+  unsigned user_input = 0;
+  bool found = false;
 
-  std::string user_input;
+    
+  std::cout<<termkit::center_line("---------------- Vitrine ----------------")<<std::endl;
+  std::cout<<termkit::center_text("Vous aller devoir trouver le JUSTE PRIX de la vitrine, ça vaut entre 10 000 et 50 000 €,\n parlez clairement, ne vous emballez pas et laisser moi le temps de vous répondre, on y vas ?\n\n")<<std::endl;
+  std::cout<<termkit::center_line(termkit::rgb_bg("  APPUYEZ SUR UNE TOUCHE POUR COMMENCER  ", 255, 192, 203, true))<<std::endl;
+  std::cout<<std::endl;
+  std::cout<<termkit::center_line("-----------------------------------------")<<std::endl;
 
-  Object object_to_guess = objects[random(0, 30)];
-  int price_to_guess = object_to_guess.price;
-  std::string object_name = object_to_guess.name;
+  termkit::getch();
 
-  do {
+  const unsigned price = random(10000, 50000);
 
-    std::cout << "Combien pour " << termkit::rgb_fg(object_name, 125, 56, 89)
-              << " ? ";
-    std::cin >> user_input;
+  std::string text = "Et c'est partit !";
 
-    // cheat code
-    if (user_input == "vincent") {
-      break;
+  while (!found) {
+    termkit::clear();
+    std::cerr<<price;
+    std::cout<<termkit::center_line("---------------- Vitrine ----------------")<<std::endl;
+    std::cout<<termkit::center_line(text)<<std::endl;
+    std::cout<<termkit::center_line("Votre prix: ")<<std::endl;
+    std::cout<<termkit::center_line("-----------------------------------------");
+
+    termkit::move_cursor_up(1);
+    termkit::move_cursor_left(15);
+
+    std::cin>>user_input;
+
+    tries++;
+
+    if (user_input > price) {
+      text = termkit::rgb_bg("C'EST MOINS !", 255,0,0, true);
+    }
+    else if (user_input < price) {
+      text = termkit::rgb_bg("C'EST PLUS !", 173, 216, 230, true);
+
+    }else break;
     }
 
-    user_guess = std::stoi(user_input);
+  std::cout<<termkit::center_line(termkit::rgb_fg("C'EST LE JUSTE PRIX ! La valeur de la vitrine est de '" + std::to_string(price) + "' !", 162, 227, 188));
+  std::cout<<termkit::center_line("Vous avez trouve en '" + termkit::rgb_fg(std::to_string(tries), 108, 172, 122) + "' !");
+  
+  Utils::wait(5);
 
-    if (user_guess < price_to_guess) {
-      std::cout << "C'est " + termkit::rgb_fg("plus", 99, 91, 252) + " !"
-                << std::endl;
-    } else if (user_guess > price_to_guess) {
-      std::cout << "C'est " + termkit::rgb_fg("moins", 99, 91, 252) + " !"
-                << std::endl;
-    } else {
-      won = true;
-    }
-  } while (!won);
-  std::cout << "Felicitation !! Vous avez trouvé " +
-                   termkit::rgb_fg(std::to_string(price_to_guess), 92, 255,
-                                   174) +
-                   "€, le prix de " + termkit::rgb_fg(object_name, 92, 255, 174)
-            << std::endl;
 }
 
-void plus_proche() {}
-
-void trois_part() {}
-
 extern void justeprix() {
-  plus_proche();
-  trois_part();
+  termkit::hide_cursor();
+
   vitrine();
+
+  termkit::show_cursor();
 }

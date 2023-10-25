@@ -34,23 +34,40 @@
 namespace termkit {
 extern const char DEFAULT_TERM_STYLE[5] = "\x1b[0m";
 
-std::string rgb_impl(unsigned r, unsigned g, unsigned b,
-                     bool color_background) {
-  char buffer[20];
-  snprintf(buffer, sizeof(buffer), "\x1b[%i;2;%i;%i;%im",
-           (38 + color_background * 10), r, g, b);
-  // Explicit casting from char array to cpp string to avoid being confused
-  return (std::string)buffer;
+std::string rgb_impl(std::string text,unsigned r, unsigned g, unsigned b, bool color_background, bool do_pad) {
+
+  std::string result;
+
+  std::string red = std::to_string(r); 
+  std::string green = std::to_string(g); 
+  std::string blue = std::to_string(b); 
+
+  // Color codes are made like this, as they consist of characters they mess up our spacing functions, as a workaround we
+  // add a left padding to the string with an equal amount of space characters.
+  // 12+3 is a magic number that magically make everything work
+  // \x1b[38;2;red;green;bluem
+  //result = std::string(' ', red.length() + green.length() +blue.length() + 13 + 8);
+  if (do_pad){
+  for (unsigned long i = 0; i < 12+3+red.length()+green.length()+blue.length(); i++) {
+    result += " ";
+  }}
+
+  // creating the color code
+  result += "\x1b[" + std::to_string(3+color_background) + "8;2;" + red + ";" + green + ";" + blue + "m";
+  result += text;
+  // reset styling to avoid messing with the upcoming text
+  result += "\x1b[" + std::to_string(3+color_background) + "9m";
+  return result;
 }
 
 extern std::string rgb_fg(std::string text, unsigned r, unsigned g,
-                          unsigned b) {
-  return rgb_impl(r, g, b, false) + text + "\x1b[39m";
+                          unsigned b, bool add_padding = false) {
+  return rgb_impl(text, r, g, b, false, add_padding);
 }
 
 extern std::string rgb_bg(std::string text, unsigned r, unsigned g,
-                          unsigned b) {
-  return rgb_impl(r, g, b, true) + text + "\x1b[49m";
+                          unsigned b, bool add_padding = false) {
+  return rgb_impl(text, r, g, b, true, add_padding);
 }
 
 extern void move_cursor_up(unsigned shift) { printf("\x1b[%iA", shift); }
@@ -67,8 +84,13 @@ extern void set_term_title(std::string title) {
   printf("\e]2;%s\007", title.c_str());
 }
 
-extern std::string bold_text(std::string text) {
-  return "\x1b[1m" + text + "\x1b[22m";
+extern std::string bold_text(std::string text, bool do_pad = false) {
+  std::string result = "";
+
+  // Padding for the exact same reason as seen in rgb_impl
+  if (do_pad) result += "               ";  
+  result += "\x1b[1m" + text + "\x1b[22m";
+  return result;
 }
 
 extern std::string underline_text(std::string text) {
@@ -167,13 +189,16 @@ extern std::string center_text(std::string text) {
   return result;
 }
 
-extern std::string center_text_block(std::string text) {
+extern std::string center_text_block(std::string text, unsigned visual_width = 0) {
   std::string result = "";
   std::string constructed_line = "";
 
   Term_size console_size = get_term_size();
   unsigned console_middle_point = console_size.width / 2;
-  unsigned text_middle_point = text.substr(0, text.find('\n')).length() / 2;
+  unsigned text_middle_point = 0;
+
+  if (visual_width != 0) text_middle_point = visual_width / 2;
+  else text_middle_point = text.substr(0, text.find('\n')).length() / 2;
 
   unsigned center_point = console_middle_point - text_middle_point;
 

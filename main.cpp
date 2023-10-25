@@ -16,5 +16,11 @@ int main()
             MenuEntry(&pfc, "Gravier Carton Couteau de Dieu"),
             MenuEntry(&shipwar, "Bataille navale de BoomTchaGong"),
             MenuEntry(&reflex, "Jeu de reflex de Zarox28")});
+  
+  // make sure we show back the cursor, in case the game didn't
+  termkit::show_cursor();
+  termkit::clear();
+  // reset terminal stylings
+  std::cout << termkit::DEFAULT_TERM_STYLE;
   return 0;
 }
