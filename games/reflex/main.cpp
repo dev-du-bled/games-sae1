@@ -22,7 +22,7 @@ enum SPACE_KEY
 };
 
 // ----- DISPLAY LOGO -----
-void DisplayLogo()
+void displayLogo()
 {
   const char *logo = R"( ____       __ _           
 |  _ \ ___ / _| | _____  __
@@ -36,8 +36,10 @@ void DisplayLogo()
 }
 
 // ----- DISPLAY SQUARE -----
-void DisplaySquare(bool color)
+void displaySquare(bool color)
 {
+  std::string line;
+
   if (color)
   {
     std::cout << termkit::rgb_fg(termkit::center_line("Click!"), 255, 255, 255) << std::endl;
@@ -53,26 +55,30 @@ void DisplaySquare(bool color)
   {
     for (unsigned short i = 0; i < 60; i++)
     {
-      if (color)
-      {
-        std::cout << termkit::rgb_fg("■", 0, 255, 0);
-      }
-      else
-      {
-        std::cout << termkit::rgb_fg("■", 255, 0, 0);
-      }
+      line += "■";
+    }
+
+    if (color)
+    {
+      std::cout << termkit::rgb_fg(line, 0, 255, 0);
+    }
+    else
+    {
+      std::cout << termkit::rgb_fg(line, 255, 0, 0);
     }
 
     std::cout << std::endl;
+
+    line = "";
   }
 }
 
 // ----- START -----
-void Start()
+void start()
 {
   termkit::clear();
 
-  DisplayLogo();
+  displayLogo();
 
   std::cout << std::endl;
   std::cout << termkit::bold_text(termkit::center_line("   Press any key to start the game...")) << std::endl;
@@ -95,17 +101,17 @@ void Start()
 }
 
 // ----- PLAY -----
-void Play()
+void play()
 {
   while (true)
   {
-    DisplaySquare(0);
+    displaySquare(0);
 
     Utils::Wait(rand() % 5 + 1);
 
     termkit::clear();
 
-    DisplaySquare(1);
+    displaySquare(1);
 
     auto startTime = std::chrono::high_resolution_clock::now();
 
@@ -175,7 +181,7 @@ void Play()
 
     default:
       termkit::clear();
-      Play();
+      play();
     }
   }
 }
@@ -185,6 +191,6 @@ void reflex()
 {
   termkit::hide_cursor();
 
-  Start();
-  Play();
+  start();
+  play();
 }

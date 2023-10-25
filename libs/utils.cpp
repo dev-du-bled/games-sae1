@@ -21,7 +21,7 @@
 
 namespace Utils
 {
-  extern void Wait(unsigned int seconds)
+  extern void wait(unsigned int seconds)
   {
 #if defined(unix) || defined(__APPLE__)
     sleep(seconds);
