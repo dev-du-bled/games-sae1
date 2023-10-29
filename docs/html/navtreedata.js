@@ -25,6 +25,12 @@
 var NAVTREE =
 [
   [ "SAÉ Project 1", "index.html", [
+    [ "SAÉ Project 1", "md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html", [
+      [ "Table of Contents", "md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "About", "md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html#autotoc_md3", null ],
+      [ "License", "md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html#autotoc_md4", null ],
+      [ "Authors", "md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html#autotoc_md5", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -38,14 +44,20 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ]
+        [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", null ],
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
