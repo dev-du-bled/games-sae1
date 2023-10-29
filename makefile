@@ -10,9 +10,12 @@ SRC = main.cpp
 
 $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRC)
-	./$(TARGET)
+
 clean:
 	rm -f $(TARGET)
+
+run:
+	./$(TARGET)
 
 .PHONY: clean
 
