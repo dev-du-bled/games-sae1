@@ -93,9 +93,9 @@ void start()
   displayLogo();
 
   std::cout << std::endl;
-  std::cout << termkit::bold_text(termkit::center_line("   Press any key to start the game...")) << std::endl;
+  std::cout << termkit::bold_text(termkit::center_line("Press any key to start the game...", 32)) << std::endl;
   std::cout << std::endl;
-  std::cout << termkit::bold_text(termkit::center_line("   Press Ctrl+C to exit the game")) << std::endl;
+  std::cout << termkit::bold_text(termkit::center_line("Press Ctrl+C to exit the game", 28)) << std::endl;
   std::cout << std::endl;
 
   switch (termkit::getch())
@@ -144,7 +144,7 @@ void play()
 
     if (durationMs.count() == 0)
     {
-      std::cout << termkit::rgb_fg(termkit::bold_text(termkit::center_line("   You clicked too early!")), 255, 0, 0) << std::endl;
+      std::cout << termkit::rgb_fg(termkit::bold_text(termkit::center_line("You clicked too early!")), 255, 0, 0) << std::endl;
     }
     else
     {
@@ -153,14 +153,14 @@ void play()
 
       if (previousTime[1] == previousTime[0])
       {
-        std::cout << termkit::bold_text(termkit::center_line("   You have the same time as before!")) << std::endl;
+        std::cout << termkit::bold_text(termkit::center_line("You have the same time as before!")) << std::endl;
         color[0] = 66;
         color[1] = 158;
         color[2] = 245;
       }
       else if (previousTime[0] == "0")
       {
-        std::cout << termkit::bold_text(termkit::center_line("   This is your first time!")) << std::endl;
+        std::cout << termkit::bold_text(termkit::center_line("This is your first time!")) << std::endl;
         for (unsigned short i = 0; i < 3; i++)
         {
           color[i] = 255;
@@ -168,14 +168,14 @@ void play()
       }
       else if (previousTime[1] < previousTime[0])
       {
-        std::cout << termkit::bold_text(termkit::center_line("   You beat the previous time!")) << std::endl;
+        std::cout << termkit::bold_text(termkit::center_line("You beat the previous time!")) << std::endl;
         color[0] = 28;
         color[1] = 189;
         color[2] = 52;
       }
       else
       {
-        std::cout << termkit::bold_text(termkit::center_line("   You didn't beat the previous time!")) << std::endl;
+        std::cout << termkit::bold_text(termkit::center_line("You didn't beat the previous time!")) << std::endl;
         color[0] = 245;
         color[1] = 168;
         color[2] = 34;
@@ -191,9 +191,9 @@ void play()
 
     termkit::clear();
 
-    std::cout << termkit::bold_text(termkit::center_line("   Press any key to continue...")) << std::endl;
+    std::cout << termkit::bold_text(termkit::center_line("Press any key to continue...", 27)) << std::endl;
     std::cout << std::endl;
-    std::cout << termkit::bold_text(termkit::center_line("   Press Ctrl+C to exit the game")) << std::endl;
+    std::cout << termkit::bold_text(termkit::center_line("Press Ctrl+C to exit the game", 28)) << std::endl;
 
     switch (termkit::getch())
     {

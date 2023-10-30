@@ -26,7 +26,7 @@ void Game::displayLogo()
   |_| |_|\___||_|\__,_|\___||_|\___/ \___|
 )";
 
-  std::cout << termkit::rgb_fg(termkit::center_text_block(logo), 252, 157, 3) << std::endl;
+  std::cout << termkit::rgb_fg(termkit::center_text_block(logo, 43), 252, 157, 3) << std::endl;
   std::cout << termkit::bold_text(termkit::center_line("By Zarox28")) << std::endl;
   std::cout << std::endl;
 }
@@ -35,6 +35,7 @@ void Game::addPlayer(unsigned short playerNumber)
 {
   Player player;
   std::string name;
+  std::string symbolInput;
   unsigned char symbol;
 
   displayLogo();
@@ -46,9 +47,33 @@ void Game::addPlayer(unsigned short playerNumber)
   std::cout << termkit::bold_text("Name: ");
   std::cin >> name;
 
-  for (unsigned short i = 0; i < players.size(); i++)
+  if (name.length() > 10 || name.length() < 1)
   {
-    if (players[i].getName() == name)
+    std::cout << std::endl;
+    std::cout << termkit::bold_text("Name must be between 1 and 10 characters!") << std::endl;
+    std::cout << std::endl;
+
+    Utils::wait(2);
+    termkit::clear();
+
+    addPlayer(playerNumber);
+  }
+
+  if (!std::regex_match(name, std::regex("[a-zA-Z]+")))
+  {
+    std::cout << std::endl;
+    std::cout << termkit::bold_text("Name must only contain letters!") << std::endl;
+    std::cout << std::endl;
+
+    Utils::wait(2);
+    termkit::clear();
+
+    addPlayer(playerNumber);
+  }
+
+  if (players.size() == 1)
+  {
+    if (players[0].getName() == name)
     {
       std::cout << std::endl;
       std::cout << termkit::bold_text("This name is already taken!") << std::endl;
@@ -68,19 +93,8 @@ void Game::addPlayer(unsigned short playerNumber)
   player.resetScore();
 
   std::cout << termkit::bold_text("Symbol: ");
-  std::cin >> symbol;
-
-  if (symbol == ' ' || std::string(1, symbol).length() > 1)
-  {
-    std::cout << std::endl;
-    std::cout << termkit::bold_text("Symbol not allowed!") << std::endl;
-    std::cout << std::endl;
-
-    Utils::wait(2);
-    termkit::clear();
-
-    addPlayer(playerNumber);
-  }
+  std::cin >> symbolInput;
+  symbol = symbolInput[0];
 
   if (players.size() == 1)
   {

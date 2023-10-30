@@ -104,8 +104,8 @@ Functions</h2></td></tr>
 <tr class="separator:a1f816f8d2ebded7a9b6069b5a3f3b7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0807cba9598e1ee8a43dec3e23612379" id="r_a0807cba9598e1ee8a43dec3e23612379"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetermkit.html#a0807cba9598e1ee8a43dec3e23612379">set_term_title</a> (std::string <a class="el" href="menu_8cpp.html#a8214780964530800368b406c681fd1d9">title</a>)</td></tr>
 <tr class="separator:a0807cba9598e1ee8a43dec3e23612379"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25dc08c208e43b130f0d839186f279ed" id="r_a25dc08c208e43b130f0d839186f279ed"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetermkit.html#a25dc08c208e43b130f0d839186f279ed">bold_text</a> (std::string text, bool do_pad)</td></tr>
-<tr class="separator:a25dc08c208e43b130f0d839186f279ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e5450956ac385a4173f2243414c33b" id="r_a22e5450956ac385a4173f2243414c33b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetermkit.html#a22e5450956ac385a4173f2243414c33b">bold_text</a> (std::string text, bool add_padding)</td></tr>
+<tr class="separator:a22e5450956ac385a4173f2243414c33b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76ae0214287c0fc86818bee7ba7357e3" id="r_a76ae0214287c0fc86818bee7ba7357e3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetermkit.html#a76ae0214287c0fc86818bee7ba7357e3">underline_text</a> (std::string text)</td></tr>
 <tr class="separator:a76ae0214287c0fc86818bee7ba7357e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5509ae3685412cdb281a4a990e2d6148" id="r_a5509ae3685412cdb281a4a990e2d6148"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetermkit.html#a5509ae3685412cdb281a4a990e2d6148">save_cursor_pos</a> ()</td></tr>
@@ -144,8 +144,8 @@ Variables</h2></td></tr>
 <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
 <p>You should have received a copy of the GNU General Public License along with this program. If not, see <a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a25dc08c208e43b130f0d839186f279ed" name="a25dc08c208e43b130f0d839186f279ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25dc08c208e43b130f0d839186f279ed">&#9670;&#160;</a></span>bold_text()</h2>
+<a id="a22e5450956ac385a4173f2243414c33b" name="a22e5450956ac385a4173f2243414c33b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e5450956ac385a4173f2243414c33b">&#9670;&#160;</a></span>bold_text()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -163,7 +163,7 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>do_pad</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>add_padding</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -181,7 +181,7 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>Text to be bolded </td></tr>
-    <tr><td class="paramname">do_pad</td><td>Wether or not add spacing before the string to accomodate for escape sequences </td></tr>
+    <tr><td class="paramname">add_padding</td><td>Wether or not add spacing before the string to accomodate for escape sequences </td></tr>
   </table>
   </dd>
 </dl>
@@ -226,7 +226,7 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">line</td><td>String of text to center </td></tr>
-    <tr><td class="paramname">visual_witdh</td><td>Overwrite the automatic with detection, usefull when the string contains non-printable characters </td></tr>
+    <tr><td class="paramname">visual_witdh</td><td>Overwrite the automatic width detection, usefull when the string contains non-printable characters </td></tr>
   </table>
   </dd>
 </dl>
@@ -272,7 +272,7 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>String of text to center </td></tr>
-    <tr><td class="paramname">visual_witdh</td><td>Overwrite the automatic with detection, usefull when the string contains non-printable characters </td></tr>
+    <tr><td class="paramname">visual_witdh</td><td>Overwrite the automatic width detection, usefull when the string contains non-printable characters </td></tr>
   </table>
   </dd>
 </dl>
@@ -317,7 +317,7 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>String of text to center </td></tr>
-    <tr><td class="paramname">visual_witdh</td><td>Overwrite the automatic with detection, usefull when the string contains non-printable characters </td></tr>
+    <tr><td class="paramname">visual_witdh</td><td>Overwrite the automatic width detection, usefull when the string contains non-printable characters </td></tr>
   </table>
   </dd>
 </dl>
@@ -675,10 +675,11 @@ Variables</h2></td></tr>
     <tr><td class="paramname">r</td><td>Intensity of the red channel (ranges from 0-255) </td></tr>
     <tr><td class="paramname">g</td><td>Intensity of the green channel (ranges from 0-255) </td></tr>
     <tr><td class="paramname">b</td><td>Intensity of the blue channel (ranges from 0-255) </td></tr>
+    <tr><td class="paramname">add_padding</td><td>Wether or not to automatically pad the string to account for the color escape sequence; Default is false </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>color ANSI Escape sequence representing a color </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>color ANSI Escape sequence (string) representing a color </dd></dl>
 
 </div>
 </div>
@@ -740,10 +741,11 @@ Variables</h2></td></tr>
     <tr><td class="paramname">r</td><td>Intensity of the red channel (ranges from 0-255) </td></tr>
     <tr><td class="paramname">g</td><td>Intensity of the green channel (ranges from 0-255) </td></tr>
     <tr><td class="paramname">b</td><td>Intensity of the blue channel (ranges from 0-255) </td></tr>
+    <tr><td class="paramname">add_padding</td><td>Wether or not to automatically pad the string to account for the color escape sequence; Default is false </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>color ANSI Escape sequence representing a color </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>color ANSI Escape sequence (string) representing a color </dd></dl>
 
 </div>
 </div>

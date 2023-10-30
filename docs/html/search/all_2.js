@@ -4,6 +4,6 @@ var searchData=
   ['board_1',['Board',['../class_board.html',1,'']]],
   ['board_2ecpp_2',['board.cpp',['../board_8cpp.html',1,'']]],
   ['board_2ehpp_3',['board.hpp',['../board_8hpp.html',1,'']]],
-  ['bold_5ftext_4',['bold_text',['../namespacetermkit.html#a25dc08c208e43b130f0d839186f279ed',1,'termkit']]],
+  ['bold_5ftext_4',['bold_text',['../namespacetermkit.html#a22e5450956ac385a4173f2243414c33b',1,'termkit']]],
   ['bracket_5',['BRACKET',['../menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34',1,'menu.cpp']]]
 ];
