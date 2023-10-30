@@ -40,7 +40,8 @@ std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background);
  * @param r Intensity of the red channel (ranges from 0-255)
  * @param g Intensity of the green channel (ranges from 0-255)
  * @param b Intensity of the blue channel (ranges from 0-255)
- * @return color ANSI Escape sequence representing a color
+ * @param add_padding Wether or not to aumatically pad the string to account for the color escape sequence; Default is false
+ * @return color ANSI Escape sequence (string) representing a color
  */
 extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding = false);
 
@@ -52,7 +53,8 @@ extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b, 
  * @param r Intensity of the red channel (ranges from 0-255)
  * @param g Intensity of the green channel (ranges from 0-255)
  * @param b Intensity of the blue channel (ranges from 0-255)
- * @return color ANSI Escape sequence representing a color
+ * @param add_padding Wether or not to aumatically pad the string to account for the color escape sequence; Default is false
+ * @return color ANSI Escape sequence (string) representing a color
  */
 extern std::string rgb_bg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding = false);
 
