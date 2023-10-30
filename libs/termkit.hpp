@@ -171,7 +171,7 @@ extern void show_cursor();
  * Adds space chars for padding
  *
  * @param line String of text to center
- * @param visual_witdh Overwrite the automatic with detection, usefull when the string contains non-printable characters
+ * @param visual_witdh Overwrite the automatic width detection, usefull when the string contains non-printable characters
  * @return a string padded-left with space chars
  */
 extern std::string center_line(std::string line, unsigned visual_width = 0);
@@ -182,7 +182,7 @@ extern std::string center_line(std::string line, unsigned visual_width = 0);
  * Calls termkit::center_line en every lines
  *
  * @param text String of text to center
- * @param visual_witdh Overwrite the automatic with detection, usefull when the string contains non-printable characters
+ * @param visual_witdh Overwrite the automatic width detection, usefull when the string contains non-printable characters
  * @return a string with every line padded-left using space chars
  */
 extern std::string center_text(std::string text, unsigned visual_width = 0);
@@ -191,7 +191,7 @@ extern std::string center_text(std::string text, unsigned visual_width = 0);
  * Centers a paragraph horizontally
  *
  * @param text String of text to center
- * @param visual_witdh Overwrite the automatic with detection, usefull when the string contains non-printable characters
+ * @param visual_witdh Overwrite the automatic width detection, usefull when the string contains non-printable characters
  * @return a string with every line padded-left using space chars
  */
 extern std::string center_text_block(std::string text, unsigned visual_width = 0);
