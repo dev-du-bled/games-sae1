@@ -1,7 +1,7 @@
 var searchData=
 [
   ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_1',['main.cpp',['../games_2hanged_2main_8cpp.html',1,'(Global Namespace)'],['../games_2pfc_2main_8cpp.html',1,'(Global Namespace)'],['../games_2reflex_2main_8cpp.html',1,'(Global Namespace)'],['../games_2right_01price_2main_8cpp.html',1,'(Global Namespace)'],['../games_2shipwar_2main_8cpp.html',1,'(Global Namespace)'],['../games_2tictactoe_2main_8cpp.html',1,'(Global Namespace)'],['../main_8cpp.html',1,'(Global Namespace)']]],
+  ['main_2ecpp_1',['main.cpp',['../games_2gcc_2main_8cpp.html',1,'(Global Namespace)'],['../games_2hanged_2main_8cpp.html',1,'(Global Namespace)'],['../games_2reflex_2main_8cpp.html',1,'(Global Namespace)'],['../games_2right_01price_2main_8cpp.html',1,'(Global Namespace)'],['../games_2shipwar_2main_8cpp.html',1,'(Global Namespace)'],['../games_2tictactoe_2main_8cpp.html',1,'(Global Namespace)'],['../main_8cpp.html',1,'(Global Namespace)']]],
   ['menu_2ecpp_2',['menu.cpp',['../menu_8cpp.html',1,'']]],
   ['menuentry_3',['menuentry',['../class_menu_entry.html#a6aa246ac0c5c3b12ca7449a13e3e79d9',1,'MenuEntry::MenuEntry()'],['../class_menu_entry.html',1,'MenuEntry']]],
   ['move_5fcursor_5fdown_4',['move_cursor_down',['../namespacetermkit.html#a8285fb8ea76bceec83aab3fbb3ef15ec',1,'termkit']]],

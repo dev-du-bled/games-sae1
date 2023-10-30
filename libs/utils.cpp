@@ -1,12 +1,10 @@
 /**
  * @brief This file contains the utils functions.
- *
  * @file utils.cpp
- *
  * @see utils.hpp
- *
- * created by Zarox28
+ * @author Zarox28
  */
+
 #pragma once
 
 #include <iostream>

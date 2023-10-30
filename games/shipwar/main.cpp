@@ -1,7 +1,6 @@
 /**
- * @file  main.hpp
  * @brief This file contains the shipwar game
- * @see main.cpp
+ * @file  main.cpp
  * @author Firmin_
  */
 
@@ -25,7 +24,9 @@ using namespace std;
 /**
  * @brief Initialize a grid
  *
- * @param grid Grid to initialize
+ * @param [in] grid Grid to initialize
+ *
+ * @return void
  */
 void initializeGrid(int grid[10][10])
 {
@@ -41,9 +42,8 @@ void initializeGrid(int grid[10][10])
 /**
  * @brief Create a string to print the grid on the terminal
  *
- * @param grid Grid to print
- *
- * @param isAnonymous If true, the grid will be anonymized
+ * @param [in] grid Grid to print
+ * @param [in] isAnonymous If true, the grid will be anonymized
  *
  * @return Grid in a string
  */
@@ -80,13 +80,12 @@ string printGrid(int grid[10][10], bool isAnonymous = false)
 /**
  * @brief Place a ship in the grid
  *
- * @param playerGrid Player grid
+ * @param [in] playerGrid Player grid
+ * @param [in] shipLenght Ship lenght
+ * @param [in] shipId Ship id
+ * @param [in] retry If true, don't redraw the grid
  *
- * @param shipLenght Ship lenght
- *
- * @param shipId Ship id
- *
- * @param retry If true, don't redraw the grid
+ * @return void
  */
 void playerPlaceShip(int playerGrid[10][10], int shipLenght, int shipId, bool retry = false)
 {
@@ -192,7 +191,9 @@ void playerPlaceShip(int playerGrid[10][10], int shipLenght, int shipId, bool re
 /**
  * @brief Place all ships in the grid
  *
- * @param playerGrid Player grid
+ * @param [in] playerGrid Player grid
+ *
+ * @return void
  */
 void playerPlaceShipsInGrid(int playerGrid[10][10])
 {
@@ -218,7 +219,9 @@ void playerPlaceShipsInGrid(int playerGrid[10][10])
 /**
  * @brief Player turn
  *
- * @param otherGrid Other player grid
+ * @param [in] otherGrid Other player grid
+ *
+ * @return void
  */
 void playerPlayTurn(int otherGrid[10][10])
 {
@@ -256,6 +259,8 @@ void playerPlayTurn(int otherGrid[10][10])
 
 /**
  * @brief Shipwar game main function
+ *
+ * @return void
  */
 extern void shipwar()
 {

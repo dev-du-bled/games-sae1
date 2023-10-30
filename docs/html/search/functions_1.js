@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bold_5ftext_0',['bold_text',['../namespacetermkit.html#a22e5450956ac385a4173f2243414c33b',1,'termkit']]]
+  ['bold_5ftext_0',['bold_text',['../namespacetermkit.html#a8ccd22646d29fc32e777afebe0679536',1,'termkit']]]
 ];

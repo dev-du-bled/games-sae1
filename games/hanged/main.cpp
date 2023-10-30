@@ -1,7 +1,6 @@
 /**
- * @file  main.hpp
  * @brief This file contains the Hangman game
- * @see main.cpp
+ * @file main.cpp
  * @author Firmin_
  */
 
@@ -14,11 +13,11 @@ using namespace std;
 /**
  * @brief Draw the hangman game in terminal
  *
- * @param fail Number of fails
+ * @param [in] fail Number of fails
+ * @param [in] wordByCharGuessed Word by char guessed
+ * @param [in] alreadyTested Already tested letters
  *
- * @param wordByCharGuessed Word by char guessed
- *
- * @param alreadyTested Already tested letters
+ * @return void
  */
 void DrawHangman(int fail, vector<char> wordByCharGuessed, vector<char> alreadyTested)
 {
@@ -72,6 +71,8 @@ void DrawHangman(int fail, vector<char> wordByCharGuessed, vector<char> alreadyT
 
 /**
  * @brief Hangman game main function
+ *
+ * @return void
  */
 extern void Hangman()
 {

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pfc_0',['pfc',['../games_2pfc_2main_8cpp.html#af9770d097b7ac1bc57973b8cd0087488',1,'main.cpp']]],
+  ['pfc_0',['pfc',['../games_2gcc_2main_8cpp.html#af9770d097b7ac1bc57973b8cd0087488',1,'main.cpp']]],
   ['play_1',['play',['../class_game.html#aa333825d0bca80e91e53c7e23f053405',1,'Game::play()'],['../games_2reflex_2main_8cpp.html#a6d58098c6cf63c241ed03bc797256bb1',1,'play():&#160;main.cpp']]],
   ['playerplaceship_2',['playerPlaceShip',['../games_2shipwar_2main_8cpp.html#a03ecd2a69fd9ba15f50be7c7408384f4',1,'main.cpp']]],
   ['playerplaceshipsingrid_3',['playerPlaceShipsInGrid',['../games_2shipwar_2main_8cpp.html#a08f29e9a62bcd0287c3a50a671db850a',1,'main.cpp']]],

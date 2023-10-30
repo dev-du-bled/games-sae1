@@ -1,7 +1,6 @@
 /**
- * @file  main.hpp
  * @brief This file contains the Gravier Carton Couteau game
- * @see main.cpp
+ * @file  main.cpp
  * @author Firmin_
  */
 
@@ -12,9 +11,9 @@
 using namespace std;
 
 /**
- * @brief Generate a random hand between 0 and 2
+ * @brief Generate a random hand between 0 and 2.
  *
- * @return 0 for Gravier, 1 for Carton, 2 for Couteau
+ * @return int 0 for Gravier, 1 for Carton, 2 for Couteau
  */
 int randomHand()
 {
@@ -26,13 +25,12 @@ int randomHand()
 }
 
 /**
- * @brief Tells which player won
+ * @brief Compare two plays and return the winner
  *
- * @param playOne Player one's play
+ * @param [in] playOne Player's play
+ * @param [in] playTwo Computer's play
  *
- * @param playTwo Computers's play
- *
- * @return 0 if draw, 1 if player one, 2 if computer won
+ * @return int 0 if draw, 1 if player one, 2 if computer won
  */
 int ComparePlays(int playOne, int playTwo)
 {
@@ -57,19 +55,15 @@ int ComparePlays(int playOne, int playTwo)
 /**
  * @brief Draw the Gravier Carton Couteau game in terminal
  *
- * @param mode 0 if the player hasn't played, 1 if the player has played
+ * @param [in] mode 0 if the player hasn't played, 1 if the player has played
+ * @param [in] playerScore Player score
+ * @param [in] computerScore Computer score
+ * @param [in] rounds Number of rounds
+ * @param [in] win 0 if draw, 1 if player one, 2 if computer won
+ * @param [in] playerPlay Player's play
+ * @param [in] computerPlay Computer's play
  *
- * @param playerScore Player score
- *
- * @param computerScore Computer score
- *
- * @param rounds Number of rounds
- *
- * @param win 0 if draw, 1 if player won, 2 if computer won
- *
- * @param playerPlay Player's play
- *
- * @param computerPlay Computer's play
+ * @return void
  */
 void DrawPfc(int mode, int playerScore, int computerScore, int roundsPlayed, int rounds, int win = 0, int playerPlay = 0, int computerPlay = 0)
 {
@@ -128,6 +122,8 @@ void DrawPfc(int mode, int playerScore, int computerScore, int roundsPlayed, int
 
 /**
  * @brief Gravier Carton Couteau game main function
+ *
+ * @return void
  */
 extern void pfc()
 {

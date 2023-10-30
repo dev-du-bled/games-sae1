@@ -18,183 +18,214 @@
 #pragma once
 #include <string>
 
-namespace termkit {
-/**
- * Escape sequence to reset the terminal styling (Removes colors and text
- * effects)
- */
-extern const char DEFAULT_TERM_STYLE[5];
+namespace termkit
+{
+  /**
+   * Escape sequence to reset the terminal styling (Removes colors and text
+   * effects)
+   */
+  extern const char DEFAULT_TERM_STYLE[5];
 
-class Term_size {
-public:
-  unsigned width, height;
-};
+  class Term_size
+  {
+  public:
+    unsigned width, height;
+  };
 
-std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background);
+  std::string rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background);
 
-/**
- * Generates a color escape sequence.
- *
- * Colors the foreground with the given color
- *
- * @param r Intensity of the red channel (ranges from 0-255)
- * @param g Intensity of the green channel (ranges from 0-255)
- * @param b Intensity of the blue channel (ranges from 0-255)
- * @param add_padding whether or not to automatically pad the string to account for the color escape sequence; Default is false
- * @return color ANSI Escape sequence (string) representing a color
- */
-extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding = false);
+  /**
+   * @brief Generates a color escape sequence.
+   * Colors the foreground with the given color
+   *
+   * @param [in] r Intensity of the red channel (ranges from 0-255)
+   * @param [in] g Intensity of the green channel (ranges from 0-255)
+   * @param [in] b Intensity of the blue channel (ranges from 0-255)
+   * @param [in] add_padding whether or not to automatically pad the string to account for the color escape sequence; Default is false
+   *
+   * @return color ANSI Escape sequence (string) representing a color
+   */
+  extern std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding = false);
 
-/**
- * Generates a color escape sequence.
- *
- * Colors the background with the given color
- *
- * @param r Intensity of the red channel (ranges from 0-255)
- * @param g Intensity of the green channel (ranges from 0-255)
- * @param b Intensity of the blue channel (ranges from 0-255)
- * @param add_padding whether or not to automatically pad the string to account for the color escape sequence; Default is false
- * @return color ANSI Escape sequence (string) representing a color
- */
-extern std::string rgb_bg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding = false);
+  /**
+   * @brief Generates a color escape sequence.
+   * Colors the background with the given color
+   *
+   * @param [in] r Intensity of the red channel (ranges from 0-255)
+   * @param [in] g Intensity of the green channel (ranges from 0-255)
+   * @param [in] b Intensity of the blue channel (ranges from 0-255)
+   * @param [in] add_padding whether or not to automatically pad the string to account for the color escape sequence; Default is false
+   *
+   * @return color ANSI Escape sequence (string) representing a color
+   */
+  extern std::string rgb_bg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding = false);
 
-/**
- * Generates a movement escape sequence.
- *
- * Moves the cursor up a certain amount of times
- *
- * @param shift How many times to go up
- */
-extern void move_cursor_up(unsigned shift);
+  /**
+   * @brief Generates a movement escape sequence.
+   * Moves the cursor up a certain amount of times
+   *
+   * @param [in] shift How many times to go up
+   *
+   * @return movement ANSI Escape sequence (string) representing a movement
+   */
+  extern void move_cursor_up(unsigned shift);
 
-/**
- * Generates a movement escape sequence.
- *
- * Moves the cursor left a certain amount of times
- *
- * @param shift How many times to go left
- */
-extern void move_cursor_left(unsigned shift);
+  /**
+   * @brief Generates a movement escape sequence.
+   * Moves the cursor left a certain amount of times
+   *
+   * @param [in] shift How many times to go left
+   *
+   * @return movement ANSI Escape sequence (string) representing a movement
+   */
+  extern void move_cursor_left(unsigned shift);
 
-/**
- * Generates a movement escape sequence.
- *
- * Moves the cursor right a certain amount of times
- *
- * @param shift How many times to go right
- */
-extern void move_cursor_right(unsigned shift);
+  /**
+   * @brief Generates a movement escape sequence.
+   * Moves the cursor right a certain amount of times
+   *
+   * @param [in] shift How many times to go right
+   *
+   * @return movement ANSI Escape sequence (string) representing a movement
+   */
+  extern void move_cursor_right(unsigned shift);
 
-/**
- * Generates a movement escape sequence.
- *
- * Moves the cursor down a certain amount of times
- *
- * @param shift How many times to go down
- */
-extern void move_cursor_down(unsigned shift);
+  /**
+   * @brief Generates a movement escape sequence.
+   * Moves the cursor down a certain amount of times
+   *
+   * @param [in] shift How many times to go down
+   *
+   * @return movement ANSI Escape sequence (string) representing a movement
+   */
+  extern void move_cursor_down(unsigned shift);
 
-/**
- * Clears the line.
- * Moves the cursor at the end of the line.
- */
-extern void clear_line();
+  /**
+   * @brief Clears the line.
+   * Moves the cursor at the end of the line.
+   *
+   * @return movement ANSI Escape sequence (string) representing a movement
+   */
+  extern void clear_line();
 
-/**
- * Sets the terminal's window title
- *
- * @param title The new window title
- */
-extern void set_term_title(std::string title);
+  /**
+   * @brief Sets the terminal's window title
+   *
+   * @param [in] title The new window title
+   *
+   * @return void
+   */
+  extern void set_term_title(std::string title);
 
-/**
- * Makes the text look THICK
- *
- * @param text Text to be bolded
- * @param add_padding whether or not add spacing before the string to accomodate for escape sequences
- */
-extern std::string bold_text(std::string text, bool add_padding = false);
+  /**
+   * @brief Makes the text look THICK
+   *
+   * @param [in] text Text to be bolded
+   * @param [in] add_padding whether or not add spacing before the string to accomodate for escape sequences
+   *
+   * @return bolded text
+   */
+  extern std::string bold_text(std::string text, bool add_padding = false);
 
-/**
- * Draws a line under the text
- *
- * @param text Text to underline
- */
-extern std::string underline_text(std::string text);
+  /**
+   * @brief Draws a line under the text
+   *
+   * @param [in] text Text to underline
+   *
+   * @return underlined text
+   */
+  extern std::string underline_text(std::string text);
 
-/**
- * Tells the terminal to save the cursor position for later
- */
-extern void save_cursor_pos();
+  /**
+   * @brief Tells the terminal to save the cursor position for later
+   *
+   * @return void
+   */
+  extern void save_cursor_pos();
 
-/**
- * Tells the terminal to put the cursor back at the saved position (if any)
- */
-extern void restore_cursor_pos();
+  /**
+   * @brief Tells the terminal to put the cursor back at the saved position (if any)
+   *
+   * @return void
+   */
+  extern void restore_cursor_pos();
 
-/**
- * Puts the cursor at coordinate (X,Y)
- * 1,1 is the top left corner
- *
- * @param line Position on the Y axis
- * @param column Position on the X axis
- */
-extern void set_cursor_pos(unsigned line, unsigned column);
+  /**
+   * @brief Puts the cursor at coordinate (X,Y)
+   * 1,1 is the top left corner
+   *
+   * @param [in] line Position on the Y axis
+   * @param [in] column Position on the X axis
+   *
+   * @return void
+   */
+  extern void set_cursor_pos(unsigned line, unsigned column);
 
-/**
- * Clears the terminal screen and history
- */
-extern void clear();
+  /**
+   * @brief Clears the terminal screen and history
+   *
+   * @return void
+   */
+  extern void clear();
 
-/**
- * Gets a single char from the user.
- * Does not echo and does not process keys
- */
-extern char getch();
+  /**
+   * @brief Gets a single char from the user.
+   * Does not echo and does not process keys
+   *
+   * @return char
+   */
+  extern char getch();
 
-/**
- * Gets the size of the terminal in rows and columns
- */
-extern Term_size get_term_size();
+  /**
+   * @brief Gets the size of the terminal in rows and columns
+   *
+   * @return Term_size
+   */
+  extern Term_size get_term_size();
 
-/**
- * Hide the cursor
- */
-extern void hide_cursor();
+  /**
+   * @brief Hide the cursor
+   *
+   * @return void
+   */
+  extern void hide_cursor();
 
-/**
- * Show the cursor
- */
-extern void show_cursor();
+  /**
+   * @brief Show the cursor
+   *
+   * @return void
+   */
+  extern void show_cursor();
 
-/**
- * Centers a single line horizontally
- *
- * Adds space chars for padding
- *
- * @param line String of text to center
- * @param visual_witdh Overwrite the automatic width detection, usefull when the string contains non-printable characters
- * @return a string padded-left with space chars
- */
-extern std::string center_line(std::string line, unsigned visual_width = 0);
+  /**
+   * @brief Centers a single line horizontally
+   * Adds space chars for padding
+   *
+   * @param [in] line String of text to center
+   * @param [in] visual_witdh Overwrite the automatic width detection, usefull when the string contains non-printable characters
+   *
+   * @return a string padded-left with space chars
+   */
+  extern std::string center_line(std::string line, unsigned visual_width = 0);
 
-/**
- * Centers a paragraph line by line horizontally
- *
- * Calls termkit::center_line en every lines
- *
- * @param text String of text to center
- * @param visual_witdh Overwrite the automatic width detection, usefull when the string contains non-printable characters
- * @return a string with every line padded-left using space chars
- */
-extern std::string center_text(std::string text, unsigned visual_width = 0);
+  /**
+   * @brief Centers a paragraph line by line horizontally
+   * Calls termkit::center_line en every lines
+   *
+   * @param [in] text String of text to center
+   * @param [in] visual_witdh Overwrite the automatic width detection, usefull when the string contains non-printable characters
+   *
+   * @return a string with every line padded-left using space chars
+   */
+  extern std::string center_text(std::string text, unsigned visual_width = 0);
 
-/**
- * Centers a paragraph horizontally
- *
- * @param text String of text to center
- * @param visual_witdh Overwrite the automatic width detection, usefull when the string contains non-printable characters
- * @return a string with every line padded-left using space chars
- */
-extern std::string center_text_block(std::string text, unsigned visual_width = 0);
+  /**
+   * @brief Centers a paragraph horizontally
+   *
+   * @param [in] text String of text to center
+   * @param [in] visual_witdh Overwrite the automatic width detection, usefull when the string contains non-printable characters
+   *
+   * @return a string with every line padded-left using space chars
+   */
+  extern std::string center_text_block(std::string text, unsigned visual_width = 0);
 } // namespace termkit

@@ -1,7 +1,6 @@
 /**
- * @file  dictionary.hpp
  * @brief This file contains the dictionary for the Hangman game
- * @see main.cpp
+ * @file dictionary.cpp
  * @author Firmin_
  */
 
@@ -14,7 +13,7 @@
 using namespace std;
 
 /**
- * @brief Get a random word
+ * @brief Get a random word from the dictionary
  *
  * @return string
  */
