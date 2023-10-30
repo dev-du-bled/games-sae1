@@ -109,9 +109,9 @@ extern void set_term_title(std::string title);
  * Makes the text look THICK
  *
  * @param text Text to be bolded
- * @param do_pad Wether or not add spacing before the string to accomodate for escape sequences
+ * @param add_padding Wether or not add spacing before the string to accomodate for escape sequences
  */
-extern std::string bold_text(std::string text, bool do_pad = false);
+extern std::string bold_text(std::string text, bool add_padding = false);
 
 /**
  * Draws a line under the text

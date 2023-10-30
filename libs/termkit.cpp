@@ -84,11 +84,11 @@ extern void set_term_title(std::string title) {
   printf("\e]2;%s\007", title.c_str());
 }
 
-extern std::string bold_text(std::string text, bool do_pad) {
+extern std::string bold_text(std::string text, bool add_padding) {
   std::string result = "";
 
   // Padding for the exact same reason as seen in rgb_impl
-  if (do_pad) result += "               ";  
+  if (add_padding) result += "               ";  
   result += "\x1b[1m" + text + "\x1b[22m";
   return result;
 }
