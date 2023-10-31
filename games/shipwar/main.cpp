@@ -22,27 +22,9 @@ using namespace std;
 */
 
 /**
- * @brief Initialize a grid
- *
- * @param [in] grid Grid to initialize
- *
- * @return void
- */
-void initializeGrid(int grid[10][10])
-{
-    for (int i = 0; i < 10; ++i)
-    {
-        for (int j = 0; j < 10; ++j)
-        {
-            grid[i][j] = 0;
-        }
-    }
-}
-
-/**
  * @brief Create a string to print the grid on the terminal
  *
- * @param [in] grid Grid to print
+ * @param [out] grid Grid to print
  * @param [in] isAnonymous If true, the grid will be anonymized
  *
  * @return Grid in a string
@@ -80,7 +62,7 @@ string printGrid(int grid[10][10], bool isAnonymous = false)
 /**
  * @brief Place a ship in the grid
  *
- * @param [in] playerGrid Player grid
+ * @param [out] playerGrid Player grid
  * @param [in] shipLenght Ship lenght
  * @param [in] shipId Ship id
  * @param [in] retry If true, don't redraw the grid
@@ -191,7 +173,7 @@ void playerPlaceShip(int playerGrid[10][10], int shipLenght, int shipId, bool re
 /**
  * @brief Place all ships in the grid
  *
- * @param [in] playerGrid Player grid
+ * @param [out] playerGrid Player grid
  *
  * @return void
  */
@@ -219,7 +201,7 @@ void playerPlaceShipsInGrid(int playerGrid[10][10])
 /**
  * @brief Player turn
  *
- * @param [in] otherGrid Other player grid
+ * @param [out] otherGrid Other player grid
  *
  * @return void
  */
@@ -267,10 +249,8 @@ extern void shipwar()
     termkit::clear();
     termkit::set_term_title("Bataille navale (1v1)");
 
-    int playerOneGrid[10][10];
-    int playerTwoGrid[10][10];
-    initializeGrid(playerOneGrid);
-    initializeGrid(playerTwoGrid);
+    int playerOneGrid[10][10] = {0};
+    int playerTwoGrid[10][10] = {0};
 
     cout << termkit::center_line("Joueur 1, placez vos bateaux !") << endl;
     playerPlaceShipsInGrid(playerOneGrid);
