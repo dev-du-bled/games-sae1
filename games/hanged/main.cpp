@@ -98,6 +98,8 @@ extern void Hangman()
 
         if (test == 3) // Handle ^C
             return;
+        else if (test < 'a' || test > 'z')
+            continue;
 
         for (unsigned long i = 0; i < alreadyTested.size(); i++)
         {
