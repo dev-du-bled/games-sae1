@@ -44,14 +44,14 @@ void DrawHangman(int fail, vector<char> wordByCharGuessed, vector<char> alreadyT
          << endl;
 
     string wordByCharGuessedString = "";
-    for (unsigned long i = 0; i < wordByCharGuessed.size(); i++)
+    for (int i = 0; i < wordByCharGuessed.size(); i++)
     {
         wordByCharGuessedString += wordByCharGuessed[i];
         wordByCharGuessedString += " ";
     }
 
     string alreadyTestedString = "";
-    for (unsigned long i = 0; i < alreadyTested.size(); i++)
+    for (int i = 0; i < alreadyTested.size(); i++)
         alreadyTestedString += alreadyTested[i];
 
     cout << "     "
@@ -83,7 +83,7 @@ extern void Hangman()
         wordByCharGuessed;      // Word by char guessed
     vector<char> alreadyTested; // Already tested letters
 
-    for (unsigned long i = 0; i < word.length(); i++)
+    for (int i = 0; i < word.length(); i++)
     {
         wordByChar.push_back(word[i]);
         wordByCharGuessed.push_back('_');
@@ -101,7 +101,7 @@ extern void Hangman()
         else if (test < 'a' || test > 'z')
             continue;
 
-        for (unsigned long i = 0; i < alreadyTested.size(); i++)
+        for (int i = 0; i < alreadyTested.size(); i++)
         {
             if (alreadyTested[i] == test)
                 alreadyTestedBool = true;
@@ -114,7 +114,7 @@ extern void Hangman()
 
         bool found = false;
 
-        for (unsigned long i = 0; i < word.length(); i++)
+        for (int i = 0; i < word.length(); i++)
         {
             if (wordByChar[i] == test)
             {
@@ -129,7 +129,7 @@ extern void Hangman()
         DrawHangman(fail, wordByCharGuessed, alreadyTested);
         bool allGuessed = true;
 
-        for (unsigned long i = 0; i < word.length(); i++)
+        for (int i = 0; i < word.length(); i++)
         {
             if (wordByCharGuessed[i] == '_')
                 allGuessed = false;
