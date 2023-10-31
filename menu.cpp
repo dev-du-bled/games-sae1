@@ -19,6 +19,7 @@ enum Keys {
   ESC = 27,
   UP = 65,
   DOWN = 66,
+  // Windows has different keycodes for up and down arrows
   WINUP = 72,
   WINDOWN = 80,
   BAKTAB = 90,
@@ -28,11 +29,11 @@ enum Keys {
 class MenuEntry {
 public:
   void (*exec)();
-  std::string dislayName;
+  std::string displayName;
 
   MenuEntry(void (*callee)(), std::string name) {
     this->exec = callee;
-    this->dislayName = name;
+    this->displayName = name;
   }
 };
 
@@ -40,6 +41,7 @@ extern void showMenu(std::vector<MenuEntry> games) {
   
   unsigned short selected_option = 0;
   bool is_selecting = true;
+  std::string selected_game_display_name = games[0].displayName;
   unsigned short ui_vcenter_point = (10 + games.size()) / 2;
   //                                 ^^
   // Height of the logo + it's padding and version number
@@ -63,12 +65,12 @@ extern void showMenu(std::vector<MenuEntry> games) {
   while (is_selecting) {
     // render
     for (unsigned long i = 0; i < games.size(); i++) {
+      selected_game_display_name = games[i].displayName;
       if (i == selected_option) {
-        std::cout << termkit::center_line(termkit::bold_text(termkit::rgb_fg(games[i].dislayName, 255, 0, 0, true),true))
+        std::cout << termkit::center_line(termkit::bold_text(termkit::rgb_fg(selected_game_display_name, 255, 0, 0)), selected_game_display_name.length())
                   << std::endl;
       } else
-        std::cout << termkit::center_line("      " + games[i].dislayName)
-        //                                 ^^^^^ Padding to account for the bold text
+        std::cout << termkit::center_line(selected_game_display_name, selected_game_display_name.length())
                   << std::endl;
     }
     termkit::move_cursor_up(games.size());
