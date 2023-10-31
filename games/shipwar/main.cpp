@@ -24,7 +24,7 @@ using namespace std;
 /**
  * @brief Create a string to print the grid on the terminal
  *
- * @param [out] grid Grid to print
+ * @param [in] grid Grid to print
  * @param [in] isAnonymous If true, the grid will be anonymized
  *
  * @return Grid in a string
@@ -62,7 +62,7 @@ string printGrid(int grid[10][10], bool isAnonymous = false)
 /**
  * @brief Place a ship in the grid
  *
- * @param [out] playerGrid Player grid
+ * @param [in] playerGrid Player grid
  * @param [in] shipLenght Ship lenght
  * @param [in] shipId Ship id
  * @param [in] retry If true, don't redraw the grid
