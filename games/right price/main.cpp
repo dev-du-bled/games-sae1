@@ -36,7 +36,7 @@ unsigned random(unsigned min, unsigned max)
  *
  * @return void
  */
-void vitrine()
+void justeprix()
 {
   unsigned tries = 0;
   unsigned user_input = 0;
@@ -97,11 +97,11 @@ void vitrine()
  *
  * @return void
  */
-extern void justeprix()
-{
-  termkit::hide_cursor();
+// extern void justeprix()
+// {
+//   termkit::hide_cursor();
 
-  vitrine();
+//   vitrine();
 
-  termkit::show_cursor();
-}
+//   termkit::show_cursor();
+// }

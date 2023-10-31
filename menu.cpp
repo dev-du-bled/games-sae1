@@ -124,5 +124,4 @@ extern void showMenu(std::vector<MenuEntry> games) {
   termkit::show_cursor();
 
   games[selected_option].exec();
-  
 }
