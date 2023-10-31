@@ -2,9 +2,10 @@
 #include "games/right price/main.cpp"
 #include "games/tictactoe/main.cpp"
 #include "games/hanged/main.cpp"
-#include "games/pfc/main.cpp"
+#include "games/gcc/main.cpp"
 #include "games/shipwar/main.cpp"
 #include "games/reflex/main.cpp"
+#include "games/connect4/main.cpp"
 #include "menu.cpp"
 
 using namespace std;
@@ -15,8 +16,9 @@ int main()
             MenuEntry(&tictactoe, "Morpion de Zarox28"),
             MenuEntry(&pfc, "Gravier Carton Couteau de Dieu"),
             MenuEntry(&shipwar, "Bataille navale de BoomTchaGong"),
-            MenuEntry(&reflex, "Jeu de reflex de Zarox28")});
-  
+            MenuEntry(&reflex, "Jeu de reflex de Zarox28"),
+            MenuEntry(&connect4, "Puissance 4 de stereo18")});
+
   // make sure we show back the cursor, in case the game didn't
   termkit::show_cursor();
   // reset terminal stylings
