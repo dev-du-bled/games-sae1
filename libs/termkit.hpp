@@ -228,4 +228,19 @@ namespace termkit
    * @return a string with every line padded-left using space chars
    */
   extern std::string center_text_block(std::string text, unsigned visual_width = 0);
+
+ 
+  /**
+   * @brief Resets the terminal, not meant to be used by anything other than the signal handler
+   *
+   * @param [in] signal_id The id of the received signal, unused by the function
+   *
+   */
+  void reset_terminal_and_exit(int signal_id);
+
+  /**
+   * @brief Handles program interuptions, like ^C and everything sending a sigINT signal
+   */
+  extern void handle_SIGINT();
+  
 } // namespace termkit

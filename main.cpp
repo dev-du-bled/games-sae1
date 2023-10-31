@@ -1,4 +1,3 @@
-#include "libs/termkit.cpp"
 #include "games/right price/main.cpp"
 #include "games/tictactoe/main.cpp"
 #include "games/hanged/main.cpp"
@@ -6,11 +5,15 @@
 #include "games/shipwar/main.cpp"
 #include "games/reflex/main.cpp"
 #include "games/connect4/main.cpp"
+#include "libs/termkit.hpp"
 #include "menu.cpp"
+
+
 
 using namespace std;
 int main()
 {
+  termkit::handle_SIGINT();
   cout<<"\x1b[?47h"; // switch to alternative buffer if available
   showMenu({MenuEntry(&Hangman, "Pendu de FirminGaming"),
             MenuEntry(&justeprix, "Juste prix de Luna"),

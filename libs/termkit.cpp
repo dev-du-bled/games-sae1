@@ -23,6 +23,7 @@
 #include <sys/ioctl.h>
 #include <termios.h>
 #include <unistd.h>
+#include <signal.h>
 #elif defined(_WIN32)
 #include <conio.h>
 #include <windows.h>
@@ -249,4 +250,32 @@ namespace termkit
     return result;
   }
 
+  void reset_terminal_and_exit(int signal_id) {
+    std::cout<<DEFAULT_TERM_STYLE
+             << "\x1b[?47l" << std::endl; // switch to normal buffer if available
+    exit(0);
+  }
+#if defined(unix) || defined(__APPLE__) 
+  extern void handle_SIGINT() {
+    struct sigaction sigIntHandler;
+    sigIntHandler.sa_handler = reset_terminal_and_exit;
+    sigemptyset(&sigIntHandler.sa_mask);
+    sigIntHandler.sa_flags = 0;
+
+    sigaction(SIGINT, &sigIntHandler, NULL);
+    return;
+  }
+
+#else
+  BOOL WINAPI winCtrlHandler(DWORD signal_id) {
+    if (signal_id != CTRL_C_EVENT) return false;
+    reset_terminal_and_exit(0);
+    return true; // make the compiler happy, this statement is unreachable 
+  }
+  
+  extern void handle_SIGINT() {
+    SetConsoleCtrlHandler(winCtrlHandler, TRUE);  
+    return;
+  }
+#endif
 } // namespace termkit
