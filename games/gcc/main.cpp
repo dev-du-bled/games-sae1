@@ -18,10 +18,7 @@ using namespace std;
 int randomHand()
 {
     srand(time(0));
-
-    int randomIndex = rand() % 3;
-
-    return randomIndex;
+    return rand() % 3;
 }
 
 /**
@@ -36,18 +33,27 @@ int ComparePlays(int playOne, int playTwo)
 {
     if (playOne == playTwo)
         return 0;
-    else if (playOne == 0 && playTwo == 1)
-        return 2;
-    else if (playOne == 0 && playTwo == 2)
-        return 1;
-    else if (playOne == 1 && playTwo == 0)
-        return 1;
-    else if (playOne == 1 && playTwo == 2)
-        return 2;
-    else if (playOne == 2 && playTwo == 0)
-        return 2;
-    else if (playOne == 2 && playTwo == 1)
-        return 1;
+    else if (playOne == 0)
+    {
+        if (playTwo == 1)
+            return 2;
+        else
+            return 1;
+    }
+    else if (playOne == 1)
+    {
+        if (playTwo == 0)
+            return 1;
+        else
+            return 2;
+    }
+    else if (playOne == 2)
+    {
+        if (playTwo == 0)
+            return 2;
+        else
+            return 1;
+    }
     else
         return 0;
 }
@@ -72,9 +78,9 @@ void DrawPfc(int mode, int playerScore, int computerScore, int roundsPlayed, int
     termkit::hide_cursor();
 
     string hands[3] = {
-        "    _______\n---'   ____)\n      (_____)\n      (_____)\n      (____)\n---.__(___)\n",
-        "     _______\n---'    ____)____\n           ______)\n          _______)\n         _______)\n---.__________)\n",
-        "    _______\n---'   ____)____\n          ______)\n       __________)\n      (____)\n---.__(___)\n"};
+        "    _______\n---'   ____)\n      (_____)\n      (_____)\n      (____)\n---.__(___)\n",                          // Gravier hand
+        "     _______\n---'    ____)____\n           ______)\n          _______)\n         _______)\n---.__________)\n", // Carton hand
+        "    _______\n---'   ____)____\n          ______)\n       __________)\n      (____)\n---.__(___)\n"};            // Couteau hand
 
     cout
         << termkit::bold_text(termkit::center_line("-------------- Gravier Carton Couteau (" + to_string(roundsPlayed) + "/" + to_string(rounds) + ") --------------")) << endl
@@ -142,7 +148,7 @@ extern void pfc()
     for (int i = 0; i < rounds; i++)
     {
         DrawPfc(0, playerScore, computerScore, roundsPlayed, rounds);
-        int playerPlay = 42;
+        int playerPlay = -1;
         while (playerPlay != 0 && playerPlay != 1 && playerPlay != 2)
         {
             char playPlayChar = termkit::getch();
@@ -161,7 +167,7 @@ extern void pfc()
                 exit(0);
                 break;
             default:
-                playerPlay = 42;
+                playerPlay = -1;
                 break;
             }
         }
@@ -183,22 +189,14 @@ extern void pfc()
         DrawPfc(1, playerScore, computerScore, roundsPlayed, rounds, winner, playerPlay, computerPlay);
         Utils::wait(3);
     }
-    switch (ComparePlays(playerScore, computerScore))
-    {
-    case 0:
+    if (playerScore == computerScore)
         cout << endl
              << termkit::center_line("Egalité du match !") << endl;
-        break;
-    case 1:
+    else if (playerScore > computerScore)
         cout << endl
              << termkit::center_line("Vous avez gagné le match !") << endl;
-        break;
-    case 2:
+    else
         cout << endl
              << termkit::center_line("Vous avez perdu le match !") << endl;
-        break;
-    default:
-        break;
-    }
     termkit::show_cursor();
 }
