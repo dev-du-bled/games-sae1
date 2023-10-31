@@ -91,9 +91,6 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a87418025cf38c80a9d427b7b56136612" id="r_a87418025cf38c80a9d427b7b56136612"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="games_2shipwar_2main_8cpp.html#a87418025cf38c80a9d427b7b56136612">initializeGrid</a> (int grid[10][10])</td></tr>
-<tr class="memdesc:a87418025cf38c80a9d427b7b56136612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a grid.  <br /></td></tr>
-<tr class="separator:a87418025cf38c80a9d427b7b56136612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fec6b5e653b60f0c98cda3aa082ea98" id="r_a9fec6b5e653b60f0c98cda3aa082ea98"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="games_2shipwar_2main_8cpp.html#a9fec6b5e653b60f0c98cda3aa082ea98">printGrid</a> (int grid[10][10], bool isAnonymous=false)</td></tr>
 <tr class="memdesc:a9fec6b5e653b60f0c98cda3aa082ea98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a string to print the grid on the terminal.  <br /></td></tr>
 <tr class="separator:a9fec6b5e653b60f0c98cda3aa082ea98"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,33 +111,6 @@ Functions</h2></td></tr>
 <div class="textblock"><p>This file contains the shipwar game. </p>
 <dl class="section author"><dt>Author</dt><dd>Firmin_ </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a87418025cf38c80a9d427b7b56136612" name="a87418025cf38c80a9d427b7b56136612"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87418025cf38c80a9d427b7b56136612">&#9670;&#160;</a></span>initializeGrid()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void initializeGrid </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>grid</em>[10][10]</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Initialize a grid. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">grid</td><td>Grid to initialize</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-
-</div>
-</div>
 <a id="a03ecd2a69fd9ba15f50be7c7408384f4" name="a03ecd2a69fd9ba15f50be7c7408384f4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03ecd2a69fd9ba15f50be7c7408384f4">&#9670;&#160;</a></span>playerPlaceShip()</h2>
 
@@ -182,7 +152,7 @@ Functions</h2></td></tr>
 <p>Place a ship in the grid. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">playerGrid</td><td><a class="el" href="class_player.html">Player</a> grid </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">playerGrid</td><td><a class="el" href="class_player.html">Player</a> grid </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">shipLenght</td><td>Ship lenght </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">shipId</td><td>Ship id </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">retry</td><td>If true, don't redraw the grid</td></tr>
@@ -212,7 +182,7 @@ Functions</h2></td></tr>
 <p>Place all ships in the grid. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">playerGrid</td><td><a class="el" href="class_player.html">Player</a> grid</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">playerGrid</td><td><a class="el" href="class_player.html">Player</a> grid</td></tr>
   </table>
   </dd>
 </dl>
@@ -239,7 +209,7 @@ Functions</h2></td></tr>
 <p><a class="el" href="class_player.html">Player</a> turn. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">otherGrid</td><td>Other player grid</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">otherGrid</td><td>Other player grid</td></tr>
   </table>
   </dd>
 </dl>
@@ -276,7 +246,7 @@ Functions</h2></td></tr>
 <p>Create a string to print the grid on the terminal. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">grid</td><td>Grid to print </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">grid</td><td>Grid to print </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">isAnonymous</td><td>If true, the grid will be anonymized</td></tr>
   </table>
   </dd>

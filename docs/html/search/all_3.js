@@ -7,6 +7,7 @@ var searchData=
   ['clear_5fline_4',['clear_line',['../namespacetermkit.html#a1f816f8d2ebded7a9b6069b5a3f3b7f2',1,'termkit']]],
   ['color_5',['color',['../games_2reflex_2main_8cpp.html#a762974fa82300e8e785056e3399fa57c',1,'main.cpp']]],
   ['compareplays_6',['ComparePlays',['../games_2gcc_2main_8cpp.html#a661d2fc659a996f24b198aefa2b9e84e',1,'main.cpp']]],
-  ['contents_7',['Table of Contents',['../md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html#autotoc_md2',1,'']]],
-  ['ctrlc_8',['CTRLC',['../menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca2fbe51d0cc419818a7d7afad5d6a7079',1,'menu.cpp']]]
+  ['connect4_7',['connect4',['../games_2connect4_2main_8cpp.html#a461c7e22c55a5716d316a8e3d5f23897',1,'main.cpp']]],
+  ['contents_8',['Table of Contents',['../md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html#autotoc_md2',1,'']]],
+  ['ctrlc_9',['CTRLC',['../menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca2fbe51d0cc419818a7d7afad5d6a7079',1,'menu.cpp']]]
 ];
