@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vitrine_0',['vitrine',['../games_2right_01price_2main_8cpp.html#aa2ca7dac9c3f323968e1ef058e0cce58',1,'main.cpp']]]
+  ['wait_0',['wait',['../namespace_utils.html#a78f4b63f11f1d9f8feada0ba4e246e82',1,'Utils']]],
+  ['winctrlhandler_1',['winCtrlHandler',['../namespacetermkit.html#aaae288993c87d489abb47d2521fe5173',1,'termkit']]]
 ];

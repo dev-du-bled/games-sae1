@@ -151,6 +151,14 @@ Functions</h2></td></tr>
 <tr class="memitem:ab67d75965fa43d2101860e7981ae1118" id="r_ab67d75965fa43d2101860e7981ae1118"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetermkit.html#ab67d75965fa43d2101860e7981ae1118">center_text_block</a> (std::string text, unsigned visual_width=0)</td></tr>
 <tr class="memdesc:ab67d75965fa43d2101860e7981ae1118"><td class="mdescLeft">&#160;</td><td class="mdescRight">Centers a paragraph horizontally.  <br /></td></tr>
 <tr class="separator:ab67d75965fa43d2101860e7981ae1118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d7fc85dbb67069e5132dcfda95310a" id="r_ac2d7fc85dbb67069e5132dcfda95310a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetermkit.html#ac2d7fc85dbb67069e5132dcfda95310a">reset_terminal_and_exit</a> (int signal_id)</td></tr>
+<tr class="memdesc:ac2d7fc85dbb67069e5132dcfda95310a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the terminal, not meant to be used by anything other than the signal handler.  <br /></td></tr>
+<tr class="separator:ac2d7fc85dbb67069e5132dcfda95310a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae288993c87d489abb47d2521fe5173" id="r_aaae288993c87d489abb47d2521fe5173"><td class="memItemLeft" align="right" valign="top">BOOL WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetermkit.html#aaae288993c87d489abb47d2521fe5173">winCtrlHandler</a> (DWORD signal_id)</td></tr>
+<tr class="separator:aaae288993c87d489abb47d2521fe5173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81360140a2501be15226861a80fd878c" id="r_a81360140a2501be15226861a80fd878c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetermkit.html#a81360140a2501be15226861a80fd878c">handle_SIGINT</a> ()</td></tr>
+<tr class="memdesc:a81360140a2501be15226861a80fd878c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles program interuptions, like ^C and everything sending a sigINT signal.  <br /></td></tr>
+<tr class="separator:a81360140a2501be15226861a80fd878c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af17d87d7cd896c95fe26cc45bea56e65" id="r_af17d87d7cd896c95fe26cc45bea56e65"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetermkit.html#af17d87d7cd896c95fe26cc45bea56e65">rgb_impl</a> (unsigned r, unsigned g, unsigned b, bool color_background)</td></tr>
 <tr class="separator:af17d87d7cd896c95fe26cc45bea56e65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -461,6 +469,33 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a81360140a2501be15226861a80fd878c" name="a81360140a2501be15226861a80fd878c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81360140a2501be15226861a80fd878c">&#9670;&#160;</a></span>handle_SIGINT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void termkit::handle_SIGINT </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles program interuptions, like ^C and everything sending a sigINT signal. </p>
+
+</div>
+</div>
 <a id="ab82d5434c67e35c7de63f874b4befc29" name="ab82d5434c67e35c7de63f874b4befc29"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab82d5434c67e35c7de63f874b4befc29">&#9670;&#160;</a></span>hide_cursor()</h2>
 
@@ -626,6 +661,32 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>movement ANSI Escape sequence (string) representing a movement </dd></dl>
+
+</div>
+</div>
+<a id="ac2d7fc85dbb67069e5132dcfda95310a" name="ac2d7fc85dbb67069e5132dcfda95310a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d7fc85dbb67069e5132dcfda95310a">&#9670;&#160;</a></span>reset_terminal_and_exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void termkit::reset_terminal_and_exit </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>signal_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Resets the terminal, not meant to be used by anything other than the signal handler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">signal_id</td><td>The id of the received signal, unused by the function </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1050,6 +1111,24 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>underlined text </dd></dl>
+
+</div>
+</div>
+<a id="aaae288993c87d489abb47d2521fe5173" name="aaae288993c87d489abb47d2521fe5173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae288993c87d489abb47d2521fe5173">&#9670;&#160;</a></span>winCtrlHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BOOL WINAPI termkit::winCtrlHandler </td>
+          <td>(</td>
+          <td class="paramtype">DWORD&#160;</td>
+          <td class="paramname"><em>signal_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
