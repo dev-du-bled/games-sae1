@@ -56,8 +56,7 @@ extern void showMenu(std::vector<MenuEntry> games) {
   std::cout << termkit::center_text_block(termkit::rgb_fg(title, 255, 0, 0, true), 98)
             << termkit::DEFAULT_TERM_STYLE << std::endl;
 
-  std::cout << termkit::center_line(std::string(58, ' ') +
-                                    termkit::bold_text("v0.0.1"))
+  std::cout << termkit::center_line(std::string(58, ' ') + termkit::bold_text("v0.0.1"))
             << std::endl;
 
   std::cout << std::endl;
