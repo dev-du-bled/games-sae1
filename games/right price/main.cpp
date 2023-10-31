@@ -32,7 +32,7 @@ unsigned random(unsigned min, unsigned max)
 }
 
 /**
- * @brief Vitrine game
+ * @brief Vitrine minigame, the last one of the show. This is also the game's main function
  *
  * @return void
  */
@@ -91,17 +91,3 @@ void justeprix()
 
   Utils::wait(5);
 }
-
-/**
- * @brief Juste prix game
- *
- * @return void
- */
-// extern void justeprix()
-// {
-//   termkit::hide_cursor();
-
-//   vitrine();
-
-//   termkit::show_cursor();
-// }

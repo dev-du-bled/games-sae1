@@ -11,6 +11,7 @@
 using namespace std;
 int main()
 {
+  cout<<"\x1b[?47h"; // switch to alternative buffer if available
   showMenu({MenuEntry(&Hangman, "Pendu de FirminGaming"),
             MenuEntry(&justeprix, "Juste prix de Luna"),
             MenuEntry(&tictactoe, "Morpion de Zarox28"),
@@ -23,5 +24,6 @@ int main()
   termkit::show_cursor();
   // reset terminal stylings
   std::cout << termkit::DEFAULT_TERM_STYLE;
+  cout<<"\x1b[?47l"; // switch to normal buffer if available
   return 0;
 }
