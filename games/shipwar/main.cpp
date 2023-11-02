@@ -324,6 +324,6 @@ extern void shipwar()
             break;
         }
 
-        Utils::wait(3);
+        Utils::wait(5);
     }
 }

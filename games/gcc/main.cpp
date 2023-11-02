@@ -198,5 +198,5 @@ extern void pfc()
     else
         cout << endl
              << termkit::center_line("Vous avez perdu le match !") << endl;
-    termkit::show_cursor();
+    Utils::wait(5);
 }

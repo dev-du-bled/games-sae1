@@ -144,5 +144,5 @@ extern void Hangman()
              << termkit::center_line("You lose ! The word was " + termkit::bold_text(word))
              << endl;
 
-    termkit::show_cursor();
+    Utils::wait(5);
 }
