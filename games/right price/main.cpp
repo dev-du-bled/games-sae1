@@ -42,6 +42,8 @@ void justeprix()
   unsigned user_input = 0;
   bool found = false;
 
+  termkit::set_term_title("Juste Prix");
+
   std::cout << termkit::center_line("---------------- Vitrine ----------------") << std::endl;
   std::cout << termkit::center_text("Vous aller devoir trouver le JUSTE PRIX de la vitrine, ça vaut entre 10 000 et 50 000 €,\n parlez clairement, ne vous emballez pas et laisser moi le temps de vous répondre, on y vas ?\n\n") << std::endl;
   std::cout << termkit::center_line(termkit::rgb_bg("  APPUYEZ SUR UNE TOUCHE POUR COMMENCER  ", 255, 192, 203), 42) << std::endl;
