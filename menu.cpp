@@ -38,7 +38,7 @@ public:
 };
 
 extern void showMenu(std::vector<MenuEntry> games) {
-  
+  debutMenu : {
   unsigned short selected_option = 0;
   bool is_selecting = true;
   std::string selected_game_display_name = games[0].displayName;
@@ -124,4 +124,6 @@ extern void showMenu(std::vector<MenuEntry> games) {
   termkit::show_cursor();
 
   games[selected_option].exec();
+  }
+  goto debutMenu;
 }

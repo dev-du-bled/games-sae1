@@ -8,8 +8,6 @@
 #include "libs/termkit.hpp"
 #include "menu.cpp"
 
-
-
 using namespace std;
 int main()
 {
@@ -22,7 +20,7 @@ int main()
             MenuEntry(&shipwar, "Bataille navale de BoomTchaGong"),
             MenuEntry(&reflex, "Jeu de reflex de Zarox28"),
             MenuEntry(&connect4, "Puissance 4 de stereo18")});
-
+            
   // make sure we show back the cursor, in case the game didn't
   termkit::show_cursor();
   // reset terminal stylings
