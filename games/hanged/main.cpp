@@ -141,7 +141,7 @@ extern void Hangman()
         cout << termkit::center_line("You win !") << endl;
     else
         cout << "     "
-             << termkit::center_line("You lose ! The word was " + termkit::bold_text(word))
+             << termkit::center_line("You lost ! The word was " + termkit::bold_text(word))
              << endl;
 
     Utils::wait(5);
