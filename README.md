@@ -26,6 +26,10 @@ See [Doxygen](docs/html/index.html) for more information.
 - **Shipwar** : A game where you have to sink all the ships of your opponent.
 - **Tic Tac Toe** : A game where you have to align 3 tokens in a row.
 
+## How to run it properly ?
+
+It works on MacOS (with iTerm2) and Linux but Windows requires the new [Windows Terminal](https://github.com/microsoft/terminal) to be able to be displayed correctly.
+
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for more information.

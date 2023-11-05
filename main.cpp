@@ -12,7 +12,7 @@ using namespace std;
 int main()
 {
 #if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
-  SetConsoleOutputCP(CP_UTF8);
+  SetConsoleOutputCP(CP_UTF8); // Enable UTF-8 support for Windows console because it's 2023 and it's still not enabled by default
 #endif
   termkit::handle_SIGINT();
   cout << "\x1b[?47h"; // switch to alternative buffer if available
