@@ -84,6 +84,8 @@ $(function() {
 <p>This file contains the Connect4 (Also known as <em>Puissance 4</em>) game.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
 <code>#include &quot;<a class="el" href="termkit_8cpp_source.html">../../libs/termkit.cpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="utils_8cpp_source.html">../../libs/utils.cpp</a>&quot;</code><br />
 </div>
@@ -91,13 +93,50 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:abc56931c075610d7e011efe6408b8fbb" id="r_abc56931c075610d7e011efe6408b8fbb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="games_2connect4_2main_8cpp.html#abc56931c075610d7e011efe6408b8fbb">drawConnect4Grid</a> (int grid[6][7], int cursorPos)</td></tr>
+<tr class="memdesc:abc56931c075610d7e011efe6408b8fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the Connect 4 grid only.  <br /></td></tr>
+<tr class="separator:abc56931c075610d7e011efe6408b8fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abffa007bb503ae89633525216553b652" id="r_abffa007bb503ae89633525216553b652"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="games_2connect4_2main_8cpp.html#abffa007bb503ae89633525216553b652">drawConnect4</a> (int grid[6][7], int cursorPos, int playerTurn)</td></tr>
+<tr class="memdesc:abffa007bb503ae89633525216553b652"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the Connect 4 game.  <br /></td></tr>
+<tr class="separator:abffa007bb503ae89633525216553b652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87a636993ed024c19c9ff207f86a2b2b" id="r_a87a636993ed024c19c9ff207f86a2b2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="games_2connect4_2main_8cpp.html#a87a636993ed024c19c9ff207f86a2b2b">checkConnect4</a> (int grid[6][7])</td></tr>
+<tr class="memdesc:a87a636993ed024c19c9ff207f86a2b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chech if there is a connect 4 in the grid.  <br /></td></tr>
+<tr class="separator:a87a636993ed024c19c9ff207f86a2b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a461c7e22c55a5716d316a8e3d5f23897" id="r_a461c7e22c55a5716d316a8e3d5f23897"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="games_2connect4_2main_8cpp.html#a461c7e22c55a5716d316a8e3d5f23897">connect4</a> ()</td></tr>
+<tr class="memdesc:a461c7e22c55a5716d316a8e3d5f23897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect 4 game main function.  <br /></td></tr>
 <tr class="separator:a461c7e22c55a5716d316a8e3d5f23897"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This file contains the Connect4 (Also known as <em>Puissance 4</em>) game. </p>
 <dl class="section author"><dt>Author</dt><dd>Firmin_ </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a87a636993ed024c19c9ff207f86a2b2b" name="a87a636993ed024c19c9ff207f86a2b2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a636993ed024c19c9ff207f86a2b2b">&#9670;&#160;</a></span>checkConnect4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int checkConnect4 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>grid</em>[6][7]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Chech if there is a connect 4 in the grid. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">grid</td><td>The grid to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The player who won, 0 if no one won </dd></dl>
+
+</div>
+</div>
 <a id="a461c7e22c55a5716d316a8e3d5f23897" name="a461c7e22c55a5716d316a8e3d5f23897"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a461c7e22c55a5716d316a8e3d5f23897">&#9670;&#160;</a></span>connect4()</h2>
 
@@ -120,6 +159,89 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Connect 4 game main function. </p>
+
+</div>
+</div>
+<a id="abffa007bb503ae89633525216553b652" name="abffa007bb503ae89633525216553b652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abffa007bb503ae89633525216553b652">&#9670;&#160;</a></span>drawConnect4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawConnect4 </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>grid</em>[6][7], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cursorPos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>playerTurn</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draw the Connect 4 game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">grid</td><td>The game grid to draw </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cursorPos</td><td>The cursor position </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">playerTurn</td><td>The player who's turn it is </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abc56931c075610d7e011efe6408b8fbb" name="abc56931c075610d7e011efe6408b8fbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc56931c075610d7e011efe6408b8fbb">&#9670;&#160;</a></span>drawConnect4Grid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void drawConnect4Grid </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>grid</em>[6][7], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cursorPos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Draw the Connect 4 grid only. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">grid</td><td>The grid to draw </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cursorPos</td><td>The cursor position </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

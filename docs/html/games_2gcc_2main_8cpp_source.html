@@ -220,51 +220,49 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                playerPlay = 2;</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">case</span> 3: <span class="comment">// Handle ^C</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                exit(0);</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                playerPlay = -1;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>                <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            }</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        }</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordtype">int</span> computerPlay = <a class="code hl_function" href="games_2gcc_2main_8cpp.html#a080ab2f750d37bb730621c80044bbf75">randomHand</a>();</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keywordtype">int</span> winner = <a class="code hl_function" href="games_2gcc_2main_8cpp.html#a661d2fc659a996f24b198aefa2b9e84e">ComparePlays</a>(playerPlay, computerPlay);</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordflow">switch</span> (winner)</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        {</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            playerScore++;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            computerScore++;</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        }</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        roundsPlayed++;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <a class="code hl_function" href="games_2gcc_2main_8cpp.html#ad1fc0cc4a51e84fe206e6f76cf604790">DrawPfc</a>(1, playerScore, computerScore, roundsPlayed, rounds, winner, playerPlay, computerPlay);</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <a class="code hl_function" href="namespace_utils.html#a78f4b63f11f1d9f8feada0ba4e246e82">Utils::wait</a>(3);</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    }</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keywordflow">if</span> (playerScore == computerScore)</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        cout &lt;&lt; endl</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>             &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#af969f49dd6403a6938331ef2039f28ae">termkit::center_line</a>(<span class="stringliteral">&quot;Egalité du match !&quot;</span>) &lt;&lt; endl;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (playerScore &gt; computerScore)</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        cout &lt;&lt; endl</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>             &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#af969f49dd6403a6938331ef2039f28ae">termkit::center_line</a>(<span class="stringliteral">&quot;Vous avez gagné le match !&quot;</span>) &lt;&lt; endl;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        cout &lt;&lt; endl</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>             &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#af969f49dd6403a6938331ef2039f28ae">termkit::center_line</a>(<span class="stringliteral">&quot;Vous avez perdu le match !&quot;</span>) &lt;&lt; endl;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <a class="code hl_function" href="namespacetermkit.html#a7512fe1e28c3dea76e7d4fd7596d471e">termkit::show_cursor</a>();</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>                playerPlay = -1;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="keywordtype">int</span> computerPlay = <a class="code hl_function" href="games_2gcc_2main_8cpp.html#a080ab2f750d37bb730621c80044bbf75">randomHand</a>();</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordtype">int</span> winner = <a class="code hl_function" href="games_2gcc_2main_8cpp.html#a661d2fc659a996f24b198aefa2b9e84e">ComparePlays</a>(playerPlay, computerPlay);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keywordflow">switch</span> (winner)</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            playerScore++;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            computerScore++;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        roundsPlayed++;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <a class="code hl_function" href="games_2gcc_2main_8cpp.html#ad1fc0cc4a51e84fe206e6f76cf604790">DrawPfc</a>(1, playerScore, computerScore, roundsPlayed, rounds, winner, playerPlay, computerPlay);</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <a class="code hl_function" href="namespace_utils.html#a78f4b63f11f1d9f8feada0ba4e246e82">Utils::wait</a>(3);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    }</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordflow">if</span> (playerScore == computerScore)</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        cout &lt;&lt; endl</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>             &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#af969f49dd6403a6938331ef2039f28ae">termkit::center_line</a>(<span class="stringliteral">&quot;Egalité du match !&quot;</span>) &lt;&lt; endl;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (playerScore &gt; computerScore)</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        cout &lt;&lt; endl</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>             &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#af969f49dd6403a6938331ef2039f28ae">termkit::center_line</a>(<span class="stringliteral">&quot;Vous avez gagné le match !&quot;</span>) &lt;&lt; endl;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        cout &lt;&lt; endl</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>             &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#af969f49dd6403a6938331ef2039f28ae">termkit::center_line</a>(<span class="stringliteral">&quot;Vous avez perdu le match !&quot;</span>) &lt;&lt; endl;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <a class="code hl_function" href="namespace_utils.html#a78f4b63f11f1d9f8feada0ba4e246e82">Utils::wait</a>(5);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>}</div>
 </div>
 <div class="ttc" id="agames_2gcc_2main_8cpp_html_a080ab2f750d37bb730621c80044bbf75"><div class="ttname"><a href="games_2gcc_2main_8cpp.html#a080ab2f750d37bb730621c80044bbf75">randomHand</a></div><div class="ttdeci">int randomHand()</div><div class="ttdoc">Generate a random hand between 0 and 2.</div><div class="ttdef"><b>Definition</b> main.cpp:18</div></div>
 <div class="ttc" id="agames_2gcc_2main_8cpp_html_a661d2fc659a996f24b198aefa2b9e84e"><div class="ttname"><a href="games_2gcc_2main_8cpp.html#a661d2fc659a996f24b198aefa2b9e84e">ComparePlays</a></div><div class="ttdeci">int ComparePlays(int playOne, int playTwo)</div><div class="ttdoc">Compare two plays and return the winner.</div><div class="ttdef"><b>Definition</b> main.cpp:32</div></div>
-<div class="ttc" id="agames_2gcc_2main_8cpp_html_ad1fc0cc4a51e84fe206e6f76cf604790"><div class="ttname"><a href="games_2gcc_2main_8cpp.html#ad1fc0cc4a51e84fe206e6f76cf604790">DrawPfc</a></div><div class="ttdeci">void DrawPfc(int mode, int playerScore, int computerScore, int roundsPlayed, int rounds, int win=0, int playerPlay=0, int computerPlay=0)</div><div class="ttdoc">Draw the Gravier Carton Couteau game in terminal.</div><div class="ttdef"><b>Definition</b> main.cpp:74</div></div>
-<div class="ttc" id="agames_2gcc_2main_8cpp_html_af9770d097b7ac1bc57973b8cd0087488"><div class="ttname"><a href="games_2gcc_2main_8cpp.html#af9770d097b7ac1bc57973b8cd0087488">pfc</a></div><div class="ttdeci">void pfc()</div><div class="ttdoc">Gravier Carton Couteau game main function.</div><div class="ttdef"><b>Definition</b> main.cpp:134</div></div>
+<div class="ttc" id="agames_2gcc_2main_8cpp_html_ad1fc0cc4a51e84fe206e6f76cf604790"><div class="ttname"><a href="games_2gcc_2main_8cpp.html#ad1fc0cc4a51e84fe206e6f76cf604790">DrawPfc</a></div><div class="ttdeci">void DrawPfc(int mode, int playerScore, int computerScore, int roundsPlayed, int rounds, int win=0, int playerPlay=0, int computerPlay=0)</div><div class="ttdoc">Draw the Gravier Carton Couteau™ game in terminal.</div><div class="ttdef"><b>Definition</b> main.cpp:74</div></div>
+<div class="ttc" id="agames_2gcc_2main_8cpp_html_af9770d097b7ac1bc57973b8cd0087488"><div class="ttname"><a href="games_2gcc_2main_8cpp.html#af9770d097b7ac1bc57973b8cd0087488">pfc</a></div><div class="ttdeci">void pfc()</div><div class="ttdoc">Gravier Carton Couteau™ game main function.</div><div class="ttdef"><b>Definition</b> main.cpp:134</div></div>
 <div class="ttc" id="anamespace_utils_html_a78f4b63f11f1d9f8feada0ba4e246e82"><div class="ttname"><a href="namespace_utils.html#a78f4b63f11f1d9f8feada0ba4e246e82">Utils::wait</a></div><div class="ttdeci">void wait(unsigned int seconds)</div><div class="ttdoc">wait for a certain amount of time.</div><div class="ttdef"><b>Definition</b> utils.cpp:22</div></div>
 <div class="ttc" id="anamespacetermkit_html_a0807cba9598e1ee8a43dec3e23612379"><div class="ttname"><a href="namespacetermkit.html#a0807cba9598e1ee8a43dec3e23612379">termkit::set_term_title</a></div><div class="ttdeci">void set_term_title(std::string title)</div><div class="ttdoc">Sets the terminal's window title.</div><div class="ttdef"><b>Definition</b> termkit.cpp:91</div></div>
 <div class="ttc" id="anamespacetermkit_html_a3ee5435f45bee669e83ec94574952ff8"><div class="ttname"><a href="namespacetermkit.html#a3ee5435f45bee669e83ec94574952ff8">termkit::getch</a></div><div class="ttdeci">char getch()</div><div class="ttdoc">Gets a single char from the user. Does not echo and does not process keys.</div><div class="ttdef"><b>Definition</b> termkit.cpp:148</div></div>
-<div class="ttc" id="anamespacetermkit_html_a7512fe1e28c3dea76e7d4fd7596d471e"><div class="ttname"><a href="namespacetermkit.html#a7512fe1e28c3dea76e7d4fd7596d471e">termkit::show_cursor</a></div><div class="ttdeci">void show_cursor()</div><div class="ttdoc">Show the cursor.</div><div class="ttdef"><b>Definition</b> termkit.cpp:182</div></div>
 <div class="ttc" id="anamespacetermkit_html_a8ccd22646d29fc32e777afebe0679536"><div class="ttname"><a href="namespacetermkit.html#a8ccd22646d29fc32e777afebe0679536">termkit::bold_text</a></div><div class="ttdeci">std::string bold_text(std::string text, bool add_padding)</div><div class="ttdoc">Makes the text look THICK.</div><div class="ttdef"><b>Definition</b> termkit.cpp:96</div></div>
 <div class="ttc" id="anamespacetermkit_html_a8f82cd06a453638337bd2d1cf84d0b5a"><div class="ttname"><a href="namespacetermkit.html#a8f82cd06a453638337bd2d1cf84d0b5a">termkit::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears the terminal screen and history.</div><div class="ttdef"><b>Definition</b> termkit.cpp:121</div></div>
 <div class="ttc" id="anamespacetermkit_html_ab67d75965fa43d2101860e7981ae1118"><div class="ttname"><a href="namespacetermkit.html#ab67d75965fa43d2101860e7981ae1118">termkit::center_text_block</a></div><div class="ttdeci">std::string center_text_block(std::string text, unsigned visual_width)</div><div class="ttdoc">Centers a paragraph horizontally.</div><div class="ttdef"><b>Definition</b> termkit.cpp:224</div></div>

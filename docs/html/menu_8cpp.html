@@ -81,6 +81,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="termkit_8hpp_source.html">libs/termkit.hpp</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;sys/types.h&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div>
 <p><a href="menu_8cpp_source.html">Go to the source code of this file.</a></p>
@@ -111,6 +112,14 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a8a8426d6c6965f90c526dd88b8e9b567" id="r_a8a8426d6c6965f90c526dd88b8e9b567"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8cpp.html#a8a8426d6c6965f90c526dd88b8e9b567">displayTitle</a> ()</td></tr>
+<tr class="separator:a8a8426d6c6965f90c526dd88b8e9b567"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f9ed026fc3625dd08649a912fd82c4d" id="r_a8f9ed026fc3625dd08649a912fd82c4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8cpp.html#a8f9ed026fc3625dd08649a912fd82c4d">renderSelectable</a> (std::vector&lt; <a class="el" href="class_menu_entry.html">MenuEntry</a> &gt; &amp;games, unsigned short selected_option)</td></tr>
+<tr class="separator:a8f9ed026fc3625dd08649a912fd82c4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2e083c2a32eb43f49519c3557f76b16" id="r_ad2e083c2a32eb43f49519c3557f76b16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8cpp.html#ad2e083c2a32eb43f49519c3557f76b16">incrementSelectedOption</a> (ushort &amp;selected_option, ulong number_of_games)</td></tr>
+<tr class="separator:ad2e083c2a32eb43f49519c3557f76b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aeceae8bdfa7fb5007934b39f509cc2" id="r_a8aeceae8bdfa7fb5007934b39f509cc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8cpp.html#a8aeceae8bdfa7fb5007934b39f509cc2">decrementSelectedOption</a> (ushort &amp;selected_option, ulong number_of_games)</td></tr>
+<tr class="separator:a8aeceae8bdfa7fb5007934b39f509cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae972071030d8a58b941fc31e24795735" id="r_ae972071030d8a58b941fc31e24795735"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="menu_8cpp.html#ae972071030d8a58b941fc31e24795735">showMenu</a> (std::vector&lt; <a class="el" href="class_menu_entry.html">MenuEntry</a> &gt; games)</td></tr>
 <tr class="separator:ae972071030d8a58b941fc31e24795735"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -147,6 +156,107 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a8aeceae8bdfa7fb5007934b39f509cc2" name="a8aeceae8bdfa7fb5007934b39f509cc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aeceae8bdfa7fb5007934b39f509cc2">&#9670;&#160;</a></span>decrementSelectedOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void decrementSelectedOption </td>
+          <td>(</td>
+          <td class="paramtype">ushort &amp;&#160;</td>
+          <td class="paramname"><em>selected_option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>number_of_games</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8a8426d6c6965f90c526dd88b8e9b567" name="a8a8426d6c6965f90c526dd88b8e9b567"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a8426d6c6965f90c526dd88b8e9b567">&#9670;&#160;</a></span>displayTitle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void displayTitle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad2e083c2a32eb43f49519c3557f76b16" name="ad2e083c2a32eb43f49519c3557f76b16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2e083c2a32eb43f49519c3557f76b16">&#9670;&#160;</a></span>incrementSelectedOption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void incrementSelectedOption </td>
+          <td>(</td>
+          <td class="paramtype">ushort &amp;&#160;</td>
+          <td class="paramname"><em>selected_option</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ulong&#160;</td>
+          <td class="paramname"><em>number_of_games</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f9ed026fc3625dd08649a912fd82c4d" name="a8f9ed026fc3625dd08649a912fd82c4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f9ed026fc3625dd08649a912fd82c4d">&#9670;&#160;</a></span>renderSelectable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void renderSelectable </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="class_menu_entry.html">MenuEntry</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>games</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>selected_option</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae972071030d8a58b941fc31e24795735" name="ae972071030d8a58b941fc31e24795735"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae972071030d8a58b941fc31e24795735">&#9670;&#160;</a></span>showMenu()</h2>
 

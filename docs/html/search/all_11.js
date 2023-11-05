@@ -1,12 +1,17 @@
 var searchData=
 [
-  ['tab_0',['TAB',['../menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca920380215591395ea33ee5df8e293e19',1,'menu.cpp']]],
-  ['table_20of_20contents_1',['Table of Contents',['../md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html#autotoc_md2',1,'']]],
-  ['term_5fsize_2',['Term_size',['../classtermkit_1_1_term__size.html',1,'termkit']]],
-  ['termkit_3',['termkit',['../namespacetermkit.html',1,'']]],
-  ['termkit_2ecpp_4',['termkit.cpp',['../termkit_8cpp.html',1,'']]],
-  ['termkit_2ehpp_5',['termkit.hpp',['../termkit_8hpp.html',1,'']]],
-  ['tictactoe_6',['tictactoe',['../games_2tictactoe_2main_8cpp.html#a298754eff4ee7a1f6888211351b4fa47',1,'main.cpp']]],
-  ['time_5fbefore_5fexit_7',['TIME_BEFORE_EXIT',['../games_2right_01price_2main_8cpp.html#a2ccf4d20300096f01719fb4bbd5dc066',1,'main.cpp']]],
-  ['title_8',['title',['../menu_8cpp.html#a8214780964530800368b406c681fd1d9',1,'menu.cpp']]]
+  ['random_0',['random',['../games_2right_01price_2main_8cpp.html#a14edbc0bf5c8e393bf98e8c10998a8bd',1,'main.cpp']]],
+  ['randomhand_1',['randomHand',['../games_2gcc_2main_8cpp.html#a080ab2f750d37bb730621c80044bbf75',1,'main.cpp']]],
+  ['randomword_2',['RandomWord',['../dictionary_8cpp.html#a5709d355485823d1ad633d1e1f8102e5',1,'dictionary.cpp']]],
+  ['readme_2emd_3',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['reflex_4',['reflex',['../games_2reflex_2main_8cpp.html#a1625e0f777fbe7e394ef35ac69161b7b',1,'main.cpp']]],
+  ['renderselectable_5',['renderSelectable',['../menu_8cpp.html#a8f9ed026fc3625dd08649a912fd82c4d',1,'menu.cpp']]],
+  ['reset_5fterminal_5fand_5fexit_6',['reset_terminal_and_exit',['../namespacetermkit.html#ac2d7fc85dbb67069e5132dcfda95310a',1,'termkit']]],
+  ['resetscore_7',['resetScore',['../class_player.html#a7dfdc0be35fa9ae42104a6bfe47634b8',1,'Player']]],
+  ['restore_5fcursor_5fpos_8',['restore_cursor_pos',['../namespacetermkit.html#a92bea3b13717b3eb7ef68eb1e4fd5b70',1,'termkit']]],
+  ['rgb_5fbg_9',['rgb_bg',['../namespacetermkit.html#a64404d1938c3f55b6cbfc0a1509cc7ed',1,'termkit']]],
+  ['rgb_5ffg_10',['rgb_fg',['../namespacetermkit.html#a253548838ec422f432216554cc46e553',1,'termkit']]],
+  ['rgb_5fimpl_11',['rgb_impl',['../namespacetermkit.html#a7c625d2ab63873268ad111e12a554e0c',1,'termkit::rgb_impl(std::string text, unsigned r, unsigned g, unsigned b, bool color_background, bool do_pad)'],['../namespacetermkit.html#af17d87d7cd896c95fe26cc45bea56e65',1,'termkit::rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background)']]],
+  ['rng_12',['rng',['../games_2right_01price_2main_8cpp.html#ac03c0bcbdb2526472e690e410b407edb',1,'main.cpp']]],
+  ['rngalgo_13',['RngAlgo',['../games_2right_01price_2main_8cpp.html#ac0e20aa3781e9fdb8a59d23e9ae3c356',1,'main.cpp']]]
 ];
