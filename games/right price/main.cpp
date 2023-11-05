@@ -4,7 +4,7 @@
  * @author Luna
  */
 
-#include "../../libs/termkit.hpp"
+#include "../../libs/termkit/termkit.cpp"
 #include <iostream>
 #include <random>
 #include <string>

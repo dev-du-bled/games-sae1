@@ -5,7 +5,7 @@
 #include "games/shipwar/main.cpp"
 #include "games/reflex/main.cpp"
 #include "games/connect4/main.cpp"
-#include "libs/termkit.hpp"
+#include "libs/termkit/termkit.cpp"
 #include "menu.cpp"
 
 using namespace std;

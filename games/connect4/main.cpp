@@ -7,7 +7,7 @@
 #include <iostream>
 #include <sstream>
 #include <iomanip>
-#include "../../libs/termkit.cpp"
+#include "../../libs/termkit/termkit.cpp"
 #include "../../libs/utils.cpp"
 
 using namespace std;

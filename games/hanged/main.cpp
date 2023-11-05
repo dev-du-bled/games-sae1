@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include "dictionary.cpp"
-#include "../../libs/termkit.cpp"
+#include "../../libs/termkit/termkit.cpp"
 
 using namespace std;
 

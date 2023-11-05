@@ -5,7 +5,7 @@
  * @author Zarox28
  */
 
-#include "../../../libs/termkit.cpp"
+#include "../../../libs/termkit/termkit.cpp"
 
 #include "board.hpp"
 #include <iostream>

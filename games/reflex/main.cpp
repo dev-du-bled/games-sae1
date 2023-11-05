@@ -8,7 +8,7 @@
 #include <chrono>
 #include <string>
 
-#include "../../libs/termkit.cpp"
+#include "../../libs/termkit/termkit.cpp"
 #include "../../libs/utils.cpp"
 
 std::string previousTime[2] = {"0", "0"};

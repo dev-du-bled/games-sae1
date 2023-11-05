@@ -1,4 +1,4 @@
-#include "libs/termkit.hpp"
+#include "libs/termkit/termkit.cpp"
 #include <iostream>
 #include <sys/types.h>
 #include <vector>
@@ -114,7 +114,7 @@ extern void showMenu(std::vector<MenuEntry> games) {
         continue;
 
       /* 
-        As said a couple of lines on top, on UNIX-like systems arrow keys are composed of 3 characters, the first being the escape one (code 27 '^')
+        As said a couple of lines before, on UNIX-like systems arrow keys are composed of 3 characters, the first being the escape one (code 27 '^')
         the second being an openning bracket (code 91 '[')
         the last one being the character identifying the key
       */

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <vector>
 
-#include "../../../libs/termkit.cpp"
+#include "../../../libs/termkit/termkit.cpp"
 #include "../../../libs/utils.cpp"
 
 #include "../player/player.cpp"
