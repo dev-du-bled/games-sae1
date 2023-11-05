@@ -12,19 +12,19 @@ using namespace std;
 int main()
 {
   termkit::handle_SIGINT();
-  cout<<"\x1b[?47h"; // switch to alternative buffer if available
-  showMenu({MenuEntry(&Hangman, "Pendu de FirminGaming"),
-            MenuEntry(&justeprix, "Juste prix de Luna"),
-            MenuEntry(&tictactoe, "Morpion de Zarox28"),
-            MenuEntry(&pfc, "Gravier Carton Couteau™ de Dieu"),
-            MenuEntry(&shipwar, "Bataille navale de BoomTchaGong"),
-            MenuEntry(&reflex, "Jeu de reflex de Zarox28"),
-            MenuEntry(&connect4, "Puissance 4 de stereo18")});
-            
+  cout << "\x1b[?47h"; // switch to alternative buffer if available
+  showMenu({MenuEntry(&Hangman, "Pendu de Firmin"),
+            MenuEntry(&justeprix, "Juste prix de Gabriel"),
+            MenuEntry(&tictactoe, "Morpion d'Alexiaj'"),
+            MenuEntry(&pfc, "Gravier Carton Couteau™ de Firmin"),
+            MenuEntry(&shipwar, "Bataille navale de Firmin"),
+            MenuEntry(&reflex, "Jeu de reflex d'Alexian"),
+            MenuEntry(&connect4, "Puissance 4 de Firmin")});
+
   // make sure we show back the cursor, in case the game didn't
   termkit::show_cursor();
   // reset terminal stylings
   std::cout << termkit::DEFAULT_TERM_STYLE;
-  cout<<"\x1b[?47l"; // switch to normal buffer if available
+  cout << "\x1b[?47l"; // switch to normal buffer if available
   return 0;
 }
