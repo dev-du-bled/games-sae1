@@ -15,7 +15,7 @@ int main()
   cout << "\x1b[?47h"; // switch to alternative buffer if available
   showMenu({MenuEntry(&Hangman, "Pendu de Firmin"),
             MenuEntry(&justeprix, "Juste prix de Gabriel"),
-            MenuEntry(&tictactoe, "Morpion d'Alexiaj'"),
+            MenuEntry(&tictactoe, "Morpion d'Alexian"),
             MenuEntry(&pfc, "Gravier Carton Couteau™ de Firmin"),
             MenuEntry(&shipwar, "Bataille navale de Firmin"),
             MenuEntry(&reflex, "Jeu de reflex d'Alexian"),
