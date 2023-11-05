@@ -1,5 +1,6 @@
 #include "libs/termkit.hpp"
 #include <iostream>
+#include <sys/types.h>
 #include <vector>
 
 const char *title =
@@ -73,18 +74,19 @@ void decrementSelectedOption(ushort &selected_option, ulong number_of_games) {
 
 extern void showMenu(std::vector<MenuEntry> games) {
   const ulong number_of_games = games.size();
-  const ushort ui_vcenter_point = (10 + number_of_games / 2);
+  const ushort terminal_height = termkit::get_term_size().height;
+  const ushort ui_vcenter_point = (12 + number_of_games) / 2;
+  //                               ^^
+  // Height of the logo + it's padding and version number
   
   menuStart : {
   ushort selected_option = 0;
   bool is_selecting = true;
-  //                                 ^^
-  // Height of the logo + it's padding and version number
 
   termkit::clear();
   termkit::hide_cursor();
 
-  termkit::move_cursor_down(ui_vcenter_point);
+  termkit::move_cursor_down(terminal_height/2 - ui_vcenter_point);
 
   displayTitle();
 
@@ -95,8 +97,7 @@ extern void showMenu(std::vector<MenuEntry> games) {
 
     // keyboard input
     switch (termkit::getch()) {
-    case CTRLC:
-      return;
+    case CTRLC: return;
 
     case TAB:
       incrementSelectedOption(selected_option, number_of_games);
@@ -143,13 +144,12 @@ extern void showMenu(std::vector<MenuEntry> games) {
       continue;
 #endif
     }
-
   }
 
   termkit::clear();
   termkit::show_cursor();
 
-  games[selected_option].exec();
+  games[selected_option].exec();  
   }
   goto menuStart;
 }
