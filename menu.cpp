@@ -61,26 +61,26 @@ void renderSelectable(std::vector<MenuEntry> &games, unsigned short selected_opt
   
 }
 
-void incrementSelectedOption(ushort &selected_option, ulong number_of_games) {
+void incrementSelectedOption(unsigned short &selected_option, unsigned long number_of_games) {
   selected_option += 1;
   selected_option %= number_of_games;
 }
 
-void decrementSelectedOption(ushort &selected_option, ulong number_of_games) {
+void decrementSelectedOption(unsigned short &selected_option, unsigned long number_of_games) {
   selected_option -= 1;
   selected_option %= number_of_games;
 }
 
 
 extern void showMenu(std::vector<MenuEntry> games) {
-  const ulong number_of_games = games.size();
-  const ushort terminal_height = termkit::get_term_size().height;
-  const ushort ui_vcenter_point = (12 + number_of_games) / 2;
+  const unsigned long number_of_games = games.size();
+  const unsigned short terminal_height = termkit::get_term_size().height;
+  const unsigned short ui_vcenter_point = (12 + number_of_games) / 2;
   //                               ^^
   // Height of the logo + it's padding and version number
   
   menuStart : {
-  ushort selected_option = 0;
+  unsigned short selected_option = 0;
   bool is_selecting = true;
 
   termkit::clear();
