@@ -95,183 +95,198 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="stringliteral">  )&quot;;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="stringliteral"></span> </div>
 <div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bc">   16</a></span><span class="stringliteral"></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bc">Keys</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca2fbe51d0cc419818a7d7afad5d6a7079">   17</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca2fbe51d0cc419818a7d7afad5d6a7079">CTRLC</a> = 3,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca920380215591395ea33ee5df8e293e19">   18</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca920380215591395ea33ee5df8e293e19">TAB</a> = 9,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca951ab68bb8f7daafb78951107080904e">   19</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca951ab68bb8f7daafb78951107080904e">ENTER</a> = 13,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaf5297152557c7da396243000ca240e89">   20</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaf5297152557c7da396243000ca240e89">ESC</a> = 27,</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa">   21</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa">UP</a> = 65,</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da">   22</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da">DOWN</a> = 66,</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="comment">// Windows has different keycodes for up and down arrows</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45">   24</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45">WINUP</a> = 72,</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9">   25</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9">WINDOWN</a> = 80,</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee">   26</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee">BAKTAB</a> = 90,</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34">BRACKET</a> = 91</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34">   28</a></span>};</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bc">   16</a></span><span class="stringliteral"></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bc">Keys</a></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca2fbe51d0cc419818a7d7afad5d6a7079">   18</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca2fbe51d0cc419818a7d7afad5d6a7079">CTRLC</a> = 3,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca920380215591395ea33ee5df8e293e19">   19</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca920380215591395ea33ee5df8e293e19">TAB</a> = 9,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca951ab68bb8f7daafb78951107080904e">   20</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca951ab68bb8f7daafb78951107080904e">ENTER</a> = 13,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaf5297152557c7da396243000ca240e89">   21</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaf5297152557c7da396243000ca240e89">ESC</a> = 27,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa">   22</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa">UP</a> = 65,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da">   23</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da">DOWN</a> = 66,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="comment">// Windows has different keycodes for up and down arrows</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45">   25</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45">WINUP</a> = 72,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9">   26</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9">WINDOWN</a> = 80,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee">   27</a></span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee">BAKTAB</a> = 90,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34">BRACKET</a> = 91</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34">   29</a></span>};</div>
 </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_menu_entry.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="class_menu_entry.html">MenuEntry</a> {</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_menu_entry.html#aba31af783cb8a839d1989ecc55268578">   32</a></span>  void (*<a class="code hl_variable" href="class_menu_entry.html#aba31af783cb8a839d1989ecc55268578">exec</a>)();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_menu_entry.html#a81298e34a3f55168b2342cfbbe0b1d9d">   33</a></span>  std::string <a class="code hl_variable" href="class_menu_entry.html#a81298e34a3f55168b2342cfbbe0b1d9d">displayName</a>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_menu_entry.html#a6aa246ac0c5c3b12ca7449a13e3e79d9">   35</a></span>  <a class="code hl_function" href="class_menu_entry.html#a6aa246ac0c5c3b12ca7449a13e3e79d9">MenuEntry</a>(<span class="keywordtype">void</span> (*callee)(), std::string name) {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    this-&gt;<a class="code hl_variable" href="class_menu_entry.html#aba31af783cb8a839d1989ecc55268578">exec</a> = callee;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    this-&gt;displayName = name;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_menu_entry.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="class_menu_entry.html">MenuEntry</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_menu_entry.html#aba31af783cb8a839d1989ecc55268578">   34</a></span>  void (*<a class="code hl_variable" href="class_menu_entry.html#aba31af783cb8a839d1989ecc55268578">exec</a>)();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_menu_entry.html#a81298e34a3f55168b2342cfbbe0b1d9d">   35</a></span>  std::string <a class="code hl_variable" href="class_menu_entry.html#a81298e34a3f55168b2342cfbbe0b1d9d">displayName</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_menu_entry.html#a6aa246ac0c5c3b12ca7449a13e3e79d9">   37</a></span>  <a class="code hl_function" href="class_menu_entry.html#a6aa246ac0c5c3b12ca7449a13e3e79d9">MenuEntry</a>(<span class="keywordtype">void</span> (*callee)(), std::string name)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    this-&gt;<a class="code hl_variable" href="class_menu_entry.html#aba31af783cb8a839d1989ecc55268578">exec</a> = callee;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    this-&gt;displayName = name;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  }</div>
 </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
 </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a8a8426d6c6965f90c526dd88b8e9b567">   41</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="menu_8cpp.html#a8a8426d6c6965f90c526dd88b8e9b567">displayTitle</a>() {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  std::cout &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#ab67d75965fa43d2101860e7981ae1118">termkit::center_text_block</a>(<a class="code hl_function" href="namespacetermkit.html#a253548838ec422f432216554cc46e553">termkit::rgb_fg</a>(<a class="code hl_variable" href="menu_8cpp.html#a8214780964530800368b406c681fd1d9">title</a>, 255, 0, 0, <span class="keyword">true</span>), 98)</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            &lt;&lt; <a class="code hl_variable" href="namespacetermkit.html#acf6328832ada72b09f14e75469b09bf7">termkit::DEFAULT_TERM_STYLE</a> &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  std::cout &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#af969f49dd6403a6938331ef2039f28ae">termkit::center_line</a>(std::string(58, <span class="charliteral">&#39; &#39;</span>) + <a class="code hl_function" href="namespacetermkit.html#a8ccd22646d29fc32e777afebe0679536">termkit::bold_text</a>(<span class="stringliteral">&quot;v0.0.1&quot;</span>))</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a8a8426d6c6965f90c526dd88b8e9b567">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="menu_8cpp.html#a8a8426d6c6965f90c526dd88b8e9b567">displayTitle</a>()</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  std::cout &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#ab67d75965fa43d2101860e7981ae1118">termkit::center_text_block</a>(<a class="code hl_function" href="namespacetermkit.html#a253548838ec422f432216554cc46e553">termkit::rgb_fg</a>(<a class="code hl_variable" href="menu_8cpp.html#a8214780964530800368b406c681fd1d9">title</a>, 255, 0, 0, <span class="keyword">true</span>), 98)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            &lt;&lt; <a class="code hl_variable" href="namespacetermkit.html#acf6328832ada72b09f14e75469b09bf7">termkit::DEFAULT_TERM_STYLE</a> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  std::cout &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#af969f49dd6403a6938331ef2039f28ae">termkit::center_line</a>(std::string(58, <span class="charliteral">&#39; &#39;</span>) + <a class="code hl_function" href="namespacetermkit.html#a8ccd22646d29fc32e777afebe0679536">termkit::bold_text</a>(<span class="stringliteral">&quot;v0.0.1&quot;</span>))</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a8f9ed026fc3625dd08649a912fd82c4d">   50</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="menu_8cpp.html#a8f9ed026fc3625dd08649a912fd82c4d">renderSelectable</a>(std::vector&lt;MenuEntry&gt; &amp;games, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> selected_option) {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  std::string selected_game_display_name = games[0].displayName;     </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i = 0; i &lt; games.size() ; i++) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      selected_game_display_name = games[i].displayName;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      <span class="keywordflow">if</span> (i == selected_option) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        std::cout &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#af969f49dd6403a6938331ef2039f28ae">termkit::center_line</a>(<a class="code hl_function" href="namespacetermkit.html#a8ccd22646d29fc32e777afebe0679536">termkit::bold_text</a>(<a class="code hl_function" href="namespacetermkit.html#a253548838ec422f432216554cc46e553">termkit::rgb_fg</a>(selected_game_display_name, 255, 0, 0)), selected_game_display_name.length())</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                  &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      } <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        std::cout &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#af969f49dd6403a6938331ef2039f28ae">termkit::center_line</a>(selected_game_display_name, selected_game_display_name.length())</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                  &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="foldopen" id="foldopen00053" data-start="{" data-end="}">
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="menu_8cpp.html#a8f9ed026fc3625dd08649a912fd82c4d">   53</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="menu_8cpp.html#a8f9ed026fc3625dd08649a912fd82c4d">renderSelectable</a>(std::vector&lt;MenuEntry&gt; &amp;games, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> selected_option)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  std::string selected_game_display_name = games[0].displayName;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i = 0; i &lt; games.size(); i++)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    selected_game_display_name = games[i].displayName;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (i == selected_option)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      std::cout &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#af969f49dd6403a6938331ef2039f28ae">termkit::center_line</a>(<a class="code hl_function" href="namespacetermkit.html#a8ccd22646d29fc32e777afebe0679536">termkit::bold_text</a>(<a class="code hl_function" href="namespacetermkit.html#a253548838ec422f432216554cc46e553">termkit::rgb_fg</a>(selected_game_display_name, 255, 0, 0)), selected_game_display_name.length())</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      std::cout &lt;&lt; <a class="code hl_function" href="namespacetermkit.html#af969f49dd6403a6938331ef2039f28ae">termkit::center_line</a>(selected_game_display_name, selected_game_display_name.length())</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
 </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="menu_8cpp.html#aad6fbb690f87c4efc2aac71512629646">   64</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="menu_8cpp.html#aad6fbb690f87c4efc2aac71512629646">incrementSelectedOption</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> &amp;selected_option, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> number_of_games) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  selected_option += 1;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  selected_option %= number_of_games;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="menu_8cpp.html#aad6fbb690f87c4efc2aac71512629646">   70</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="menu_8cpp.html#aad6fbb690f87c4efc2aac71512629646">incrementSelectedOption</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> &amp;selected_option, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> number_of_games)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  selected_option += 1;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  selected_option %= number_of_games;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
 </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="menu_8cpp.html#ad59ba908b21673ea18a9cc2cfc369cde">   69</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="menu_8cpp.html#ad59ba908b21673ea18a9cc2cfc369cde">decrementSelectedOption</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> &amp;selected_option, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> number_of_games) {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  selected_option -= 1;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  selected_option %= number_of_games;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="menu_8cpp.html#ad59ba908b21673ea18a9cc2cfc369cde">   76</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="menu_8cpp.html#ad59ba908b21673ea18a9cc2cfc369cde">decrementSelectedOption</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> &amp;selected_option, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> number_of_games)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  selected_option -= 1;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  selected_option %= number_of_games;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
 </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="foldopen" id="foldopen00075" data-start="{" data-end="}">
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="menu_8cpp.html#ae972071030d8a58b941fc31e24795735">   75</a></span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="menu_8cpp.html#ae972071030d8a58b941fc31e24795735">showMenu</a>(std::vector&lt;MenuEntry&gt; games) {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> number_of_games = games.size();</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> terminal_height = <a class="code hl_function" href="namespacetermkit.html#a3d428a1add5e86af465690246a0b2540">termkit::get_term_size</a>().<a class="code hl_variable" href="classtermkit_1_1_term__size.html#ad1b336a61983ea0e483173f402b76de9">height</a>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> ui_vcenter_point = (12 + number_of_games) / 2;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="comment">//                               ^^</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="comment">// Height of the logo + it&#39;s padding and version number</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  menuStart : {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> selected_option = 0;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">bool</span> is_selecting = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <a class="code hl_function" href="namespacetermkit.html#a8f82cd06a453638337bd2d1cf84d0b5a">termkit::clear</a>();</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <a class="code hl_function" href="namespacetermkit.html#ab82d5434c67e35c7de63f874b4befc29">termkit::hide_cursor</a>();</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <a class="code hl_function" href="namespacetermkit.html#a8285fb8ea76bceec83aab3fbb3ef15ec">termkit::move_cursor_down</a>(terminal_height/2 - ui_vcenter_point);</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <a class="code hl_function" href="menu_8cpp.html#a8a8426d6c6965f90c526dd88b8e9b567">displayTitle</a>();</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordflow">while</span> (is_selecting) {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="comment">// render</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_function" href="menu_8cpp.html#a8f9ed026fc3625dd08649a912fd82c4d">renderSelectable</a>(games, selected_option);</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_function" href="namespacetermkit.html#aa8ece6cc8e4b7d58ed6cf5502c3c16fd">termkit::move_cursor_up</a>(games.size());</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">// keyboard input</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">switch</span> (<a class="code hl_function" href="namespacetermkit.html#a3ee5435f45bee669e83ec94574952ff8">termkit::getch</a>()) {</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca2fbe51d0cc419818a7d7afad5d6a7079">CTRLC</a>: <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca920380215591395ea33ee5df8e293e19">TAB</a>:</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      <a class="code hl_function" href="menu_8cpp.html#aad6fbb690f87c4efc2aac71512629646">incrementSelectedOption</a>(selected_option, number_of_games);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca951ab68bb8f7daafb78951107080904e">ENTER</a>:</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      is_selecting = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">// handle multi-character keys &#39;^[&#39; e.i UP arrow is ^[A</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">//                                                  27 91 A</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#if defined(unix) || defined(__APPLE__) </span><span class="comment">// linux and mac support</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaf5297152557c7da396243000ca240e89">ESC</a>:</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetermkit.html#a3ee5435f45bee669e83ec94574952ff8">termkit::getch</a>() != <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34">BRACKET</a>)</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <span class="comment">/* </span></div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">        As said a couple of lines before, on UNIX-like systems arrow keys are composed of 3 characters, the first being the escape one (code 27 &#39;^&#39;)</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="comment">        the second being an openning bracket (code 91 &#39;[&#39;)</span></div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="comment">        the last one being the character identifying the key</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">      */</span></div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      <span class="keywordtype">char</span> g = <a class="code hl_function" href="namespacetermkit.html#a3ee5435f45bee669e83ec94574952ff8">termkit::getch</a>();</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      <span class="keywordflow">switch</span> (g) {</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa">UP</a>:</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <a class="code hl_function" href="menu_8cpp.html#ad59ba908b21673ea18a9cc2cfc369cde">decrementSelectedOption</a>(selected_option, number_of_games);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da">DOWN</a>:</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <a class="code hl_function" href="menu_8cpp.html#aad6fbb690f87c4efc2aac71512629646">incrementSelectedOption</a>(selected_option, number_of_games);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee">BAKTAB</a>:</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <a class="code hl_function" href="menu_8cpp.html#ad59ba908b21673ea18a9cc2cfc369cde">decrementSelectedOption</a>(selected_option, number_of_games);</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      }</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">// Windows support</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45">WINUP</a>:</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>      <a class="code hl_function" href="menu_8cpp.html#ad59ba908b21673ea18a9cc2cfc369cde">decrementSelectedOption</a>(selected_option, number_of_games);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9">WINDOWN</a>:</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>      <a class="code hl_function" href="menu_8cpp.html#aad6fbb690f87c4efc2aac71512629646">incrementSelectedOption</a>(selected_option, number_of_games);</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  }</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <a class="code hl_function" href="namespacetermkit.html#a8f82cd06a453638337bd2d1cf84d0b5a">termkit::clear</a>();</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <a class="code hl_function" href="namespacetermkit.html#a7512fe1e28c3dea76e7d4fd7596d471e">termkit::show_cursor</a>();</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  games[selected_option].exec();  </div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  }</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keywordflow">goto</span> menuStart;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>}</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="menu_8cpp.html#ae972071030d8a58b941fc31e24795735">   82</a></span><span class="keyword">extern</span> <span class="keywordtype">void</span> <a class="code hl_function" href="menu_8cpp.html#ae972071030d8a58b941fc31e24795735">showMenu</a>(std::vector&lt;MenuEntry&gt; games)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> number_of_games = games.size();</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> terminal_height = <a class="code hl_function" href="namespacetermkit.html#a3d428a1add5e86af465690246a0b2540">termkit::get_term_size</a>().<a class="code hl_variable" href="classtermkit_1_1_term__size.html#ad1b336a61983ea0e483173f402b76de9">height</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> ui_vcenter_point = (12 + number_of_games) / 2;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="comment">//                               ^^</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="comment">// Height of the logo + it&#39;s padding and version number</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>menuStart:</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> selected_option = 0;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordtype">bool</span> is_selecting = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <a class="code hl_function" href="namespacetermkit.html#a8f82cd06a453638337bd2d1cf84d0b5a">termkit::clear</a>();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <a class="code hl_function" href="namespacetermkit.html#ab82d5434c67e35c7de63f874b4befc29">termkit::hide_cursor</a>();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <a class="code hl_function" href="namespacetermkit.html#a0807cba9598e1ee8a43dec3e23612379">termkit::set_term_title</a>(<span class="stringliteral">&quot;SAE Games&quot;</span>);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <a class="code hl_function" href="namespacetermkit.html#a8285fb8ea76bceec83aab3fbb3ef15ec">termkit::move_cursor_down</a>(terminal_height / 2 - ui_vcenter_point);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <a class="code hl_function" href="menu_8cpp.html#a8a8426d6c6965f90c526dd88b8e9b567">displayTitle</a>();</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordflow">while</span> (is_selecting)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="comment">// render</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_function" href="menu_8cpp.html#a8f9ed026fc3625dd08649a912fd82c4d">renderSelectable</a>(games, selected_option);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_function" href="namespacetermkit.html#aa8ece6cc8e4b7d58ed6cf5502c3c16fd">termkit::move_cursor_up</a>(games.size());</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">// keyboard input</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">switch</span> (<a class="code hl_function" href="namespacetermkit.html#a3ee5435f45bee669e83ec94574952ff8">termkit::getch</a>())</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca2fbe51d0cc419818a7d7afad5d6a7079">CTRLC</a>:</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca920380215591395ea33ee5df8e293e19">TAB</a>:</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <a class="code hl_function" href="menu_8cpp.html#aad6fbb690f87c4efc2aac71512629646">incrementSelectedOption</a>(selected_option, number_of_games);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca951ab68bb8f7daafb78951107080904e">ENTER</a>:</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      is_selecting = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="comment">// handle multi-character keys &#39;^[&#39; e.i UP arrow is ^[A</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="comment">//                                                  27 91 A</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#if defined(unix) || defined(__APPLE__) </span><span class="comment">// linux and mac support</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaf5297152557c7da396243000ca240e89">ESC</a>:</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetermkit.html#a3ee5435f45bee669e83ec94574952ff8">termkit::getch</a>() != <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34">BRACKET</a>)</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>      <span class="comment">/*</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="comment">        As said a couple of lines before, on UNIX-like systems arrow keys are composed of 3 characters, the first being the escape one (code 27 &#39;^&#39;)</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="comment">        the second being an openning bracket (code 91 &#39;[&#39;)</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">        the last one being the character identifying the key</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment">      */</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keywordtype">char</span> g = <a class="code hl_function" href="namespacetermkit.html#a3ee5435f45bee669e83ec94574952ff8">termkit::getch</a>();</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      <span class="keywordflow">switch</span> (g)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa">UP</a>:</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <a class="code hl_function" href="menu_8cpp.html#ad59ba908b21673ea18a9cc2cfc369cde">decrementSelectedOption</a>(selected_option, number_of_games);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da">DOWN</a>:</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <a class="code hl_function" href="menu_8cpp.html#aad6fbb690f87c4efc2aac71512629646">incrementSelectedOption</a>(selected_option, number_of_games);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee">BAKTAB</a>:</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <a class="code hl_function" href="menu_8cpp.html#ad59ba908b21673ea18a9cc2cfc369cde">decrementSelectedOption</a>(selected_option, number_of_games);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>      }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="comment">// Windows support</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45">WINUP</a>:</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      <a class="code hl_function" href="menu_8cpp.html#ad59ba908b21673ea18a9cc2cfc369cde">decrementSelectedOption</a>(selected_option, number_of_games);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9">WINDOWN</a>:</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      <a class="code hl_function" href="menu_8cpp.html#aad6fbb690f87c4efc2aac71512629646">incrementSelectedOption</a>(selected_option, number_of_games);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <a class="code hl_function" href="namespacetermkit.html#a8f82cd06a453638337bd2d1cf84d0b5a">termkit::clear</a>();</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <a class="code hl_function" href="namespacetermkit.html#a7512fe1e28c3dea76e7d4fd7596d471e">termkit::show_cursor</a>();</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  games[selected_option].exec();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>}</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keywordflow">goto</span> menuStart;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>}</div>
 </div>
-<div class="ttc" id="aclass_menu_entry_html"><div class="ttname"><a href="class_menu_entry.html">MenuEntry</a></div><div class="ttdef"><b>Definition</b> menu.cpp:30</div></div>
-<div class="ttc" id="aclass_menu_entry_html_a6aa246ac0c5c3b12ca7449a13e3e79d9"><div class="ttname"><a href="class_menu_entry.html#a6aa246ac0c5c3b12ca7449a13e3e79d9">MenuEntry::MenuEntry</a></div><div class="ttdeci">MenuEntry(void(*callee)(), std::string name)</div><div class="ttdef"><b>Definition</b> menu.cpp:35</div></div>
-<div class="ttc" id="aclass_menu_entry_html_a81298e34a3f55168b2342cfbbe0b1d9d"><div class="ttname"><a href="class_menu_entry.html#a81298e34a3f55168b2342cfbbe0b1d9d">MenuEntry::displayName</a></div><div class="ttdeci">std::string displayName</div><div class="ttdef"><b>Definition</b> menu.cpp:33</div></div>
-<div class="ttc" id="aclass_menu_entry_html_aba31af783cb8a839d1989ecc55268578"><div class="ttname"><a href="class_menu_entry.html#aba31af783cb8a839d1989ecc55268578">MenuEntry::exec</a></div><div class="ttdeci">void(* exec)()</div><div class="ttdef"><b>Definition</b> menu.cpp:32</div></div>
+<div class="ttc" id="aclass_menu_entry_html"><div class="ttname"><a href="class_menu_entry.html">MenuEntry</a></div><div class="ttdef"><b>Definition</b> menu.cpp:32</div></div>
+<div class="ttc" id="aclass_menu_entry_html_a6aa246ac0c5c3b12ca7449a13e3e79d9"><div class="ttname"><a href="class_menu_entry.html#a6aa246ac0c5c3b12ca7449a13e3e79d9">MenuEntry::MenuEntry</a></div><div class="ttdeci">MenuEntry(void(*callee)(), std::string name)</div><div class="ttdef"><b>Definition</b> menu.cpp:37</div></div>
+<div class="ttc" id="aclass_menu_entry_html_a81298e34a3f55168b2342cfbbe0b1d9d"><div class="ttname"><a href="class_menu_entry.html#a81298e34a3f55168b2342cfbbe0b1d9d">MenuEntry::displayName</a></div><div class="ttdeci">std::string displayName</div><div class="ttdef"><b>Definition</b> menu.cpp:35</div></div>
+<div class="ttc" id="aclass_menu_entry_html_aba31af783cb8a839d1989ecc55268578"><div class="ttname"><a href="class_menu_entry.html#aba31af783cb8a839d1989ecc55268578">MenuEntry::exec</a></div><div class="ttdeci">void(* exec)()</div><div class="ttdef"><b>Definition</b> menu.cpp:34</div></div>
 <div class="ttc" id="aclasstermkit_1_1_term__size_html_ad1b336a61983ea0e483173f402b76de9"><div class="ttname"><a href="classtermkit_1_1_term__size.html#ad1b336a61983ea0e483173f402b76de9">termkit::Term_size::height</a></div><div class="ttdeci">unsigned height</div><div class="ttdef"><b>Definition</b> termkit.hpp:32</div></div>
-<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bc"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bc">Keys</a></div><div class="ttdeci">Keys</div><div class="ttdef"><b>Definition</b> menu.cpp:16</div></div>
-<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bca2fbe51d0cc419818a7d7afad5d6a7079"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca2fbe51d0cc419818a7d7afad5d6a7079">CTRLC</a></div><div class="ttdeci">@ CTRLC</div><div class="ttdef"><b>Definition</b> menu.cpp:17</div></div>
-<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee">BAKTAB</a></div><div class="ttdeci">@ BAKTAB</div><div class="ttdef"><b>Definition</b> menu.cpp:26</div></div>
-<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bca920380215591395ea33ee5df8e293e19"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca920380215591395ea33ee5df8e293e19">TAB</a></div><div class="ttdeci">@ TAB</div><div class="ttdef"><b>Definition</b> menu.cpp:18</div></div>
-<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bca951ab68bb8f7daafb78951107080904e"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca951ab68bb8f7daafb78951107080904e">ENTER</a></div><div class="ttdeci">@ ENTER</div><div class="ttdef"><b>Definition</b> menu.cpp:19</div></div>
-<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da">DOWN</a></div><div class="ttdeci">@ DOWN</div><div class="ttdef"><b>Definition</b> menu.cpp:22</div></div>
-<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45">WINUP</a></div><div class="ttdeci">@ WINUP</div><div class="ttdef"><b>Definition</b> menu.cpp:24</div></div>
-<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9">WINDOWN</a></div><div class="ttdeci">@ WINDOWN</div><div class="ttdef"><b>Definition</b> menu.cpp:25</div></div>
-<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa">UP</a></div><div class="ttdeci">@ UP</div><div class="ttdef"><b>Definition</b> menu.cpp:21</div></div>
-<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34">BRACKET</a></div><div class="ttdeci">@ BRACKET</div><div class="ttdef"><b>Definition</b> menu.cpp:27</div></div>
-<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bcaf5297152557c7da396243000ca240e89"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaf5297152557c7da396243000ca240e89">ESC</a></div><div class="ttdeci">@ ESC</div><div class="ttdef"><b>Definition</b> menu.cpp:20</div></div>
+<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bc"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bc">Keys</a></div><div class="ttdeci">Keys</div><div class="ttdef"><b>Definition</b> menu.cpp:17</div></div>
+<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bca2fbe51d0cc419818a7d7afad5d6a7079"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca2fbe51d0cc419818a7d7afad5d6a7079">CTRLC</a></div><div class="ttdeci">@ CTRLC</div><div class="ttdef"><b>Definition</b> menu.cpp:18</div></div>
+<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca6a8e930dd6e137c1f209465741abfcee">BAKTAB</a></div><div class="ttdeci">@ BAKTAB</div><div class="ttdef"><b>Definition</b> menu.cpp:27</div></div>
+<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bca920380215591395ea33ee5df8e293e19"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca920380215591395ea33ee5df8e293e19">TAB</a></div><div class="ttdeci">@ TAB</div><div class="ttdef"><b>Definition</b> menu.cpp:19</div></div>
+<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bca951ab68bb8f7daafb78951107080904e"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca951ab68bb8f7daafb78951107080904e">ENTER</a></div><div class="ttdeci">@ ENTER</div><div class="ttdef"><b>Definition</b> menu.cpp:20</div></div>
+<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9b0b4a95b99523966e0e34ffdadac9da">DOWN</a></div><div class="ttdeci">@ DOWN</div><div class="ttdef"><b>Definition</b> menu.cpp:23</div></div>
+<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bca9ba02b561471b2d70f5ffb27da61fa45">WINUP</a></div><div class="ttdeci">@ WINUP</div><div class="ttdef"><b>Definition</b> menu.cpp:25</div></div>
+<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaa88034f377f020c1248a0f83cba7cab9">WINDOWN</a></div><div class="ttdeci">@ WINDOWN</div><div class="ttdef"><b>Definition</b> menu.cpp:26</div></div>
+<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaba595d8bca8bc5e67c37c0a9d89becfa">UP</a></div><div class="ttdeci">@ UP</div><div class="ttdef"><b>Definition</b> menu.cpp:22</div></div>
+<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcacd24ebeede4a5163c43171bf61163e34">BRACKET</a></div><div class="ttdeci">@ BRACKET</div><div class="ttdef"><b>Definition</b> menu.cpp:28</div></div>
+<div class="ttc" id="amenu_8cpp_html_a0ada92b8263d776ca3c779d2a0e031bcaf5297152557c7da396243000ca240e89"><div class="ttname"><a href="menu_8cpp.html#a0ada92b8263d776ca3c779d2a0e031bcaf5297152557c7da396243000ca240e89">ESC</a></div><div class="ttdeci">@ ESC</div><div class="ttdef"><b>Definition</b> menu.cpp:21</div></div>
 <div class="ttc" id="amenu_8cpp_html_a8214780964530800368b406c681fd1d9"><div class="ttname"><a href="menu_8cpp.html#a8214780964530800368b406c681fd1d9">title</a></div><div class="ttdeci">const char * title</div><div class="ttdef"><b>Definition</b> menu.cpp:6</div></div>
-<div class="ttc" id="amenu_8cpp_html_a8a8426d6c6965f90c526dd88b8e9b567"><div class="ttname"><a href="menu_8cpp.html#a8a8426d6c6965f90c526dd88b8e9b567">displayTitle</a></div><div class="ttdeci">void displayTitle()</div><div class="ttdef"><b>Definition</b> menu.cpp:41</div></div>
-<div class="ttc" id="amenu_8cpp_html_a8f9ed026fc3625dd08649a912fd82c4d"><div class="ttname"><a href="menu_8cpp.html#a8f9ed026fc3625dd08649a912fd82c4d">renderSelectable</a></div><div class="ttdeci">void renderSelectable(std::vector&lt; MenuEntry &gt; &amp;games, unsigned short selected_option)</div><div class="ttdef"><b>Definition</b> menu.cpp:50</div></div>
-<div class="ttc" id="amenu_8cpp_html_aad6fbb690f87c4efc2aac71512629646"><div class="ttname"><a href="menu_8cpp.html#aad6fbb690f87c4efc2aac71512629646">incrementSelectedOption</a></div><div class="ttdeci">void incrementSelectedOption(unsigned short &amp;selected_option, unsigned long number_of_games)</div><div class="ttdef"><b>Definition</b> menu.cpp:64</div></div>
-<div class="ttc" id="amenu_8cpp_html_ad59ba908b21673ea18a9cc2cfc369cde"><div class="ttname"><a href="menu_8cpp.html#ad59ba908b21673ea18a9cc2cfc369cde">decrementSelectedOption</a></div><div class="ttdeci">void decrementSelectedOption(unsigned short &amp;selected_option, unsigned long number_of_games)</div><div class="ttdef"><b>Definition</b> menu.cpp:69</div></div>
-<div class="ttc" id="amenu_8cpp_html_ae972071030d8a58b941fc31e24795735"><div class="ttname"><a href="menu_8cpp.html#ae972071030d8a58b941fc31e24795735">showMenu</a></div><div class="ttdeci">void showMenu(std::vector&lt; MenuEntry &gt; games)</div><div class="ttdef"><b>Definition</b> menu.cpp:75</div></div>
+<div class="ttc" id="amenu_8cpp_html_a8a8426d6c6965f90c526dd88b8e9b567"><div class="ttname"><a href="menu_8cpp.html#a8a8426d6c6965f90c526dd88b8e9b567">displayTitle</a></div><div class="ttdeci">void displayTitle()</div><div class="ttdef"><b>Definition</b> menu.cpp:44</div></div>
+<div class="ttc" id="amenu_8cpp_html_a8f9ed026fc3625dd08649a912fd82c4d"><div class="ttname"><a href="menu_8cpp.html#a8f9ed026fc3625dd08649a912fd82c4d">renderSelectable</a></div><div class="ttdeci">void renderSelectable(std::vector&lt; MenuEntry &gt; &amp;games, unsigned short selected_option)</div><div class="ttdef"><b>Definition</b> menu.cpp:53</div></div>
+<div class="ttc" id="amenu_8cpp_html_aad6fbb690f87c4efc2aac71512629646"><div class="ttname"><a href="menu_8cpp.html#aad6fbb690f87c4efc2aac71512629646">incrementSelectedOption</a></div><div class="ttdeci">void incrementSelectedOption(unsigned short &amp;selected_option, unsigned long number_of_games)</div><div class="ttdef"><b>Definition</b> menu.cpp:70</div></div>
+<div class="ttc" id="amenu_8cpp_html_ad59ba908b21673ea18a9cc2cfc369cde"><div class="ttname"><a href="menu_8cpp.html#ad59ba908b21673ea18a9cc2cfc369cde">decrementSelectedOption</a></div><div class="ttdeci">void decrementSelectedOption(unsigned short &amp;selected_option, unsigned long number_of_games)</div><div class="ttdef"><b>Definition</b> menu.cpp:76</div></div>
+<div class="ttc" id="amenu_8cpp_html_ae972071030d8a58b941fc31e24795735"><div class="ttname"><a href="menu_8cpp.html#ae972071030d8a58b941fc31e24795735">showMenu</a></div><div class="ttdeci">void showMenu(std::vector&lt; MenuEntry &gt; games)</div><div class="ttdef"><b>Definition</b> menu.cpp:82</div></div>
+<div class="ttc" id="anamespacetermkit_html_a0807cba9598e1ee8a43dec3e23612379"><div class="ttname"><a href="namespacetermkit.html#a0807cba9598e1ee8a43dec3e23612379">termkit::set_term_title</a></div><div class="ttdeci">void set_term_title(std::string title)</div><div class="ttdoc">Sets the terminal's window title.</div><div class="ttdef"><b>Definition</b> termkit.cpp:91</div></div>
 <div class="ttc" id="anamespacetermkit_html_a253548838ec422f432216554cc46e553"><div class="ttname"><a href="namespacetermkit.html#a253548838ec422f432216554cc46e553">termkit::rgb_fg</a></div><div class="ttdeci">std::string rgb_fg(std::string text, unsigned r, unsigned g, unsigned b, bool add_padding)</div><div class="ttdoc">Generates a color escape sequence. Colors the foreground with the given color.</div><div class="ttdef"><b>Definition</b> termkit.cpp:69</div></div>
 <div class="ttc" id="anamespacetermkit_html_a3d428a1add5e86af465690246a0b2540"><div class="ttname"><a href="namespacetermkit.html#a3d428a1add5e86af465690246a0b2540">termkit::get_term_size</a></div><div class="ttdeci">Term_size get_term_size()</div><div class="ttdoc">Gets the size of the terminal in rows and columns.</div><div class="ttdef"><b>Definition</b> termkit.cpp:166</div></div>
 <div class="ttc" id="anamespacetermkit_html_a3ee5435f45bee669e83ec94574952ff8"><div class="ttname"><a href="namespacetermkit.html#a3ee5435f45bee669e83ec94574952ff8">termkit::getch</a></div><div class="ttdeci">char getch()</div><div class="ttdoc">Gets a single char from the user. Does not echo and does not process keys.</div><div class="ttdef"><b>Definition</b> termkit.cpp:148</div></div>

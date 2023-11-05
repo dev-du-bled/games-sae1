@@ -10,5 +10,6 @@ var searchData=
   ['playerplayturn_7',['playerPlayTurn',['../games_2shipwar_2main_8cpp.html#aca67fb811163eb1a09b5eac6c1798489',1,'main.cpp']]],
   ['previoustime_8',['previousTime',['../games_2reflex_2main_8cpp.html#aca92ba59b29d517635c2172a6bc414b0',1,'main.cpp']]],
   ['printgrid_9',['printGrid',['../games_2shipwar_2main_8cpp.html#a9fec6b5e653b60f0c98cda3aa082ea98',1,'main.cpp']]],
-  ['project_201_10',['SAE Dev - Project #1',['../md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html',1,'']]]
+  ['project_201_10',['SAE Dev - Project #1',['../md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html',1,'']]],
+  ['properly_11',['How to run it properly ?',['../md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html#autotoc_md5',1,'']]]
 ];

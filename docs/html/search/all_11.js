@@ -13,5 +13,6 @@ var searchData=
   ['rgb_5ffg_10',['rgb_fg',['../namespacetermkit.html#a253548838ec422f432216554cc46e553',1,'termkit']]],
   ['rgb_5fimpl_11',['rgb_impl',['../namespacetermkit.html#a7c625d2ab63873268ad111e12a554e0c',1,'termkit::rgb_impl(std::string text, unsigned r, unsigned g, unsigned b, bool color_background, bool do_pad)'],['../namespacetermkit.html#af17d87d7cd896c95fe26cc45bea56e65',1,'termkit::rgb_impl(unsigned r, unsigned g, unsigned b, bool color_background)']]],
   ['rng_12',['rng',['../games_2right_01price_2main_8cpp.html#ac03c0bcbdb2526472e690e410b407edb',1,'main.cpp']]],
-  ['rngalgo_13',['RngAlgo',['../games_2right_01price_2main_8cpp.html#ac0e20aa3781e9fdb8a59d23e9ae3c356',1,'main.cpp']]]
+  ['rngalgo_13',['RngAlgo',['../games_2right_01price_2main_8cpp.html#ac0e20aa3781e9fdb8a59d23e9ae3c356',1,'main.cpp']]],
+  ['run_20it_20properly_14',['How to run it properly ?',['../md__2_users_2alexiankujawski_2_documents_2_code_2games-sae1_2_r_e_a_d_m_e.html#autotoc_md5',1,'']]]
 ];
