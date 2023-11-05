@@ -11,6 +11,9 @@
 using namespace std;
 int main()
 {
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+  SetConsoleOutputCP(CP_UTF8);
+#endif
   termkit::handle_SIGINT();
   cout << "\x1b[?47h"; // switch to alternative buffer if available
   showMenu({MenuEntry(&Hangman, "Pendu de Firmin"),
