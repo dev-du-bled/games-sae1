@@ -7,6 +7,8 @@
 ## Table of Contents
 
 - [About](#about)
+    - [Game List](#game-list)
+- [How to run it properly ?](#how-to-run-it-properly)
 - [License](#license)
 - [Authors](#authors)
 
