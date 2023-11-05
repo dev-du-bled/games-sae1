@@ -1,5 +1,5 @@
 /**
- * @brief This file contains the Gravier Carton Couteau game
+ * @brief This file contains the Gravier Carton Couteau™ game
  * @file  main.cpp
  * @author Firmin_
  */
@@ -59,7 +59,7 @@ int ComparePlays(int playOne, int playTwo)
 }
 
 /**
- * @brief Draw the Gravier Carton Couteau game in terminal
+ * @brief Draw the Gravier Carton Couteau™ game in terminal
  *
  * @param [in] mode 0 if the player hasn't played, 1 if the player has played
  * @param [in] playerScore Player score
@@ -127,7 +127,7 @@ void DrawPfc(int mode, int playerScore, int computerScore, int roundsPlayed, int
 }
 
 /**
- * @brief Gravier Carton Couteau game main function
+ * @brief Gravier Carton Couteau™ game main function
  *
  * @return void
  */
@@ -164,8 +164,7 @@ extern void pfc()
                 playerPlay = 2;
                 break;
             case 3: // Handle ^C
-                exit(0);
-                break;
+                return;
             default:
                 playerPlay = -1;
                 break;
