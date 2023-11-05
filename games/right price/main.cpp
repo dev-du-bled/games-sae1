@@ -9,6 +9,7 @@
 #include <random>
 #include <string>
 #include "../../libs/utils.hpp"
+#include <time.h>
 
 #define TIME_BEFORE_EXIT 5
 

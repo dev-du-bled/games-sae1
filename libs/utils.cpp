@@ -24,7 +24,7 @@ namespace Utils
 #if defined(unix) || defined(__APPLE__)
     sleep(seconds);
 #else
-    Sleep(seconds);
+    Sleep(seconds * 1000);
 #endif
   }
 }

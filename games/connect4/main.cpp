@@ -133,10 +133,17 @@ extern void connect4()
     drawConnect4(grid, cusorPos, playerTurn);
     while (winner == 0)
     {
+#if defined(unix) || defined(__APPLE__) // linux and mac support
+        int leftArrow = 68;
+        int rightArrow = 67;
+#elif defined(_WIN32) || defined(_WIN64) // windows support
+        int leftArrow = 75;
+        int rightArrow = 77;
+#endif
         int usrInput = termkit::getch();
-        if (usrInput == 68 && cusorPos > 1) // Left arrow
+        if (usrInput == leftArrow && cusorPos > 1) // Left arrow
             cusorPos--;
-        else if (usrInput == 67 && cusorPos < 7) // Right arrow
+        else if (usrInput == rightArrow && cusorPos < 7) // Right arrow
             cusorPos++;
         else if (usrInput == 13) // Enter
         {
