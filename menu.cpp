@@ -37,33 +37,18 @@ public:
   }
 };
 
-extern void showMenu(std::vector<MenuEntry> games) {
-  debutMenu : {
-  unsigned short selected_option = 0;
-  bool is_selecting = true;
-  std::string selected_game_display_name = games[0].displayName;
-  unsigned short ui_vcenter_point = (10 + games.size()) / 2;
-  //                                 ^^
-  // Height of the logo + it's padding and version number
-
-  termkit::clear();
-  termkit::hide_cursor();
-
-  termkit::move_cursor_down(ui_vcenter_point);
-  // in case some OS doesn't support the moving the cursor using a CSI here is a legacy way of moving it
-  // for (unsigned short k = 0; k < ui_vcenter_point + 1; k++) std::cout << std::endl;
-
+void displayTitle() {
   std::cout << termkit::center_text_block(termkit::rgb_fg(title, 255, 0, 0, true), 98)
             << termkit::DEFAULT_TERM_STYLE << std::endl;
-
   std::cout << termkit::center_line(std::string(58, ' ') + termkit::bold_text("v0.0.1"))
             << std::endl;
-
   std::cout << std::endl;
+  
+}
 
-  while (is_selecting) {
-    // render
-    for (unsigned long i = 0; i < games.size(); i++) {
+void renderSelectable(std::vector<MenuEntry> &games, unsigned short selected_option) {
+  std::string selected_game_display_name = games[0].displayName;     
+  for (unsigned long i = 0; i < games.size() ; i++) {
       selected_game_display_name = games[i].displayName;
       if (i == selected_option) {
         std::cout << termkit::center_line(termkit::bold_text(termkit::rgb_fg(selected_game_display_name, 255, 0, 0)), selected_game_display_name.length())
@@ -72,6 +57,40 @@ extern void showMenu(std::vector<MenuEntry> games) {
         std::cout << termkit::center_line(selected_game_display_name, selected_game_display_name.length())
                   << std::endl;
     }
+  
+}
+
+void incrementSelectedOption(ushort &selected_option, ulong number_of_games) {
+  selected_option += 1;
+  selected_option %= number_of_games;
+}
+
+void decrementSelectedOption(ushort &selected_option, ulong number_of_games) {
+  selected_option -= 1;
+  selected_option %= number_of_games;
+}
+
+
+extern void showMenu(std::vector<MenuEntry> games) {
+  const ulong number_of_games = games.size();
+  const ushort ui_vcenter_point = (10 + number_of_games / 2);
+  
+  menuStart : {
+  ushort selected_option = 0;
+  bool is_selecting = true;
+  //                                 ^^
+  // Height of the logo + it's padding and version number
+
+  termkit::clear();
+  termkit::hide_cursor();
+
+  termkit::move_cursor_down(ui_vcenter_point);
+
+  displayTitle();
+
+  while (is_selecting) {
+    // render
+    renderSelectable(games, selected_option);
     termkit::move_cursor_up(games.size());
 
     // keyboard input
@@ -80,7 +99,7 @@ extern void showMenu(std::vector<MenuEntry> games) {
       return;
 
     case TAB:
-      selected_option = (selected_option + 1) % games.size();
+      incrementSelectedOption(selected_option, number_of_games);
       continue;
 
     case ENTER:
@@ -92,32 +111,39 @@ extern void showMenu(std::vector<MenuEntry> games) {
     case ESC:
       if (termkit::getch() != BRACKET)
         continue;
+
+      /* 
+        As said a couple of lines on top, on UNIX-like systems arrow keys are composed of 3 characters, the first being the escape one (code 27 '^')
+        the second being an openning bracket (code 91 '[')
+        the last one being the character identifying the key
+      */
       char g = termkit::getch();
+
       switch (g) {
       case UP:
-        selected_option = (selected_option - 1) % games.size();
+        decrementSelectedOption(selected_option, number_of_games);
         continue;
 
       case DOWN:
-        selected_option = (selected_option + 1) % games.size();
+        incrementSelectedOption(selected_option, number_of_games);
         continue;
 
       case BAKTAB:
-        selected_option = (selected_option - 1) % games.size();
+        decrementSelectedOption(selected_option, number_of_games);
         continue;
-        // debugging
-        // default:
-        //   printf("%i", g);
       }
-#else // windows support
+
+// Windows support
+#else
     case WINUP:
-      selected_option = (selected_option - 1) % games.size();
+      decrementSelectedOption(selected_option, number_of_games);
       continue;
     case WINDOWN:
-      selected_option = (selected_option + 1) % games.size();
+      incrementSelectedOption(selected_option, number_of_games);
       continue;
 #endif
     }
+
   }
 
   termkit::clear();
@@ -125,5 +151,5 @@ extern void showMenu(std::vector<MenuEntry> games) {
 
   games[selected_option].exec();
   }
-  goto debutMenu;
+  goto menuStart;
 }
