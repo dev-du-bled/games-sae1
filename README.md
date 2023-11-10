@@ -15,7 +15,7 @@
 
 This is the first development project from the University Institute of Technology of Nevers. It's a program that can start various games such as Tic Tac Toe, Hangman, and many others. It runs on MacOS, Linux and even Windows.
 
-See [Doxygen](dev-du-bled.github.io/games-sae1) for more information.
+See [Doxygen](https://dev-du-bled.github.io/games-sae1) for more information.
 
 ### Game List
 
