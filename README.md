@@ -1,7 +1,8 @@
 # SAE Dev - Project #1
 
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![MIT License](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=for-the-badge)
+![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg?style=for-the-badge)
+![TermKit](https://img.shields.io/badge/TermKit-pink?style=for-the-badge)
 ---
 
 ## Table of Contents
